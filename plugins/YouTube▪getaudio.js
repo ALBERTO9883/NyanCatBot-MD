@@ -1,0 +1,40 @@
+import { 
+    youtubedl,
+    youtubedlv2,
+    youtubeSearch
+} from '@bochilteam/scraper'
+
+let handler = async (m, { conn, args, isPrems, isOwner, text }) => {
+let vid = (await youtubeSearch(text)).video[0]
+let { authorName, description, videoId, durationH, viewH, publishedTime, thumbnail } = vid
+const url = 'https://www.youtube.com/watch?v=' + videoId
+
+
+  let q = '128kbps'
+  let v = args[0]
+
+
+// Kocak
+const yt = await youtubedl(v).catch(async () => await  youtubedlv2(v))
+const dl_url = await yt.audio[q].download()
+  const ttl = await yt.title
+const size = await yt.audio[q].fileSizeH
+  
+ await m.reply(`❏ 📓 *Tɪ́ᴛᴜʟᴏ:* ${ttl}
+❏ 📁 Tᴀᴍᴀɴ̃ᴏ: ${size}
+
+${global.wait}`)
+  await conn.sendMessage(m.chat, { audio: { url: dl_url }, mimetype: "audio/mp4", fileName: ttl + '.mp3', quoted: m, contextInfo: {
+'forwardingScore': 200,
+'isForwarded': false,
+externalAdReply:{
+showAdAttribution: false,
+title: `${ttl}`,
+body: `${authorName}`,
+mediaType: 2, 
+sourceUrl: `${url}`,
+thumbnailUrl: thumbnail}}}, { quoted: m })
+}
+
+handler.command = /^(getaud)$/i
+export default handler

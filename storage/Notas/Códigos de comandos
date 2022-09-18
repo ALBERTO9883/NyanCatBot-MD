@@ -1,0 +1,34 @@
+📌 • Notas de audio con ad
+conn.sendMessage(m.chat, { audio: { url: vn }, contextInfo: { "externalAdReply": { "title": botname, "body": `=> ᴀᴜᴅɪᴏ ᴀᴜᴛᴏᴍᴀᴛɪᴄᴏ`, "previewType": "PHOTO", "thumbnailUrl": null,"thumbnail": imgmenu, "sourceUrl": `https://github.com/BrunoSobrino/TheMystic-Bot-MD`, "showAdAttribution": true}}, seconds: '4556', ptt: true, mimetype: 'audio/mpeg', fileName: `error.mp3` }, { quoted: m })
+
+
+📌 • Botones con adreply
+let buttons = [
+                    { buttonId: '!owner', buttonText: { displayText: 'Creador 🐢' }, type: 1 },
+                    { buttonId: '!infobot', buttonText: { displayText: 'Info 📌' }, type: 1 }
+                ]
+                let buttonMessage = {
+                    image: imgmenu,
+                    caption: text.trim(),
+                    mentions: [m.sender],
+                    footer: `*${greeting}*`,
+                    buttons: buttons,
+                    headerType: 4,
+                    contextInfo: {
+                    mentionedJid: [m.sender],
+                    externalAdReply: {
+                    showAdAttribution: true,
+                    mediaType: 'VIDEO',
+                    mediaUrl: 'https://pornhub.com',
+                    title: '🐱⸽⃕NʏᴀɴCᴀᴛBᴏᴛ-MD🍁⃨፝⃕✰',
+                    body: '💐Alberto Y Ashly💐',
+                    thumbnail: miniurl,
+                    sourceUrl: global.linkgc
+                    }}
+                }
+                conn.sendMessage(m.chat, buttonMessage, { quoted: m })
+
+
+
+📌 • Sticker con ad
+conn.sendFile(m.chat, stiker, 'sticker.webp', '',m, true, { contextInfo: { 'forwardingScore': 200, 'isForwarded': false, externalAdReply:{ showAdAttribution: false, title: botname, body: `h`, mediaType: 2, sourceUrl: linkgc, thumbnail: miniurl}}}, { quoted: m })
