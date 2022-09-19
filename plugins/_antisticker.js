@@ -13,7 +13,7 @@ handler.before = function (m, { isAdmin, isBotAdmin }) {
       if (global.opts) {
         if (isAdmin || !isBotAdmin){		  
         }else{
-          m.reply('*Sticker detectado, perdiste el reto kpo XD*') // ganti text terserah kamu 
+          m.reply('*_⚠️ En este chat no estan permitidos los stickers._*') 
           this.groupParticipantsUpdate(m.chat, [m.sender], "remove")
         }return true
       }
