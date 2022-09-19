@@ -10,8 +10,8 @@ ESCRIBE LOS SIGUIENTES COMANDOS UNO POR UNO:
 > pkg install ffmpeg -y
 > pkg install imagemagick -y
 > pkg install yarn
-> git clone https://github.com/BrunoSobrino/TheMystic-Bot-MD
-> cd TheMystic-Bot-MD
+> git clone https://github.com/ALBERTO9883/NyanCatBot-MD
+> cd NyanCatBot-MD
 > yarn install 
 > npm update
-> npm start
+> node .
