@@ -11,10 +11,9 @@
 </p>
 <p align="center">
 <a href="https://github.com/ALBERTO9883/followes"><img title="Seguidores" src="https://img.shields.io/github/followers/ALBERTO9883?color=green&style=flat-square"></a>
-<a href="https://github.com/ALBERTO9883/NyanCatBot-MD/stargazers/"><img title="Stars" src="https://img.shields.io/github/stars/ALBERTO9883/NyanCatBot-MD?color=red&style=flat-square"></a>
+<a href="https://github.com/ALBERTO9883/NyanCatBot-MD/stargazers/"><img title="Estrellas" src="https://img.shields.io/github/stars/ALBERTO9883/NyanCatBot-MD?color=red&style=flat-square"></a>
 <a href="https://github.com/ALBERTO9883/NyanCatBot-MD/network/members"><img title="Forks" src="https://img.shields.io/github/forks/ALBERTO9883/NyanCatBot-MD?color=red&style=flat-square"></a>
-<a href="https://github.com/ALBERTO9883/NyanCatBot-MD/watchers"><img title="Watching" src="https://img.shields.io/github/watchers/ALBERTO9883/NyanCatBot-MD?label=Watchers&color=blue&style=flat-square"></a>
-<a href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FArugaZ%2FNyanCatBot-MD&count_bg=%2379C83D&title_bg=%23555555&icon=probot.svg&icon_color=%2300FF6D&title=Hits&edge_flat=false"/></a>
+<a href="https://github.com/ALBERTO9883/NyanCatBot-MD/watchers"><img title="Watching" src="https://img.shields.io/github/watchers/ALBERTO9883/NyanCatBot-MD?label=Visitantes&color=blue&style=flat-square"></a>
 </p>
 <h1 align="center"></h1>
   </div>
