@@ -192,29 +192,6 @@ var ase = new Date(); var hour = ase.getHours(); switch(hour){ case 0: hour = 'u
   global.saludo = "Espero que tengas " + hour;
 //╰─────────────────────╯
 
-/*=========== HIASAN ===========*/
-// DEFAULT MENU
-global.dmenut = '❏═┅═━–〈' //top
-global.dmenub = '┊•' //body
-global.dmenub2 = '┊' //body for info cmd on Default menu
-global.dmenuf = '┗––––––––––✦' //footer
-
-// COMMAND MENU
-global.dashmenu = '┅━━━━━═┅═❏ *DASHBOARD* ❏═┅═━━━━━┅'
-global.cmenut = '❏––––––『'                       //top
-global.cmenuh = '』––––––'                        //header
-global.cmenub = '┊✦ '                            //body
-global.cmenuf = '┗━═┅═━––––––๑\n'                //footer
-global.cmenua = '\n⌕ ❙❘❙❙❘❙❚❙❘❙❙❚❙❘❙❘❙❚❙❘❙❙❚❙❘❙❙❘❙❚❙❘ ⌕\n     ' //after
-global.pmenus = '┊'                              //pembatas menu selector
-global.htki = '––––––『' // Hiasan Titile (KIRI)
-global.htka = '』––––––' // Hiasan Title  (KANAN)
-global.lopr = 'Ⓟ' //LOGO PREMIUM ON MENU.JS
-global.lolm = 'Ⓛ' //LOGO FREE ON MENU.JS
-global.htjava = '⫹⫺'    //hiasan Doang :v
-global.hsquere = ['⛶','❏','⫹⫺']
-global.botname = '\n🐱⸽⃕𝕹ʏᴀɴ𝕮ᴀᴛ𝕭ᴏᴛ🍁⃨፝⃕✰'
-
 global.multiplier = 9999 
 
 global.rpg = {
