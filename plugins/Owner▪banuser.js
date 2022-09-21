@@ -6,7 +6,7 @@ else who = m.chat
 if (!who) throw '⚠️ *_Ingresa el @tag de algún usuario._*'
 let users = global.db.data.users
 users[who].banned = true
-conn.reply(m.chat, `⚠️ *_El usuario @${who.split('@')[0]}, fue baneado con éxito._*`, m, { mentions: [who]})
+conn.reply(m.chat, `⚠️ *_El usuario @${who.split('@')[0]}, fue baneado con éxito._*`, fgclink, { mentions: [who]})
 }
 handler.help = ['banuser']
 handler.tags = ['owner']
