@@ -10,7 +10,6 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     })
     m.reply('⚠️ *_El reporte se envío a mi creador, cualquier informe falso puede ocasionar baneo._*')
 }
-
 handler.help = ['reportar']
 handler.tags = ['info']
 handler.command = /^(report|reportar|bug|error)$/i
