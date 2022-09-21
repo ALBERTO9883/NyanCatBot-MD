@@ -6,7 +6,7 @@ else who = m.chat
 if (!who) throw '⚠️ *_Ingresa el @tag de algún usuario._*'
 let users = global.db.data.users
 users[who].banned = false
-conn.reply(m.chat, `⚠️ *_El usuario fue desbaneado con éxito._*`, m)
+conn.reply(m.chat, `⚠️ *_El usuario @${who.split('@')[0]} fue desbaneado con éxito._*`, m, { mentions: [who] })
 }
 handler.help = ['unbanuser']
 handler.tags = ['owner']
