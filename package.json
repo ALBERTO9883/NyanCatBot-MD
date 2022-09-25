@@ -36,6 +36,7 @@
         "chalk": "^5.0.0",
         "cheerio": "^1.0.0-rc.10",
         "colors": "1.4.0",
+        "didyoumean": "^1.2.2",
         "emoji-api": "^1.0.2",
         "express": "^4.17.3",
         "fg-ig": "^0.0.1",
