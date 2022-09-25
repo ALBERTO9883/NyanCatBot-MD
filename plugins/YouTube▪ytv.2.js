@@ -1,12 +1,15 @@
 let limit = 80
 import fs from 'fs'
 import fetch from 'node-fetch'
-import { youtubedl, youtubedlv2, youtubedlv3 } from '@bochilteam/scraper';
-let handler = async (m, { conn, args, isPrems, isOwner }) => {
+import { youtubedl, youtubedlv2, youtubedlv3, youtubeSearch } from '@bochilteam/scraper';
+let handler = async (m, { conn, args, isPrems, isOwner, text }) => {
 if (!args || !args[0]) throw '*_⚠️ Inserte el comando más el enlace de YouTube._*'
-conn.reply(m.chat global.wait, m)
+conn.reply(m.chat, global.wait, m)
 let chat = global.db.data.chats[m.chat]
 const isY = /y(es)/gi.test(args[1])
+let vid = (await youtubeSearch(text)).video[0]
+let { authorName, description, videoId, durationH, viewH, publishedTime } = vid
+const url = 'https://www.youtube.com/watch?v=' + videoId
 const { thumbnail, video: _video, title } = await youtubedl(args[0]).catch(async _ => await youtubedlv2(args[0])).catch(async _ => await youtubedlv3(args[0]))
 const limitedSize = (isPrems || isOwner ? 99 : limit) * 1024
 let video, source, res, link, lastError, isLimit
@@ -25,7 +28,16 @@ if (source instanceof ArrayBuffer) break
 video = source = link = null
 lastError = e
 }}
-conn.sendMessage(m.chat, { document: { url: link }, mimetype: 'video/mp4', fileName: title + `.mp4`}, {quoted: m})
+await conn.sendMessage(m.chat, { document: { url: link }, mimetype: "video/mp4", fileName: title + '.mp4', quoted: m, contextInfo: {
+'forwardingScore': 200,
+'isForwarded': false,
+externalAdReply:{
+showAdAttribution: false,
+title: `${title}`,
+body: `${authorName}`,
+mediaType: 2, 
+sourceUrl: `${url}`,
+thumbnailUrl: thumbnail}}}, { quoted: m })
 }
 handler.help = ['ytvdoc *<link yt>*']
 handler.tags = ['downloader']
