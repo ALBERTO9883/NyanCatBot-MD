@@ -1,8 +1,132 @@
 import db from '../lib/database.js'
 
 let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isROwner }) => {
+let chat = global.db.data.chats[m.chat]
+
+const sections = [
+   {
+	title: `━━◌*̥₊「 1 」₊*̥◌━━`,
+	rows: [
+	{title: "🔮 | WELCOME", 
+	description: "⊜ ❝Active o Desactive la Bienvenida en este grupo❞",
+	rowId: `${usedPrefix + command} welcome`}]}, {
+	title: `━━◌*̥₊「 2 」₊*̥◌━━`,
+	rows: [
+	{title: "🌎 | PUBLIC", 
+	description: "⊜ ❝Active o Desactive para que el bot sea de uso publico y/o privado❞",
+	rowId: `${usedPrefix + command} public`}]}, {
+	title: `━━◌*̥₊「 3 」₊*̥◌━━`,
+	rows: [
+	{title: "🗣 | CHATBOT", 
+	description: "⊜ ❝Active o Desactive para que el bot envíe mensajes,stickers y audios automáticamente❞",
+	rowId: `${usedPrefix + command} chatbot`}]},
+	 {
+	title: `━━◌*̥₊「 4 」₊*̥◌━━`,
+	rows: [
+	{title: "🔞 | NSFW", 
+	description: "⊜ ❝Active o Desactive para que funcionen los comandos +18❞",
+	rowId: `${usedPrefix + command} nsfw`}]}, {
+	title: `━━◌*̥₊「 5 」₊*̥◌━━`,
+	rows: [
+	{title: "🌅 | AUTO STICKERS", 
+	description: "⊜ ❝Active o Desactive para que toda imagen, videos o link se convierta en sticker❞",
+	rowId: `${usedPrefix + command} autosticker`}]}, {
+	title: `━━◌*̥₊「 6 」₊*̥◌━━`,
+	rows: [
+	{title: "📛 | ANTI PRIVADO", 
+	description: "⊜ ❝Active o Desactive para que nadie excepto el creador pueda escribirle al privado al bot❞",
+	rowId: `${usedPrefix + command} antiprivado`}]}, {
+	title: `━━◌*̥₊「 7 」₊*̥◌━━`,
+	rows: [
+	{title: "📵 | ANTI LLAMADAS", 
+	description: "⊜ ❝Active o Desactive para que el bot bloqueé a los que llaman al privado❞",
+	rowId: `${usedPrefix + command} anticall`}]}, {
+	title: `━━◌*̥₊「 8 」₊*̥◌━━`,
+	rows: [
+	{title: "🧬 | ANTI FAKES", 
+	description: "⊜ ❝Active o Desactive para que el bot elimine números extranjeros❞",
+	rowId: `${usedPrefix + command} antifakes`}]}, {
+	title: `━━◌*̥₊「 9 」₊*̥◌━━`,
+	rows: [
+	{title: "🔗 | ANTILINK", 
+	description: "⊜ ❝Active o Desactive para que el bot elimine a los que envíen enlaces de WhatsApp❞",
+	rowId: `${usedPrefix + command} antilink`}]}, {
+	title: `━━◌*̥₊「 10 」₊*̥◌━━`,
+	rows: [
+    {title: "🚫 | ANTIDELETE", 
+    description: "⊜ ❝Active o Desactive para que el bot reenvie los mensajes eliminados❞",
+    rowId: `${usedPrefix + command} antidelete`}]}, {
+	title: `━━◌*̥₊「 11 」₊*̥◌━━`,
+	rows: [
+	{title: "⏏️ | AUTOLEVELUP", 
+	description: "⊜ ❝Active o Desactive para subir de nivel automáticamente❞",
+	rowId: `${usedPrefix + command} autolevelup`}]}, {
+	title: `━━◌*̥₊「 12 」₊*̥◌━━`,
+	rows: [
+	{title: "🔎 | DETECT", 
+	description: "⊜ ❝Active o Desactive la info sobre las modificaciones del grupo❞",
+	rowId: `${usedPrefix + command} detect`}]}, {
+	title: `━━◌*̥₊「 13 」₊*̥◌━━`,
+	rows: [
+	{title: "👁 | ANTIVIEWONCE", 
+	description: "⊜ ❝Active o Desactive para reenviar los mensajes viewOnce❞",
+	rowId: `${usedPrefix + command} antiviewonce`}]}, {
+	title: `━━◌*̥₊「 14 」₊*̥◌━━`,
+	rows: [
+	{title: "🛡️ | RESTRICT", 
+	description: "⊜ ❝Active o Desactive las restricciones para sacar gente del grupo❞",
+	rowId: `${usedPrefix + command} restrict`}]}, {
+	title: `━━◌*̥₊「 15 」₊*̥◌━━`,
+	rows: [
+	{title: "👀 | AUTOREAD", 
+	description: "⊜ ❝Active o Desactive para que el bot lea automáticamente los mensajes❞",
+	rowId: `${usedPrefix + command} autoread`}]}, {
+	title: `━━◌*̥₊「 16 」₊*̥◌━━`,
+	rows: [
+	{title: "⛔ | ANTI STICKERS", 
+	description: "⊜ ❝Active o Desactive para que el bot elimine los que mandan stickers❞",
+	rowId: `${usedPrefix + command} antisticker`}]}, {
+	title: `━━◌*̥₊「 17 」₊*̥◌━━`,
+	rows: [
+	{title: "💬 | ONLYPV", 
+	description: "⊜ ❝Active o Desactive para que el bot solo se pueda utilizar en privado❞",
+	rowId: `${usedPrefix + command} pconly`}]}, {
+	title: `━━◌*̥₊「 18 」₊*̥◌━━`,
+	rows: [
+	{title: "👥 | ONLYGP", 
+	description: "⊜ ❝Active o Desactive para que el bot solo se pueda utilizar en grupos❞",
+	rowId: `${usedPrefix + command} gconly`}]},
+]
+const listMessage = {
+  text: ' ',
+  footer: wm,
+  title: `≡ Lista de Opciones\n
+┏━⊜「 *📒LISTA* 」
+┃⋄ welcome 
+┃⋄ public 
+┃⋄ chatbot 
+┃⋄ nsfw
+┃⋄ autosticker
+┃⋄ antiprivado
+┃⋄ anticall 
+┃⋄ antifakes 
+┃⋄ antilink 
+┃⋄ antidelete 
+┃⋄ autolevelup 
+┃⋄ detect
+┃⋄ antiviewonce
+┃⋄ restrict
+┃⋄ autoread
+┃⋄ antisticker
+┃⋄ onlypv
+┃⋄ onlygp
+┗━━━━━━⬣`,
+  buttonText: "Click Aquí",
+  sections
+}
+
+
   let isEnable = /true|enable|(turn)?on|1/i.test(command)
-  let chat = global.db.data.chats[m.chat]
   let user = global.db.data.users[m.sender]
   let bot = global.db.data.settings[conn.user.jid] || {}
   let type = (args[0] || '').toLowerCase()
@@ -22,18 +146,18 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
       }
       chat.welcome = isEnable
       break
-    // case 'detect':
-    //   if (!m.isGroup) {
-    //     if (!isOwner) {
-    //       global.dfail('group', m, conn)
-    //       throw false
-    //     }
-    //   } else if (!isAdmin) {
-    //     global.dfail('admin', m, conn)
-    //     throw false
-    //   }
-    //   chat.detect = isEnable
-    //   break
+     case 'detect':
+       if (!m.isGroup) {
+         if (!isOwner) {
+           global.dfail('group', m, conn)
+           throw false
+         }
+       } else if (!isAdmin) {
+         global.dfail('admin', m, conn)
+         throw false
+       }
+       chat.detect = isEnable
+       break
     case 'delete':
       if (m.isGroup) {
         if (!(isAdmin || isOwner)) {
@@ -104,14 +228,24 @@ throw false
 chat.autosticker = isEnable          
 break
       
-case 'stickers':
+case 'chatbot':
 if (m.isGroup) {
 if (!(isAdmin || isOwner)) {
 global.dfail('admin', m, conn)
 throw false
 }
 }
-chat.sticker = isEnable
+chat.chatbot = isEnable
+break
+
+case 'antifakes':
+if (m.isGroup) {
+if (!(isAdmin || isOwner)) {
+global.dfail('admin', m, conn)
+throw false
+}
+}
+chat.antiFake = isEnable
 break
 
 case 'antisticker':
@@ -173,18 +307,6 @@ bot.antiPrivate = isEnable
     isUser = true
      user.autolevelup = isEnable
      break
-    // case 'mycontact':
-    // case 'mycontacts':
-    // case 'whitelistcontact':
-    // case 'whitelistcontacts':
-    // case 'whitelistmycontact':
-    // case 'whitelistmycontacts':
-    //   if (!isOwner) {
-    //     global.dfail('owner', m, conn)
-    //     throw false
-    //   }
-    //   conn.callWhitelistMode = isEnable
-    //   break
     case 'restrict':
     case 'restringir':
       isAll = true
@@ -243,36 +365,17 @@ bot.antiPrivate = isEnable
       global.opts['swonly'] = isEnable
       break
     default:
-      if (!/[01]/.test(command)) return m.reply(`
-*≡ Lista de Opciones*
-
-┏━⊜「 *📒LISTA* 」
-┃⋄ welcome 
-┃⋄ delete 
-┃⋄ public 
-┃⋄ antilink
-┃⋄ nsfw
-┃⋄ autosticker
-┃⋄ antidelete
-┃⋄ autolevelup 
-┃⋄ detect 
-┃⋄ antiviewonce 
-┃⋄ document 
-┃⋄ restrict 
-┃⋄ antipriv
-┃⋄ autoread 
-┃⋄ solopv
-┃⋄ sologp
-┗━━━━━━⬣
-*📌 Ejemplo :*
-*${usedPrefix}enable* welcome
-*${usedPrefix}disable* welcome
-`.trim())
+      if (!/[01]/.test(command)) return await conn.sendMessage(m.chat, listMessage, { quoted: m })
       throw false
   }
-  m.reply(`
-✅ | *${type}* *_se_* *_${isEnable ? '-Activó-' : '-Desactivó-'}_* *_${isAll ? 'para este bot' : isUser ? '' : 'para este chat'}._*
-`.trim())
+  conn.sendButton(m.chat, `
+⊜ *OPCIONES*
+┌───────────
+❏ 🗂️ *Tipo:* ${type} 
+❏ 💠 *Estado:* ${isEnable ? 'Activo ✅' : 'Desactivado 🔴'}
+❏ 🔅 *Para:* ${isAll ? 'Este bot' : isUser ? '' : 'Este chat'}
+└───────────
+`,ignyc, null, [[`${isEnable ? '🔴 Desactivar' : '✅ Activar'}`, `${isEnable ? `${usedPrefix}off ${type}` : `${usedPrefix}on ${type}`}`], ['Menú 🐢', `${usedPrefix}help`]],m)
 }
 handler.help = ['en', 'dis'].map(v => v + 'able <option>')
 handler.tags = ['nable']
