@@ -324,8 +324,8 @@ export async function handler(chatUpdate) {
                     chat.antipriv = false                   
                 if (!('audios' in chat))
                     chat.audios = false
-                if (!('sticker' in chat))
-                    chat.sticker = false    
+                if (!('chatbot' in chat))
+                    chat.chatbot = false    
                 if (!('antiSticker' in chat))
                     chat.antiSticker = false                      
                 if (!('antiLink' in chat))
@@ -357,7 +357,7 @@ export async function handler(chatUpdate) {
                     antiLink2: false,
                     antiviewonce: false,
                     antiToxic: false,
-                    sticker: true,
+                    chatbot: true,
                     antiSticker: false,
                     expired: 0,
                 }
