@@ -370,11 +370,11 @@ bot.antiPrivate = isEnable
   }
   conn.sendButton(m.chat, `
 ⊜ *OPCIONES*
-┌───────────
-❏ 🗂️ *Tipo:* ${type} 
-❏ 💠 *Estado:* ${isEnable ? 'Activo ✅' : 'Desactivado 🔴'}
-❏ 🔅 *Para:* ${isAll ? 'Este bot' : isUser ? '' : 'Este chat'}
-└───────────
+┏━━━━━━━━━━━⬣
+┃❏ 🗂️ *Tipo:* ${type} 
+┃❏ 💠 *Estado:* ${isEnable ? 'Activo ✅' : 'Desactivado 🔴'}
+┃❏ 🔅 *Para:* ${isAll ? 'Este bot' : isUser ? '' : 'Este chat'}
+┗━━━━━━━━━━━⬣
 `,ignyc, null, [[`${isEnable ? '🔴 Desactivar' : '✅ Activar'}`, `${isEnable ? `${usedPrefix}off ${type}` : `${usedPrefix}on ${type}`}`], ['Menú 🐢', `${usedPrefix}help`]],m)
 }
 handler.help = ['en', 'dis'].map(v => v + 'able <option>')
