@@ -8,7 +8,7 @@ let name = await conn.getName(m.sender)
 	
 	let img = (await axios.get(`https://raw.githubusercontent.com/FG98F/team-fg/main/img/loli.json`)).data
   
-await conn.reply(m.chat, global.wait, m)
+await conn.sendNyanCat(m.chat, global.wait, adnyancat, adanime, null, script, m)
 await conn.sendButton(m.chat, `*✅ Aϙᴜɪ́ ᴛɪᴇɴᴇs ᴛᴜ ʟᴏʟɪ!*\n*◈•@${who.split("@s.whatsapp.net")[0]}*`, '► Cʟɪᴄᴋ ᴇɴ sɪɢᴜɪᴇɴᴛᴇ ᴘᴀʀᴀ ɪʀ ᴀ ʟᴀ sɪɢᴜɪᴇɴᴛᴇ ɪᴍᴀɢᴇɴ.', pickRandom(img), [['「🔃 Sɪɢᴜɪᴇɴᴛᴇ 🔃」', `${usedPrefix + command}`]],fakemsg, { mentions: [who] })
 }
 handler.help = ['loli']

@@ -8,7 +8,7 @@ let name = await conn.getName(m.sender)
   if (!res.ok) throw await res.text()
   let json = await res.json()
   if (!json.url) throw '❎ Error'
-  await conn.reply(m.chat, global.wait, m)
+  await conn.sendNyanCat(m.chat, global.wait, adnyancat, adanime, null, script, m)
   conn.sendButton(m.chat, '*✅ Aϙᴜɪ́ ᴛɪᴇɴᴇs*', `*◈•@${who.split("@s.whatsapp.net")[0]}*`, json.url, [['「🔃 Sɪɢᴜɪᴇɴᴛᴇ 🔃」', `${usedPrefix + command }`]], fakemsg, { mentions: [who] })
 }
 handler.help = ['neko']

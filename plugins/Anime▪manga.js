@@ -8,6 +8,7 @@ let handler = async(m, { conn, text }) => {
   let { title, synopsis, chapters, url, volumes, score, image_url } = json.results[0]
   const tld = 'cn'
 let sinopsis = await translate(`${synopsis}`, { tld, to: 'es' })
+await conn.sendNyanCat(m.chat, global.wait, adnyancat, adanime, null, script, m)
 let mangaingfo = `*Título:* ${title}
 🌺 • *Capítulos:* ${chapters}
 🥗 • *Temporadas:* ${volumes}

@@ -8,8 +8,9 @@ handler.all = async function (m) {
 	
 	//Texto
 	global.adimagen = `🌅| Iᴍᴀ́ɢᴇɴᴇs Bʏ NʏᴀɴCᴀᴛBᴏᴛ🌿`
+	global.adanime = `🌸| Aɴɪᴍᴇ Bʏ NʏᴀɴCᴀᴛBᴏᴛ🈴`
 	
 	//Fotos
-	global.adnyancat = fs.readFileSync('./storage/image/adnyancat.png')
+	
 } 
 export default handler
