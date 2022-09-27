@@ -21,6 +21,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
  • _raccoon_
  • _kangaroo_
 `.trim();
+  await conn.sendNyanCat(m.chat, global.wait, adnyancat, adimagen, null, script, m)
   let res = await fetch(
     API("https://some-random-api.ml", "/animal/" + text, {})
   );
