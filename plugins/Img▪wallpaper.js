@@ -12,7 +12,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
   if (!res.ok) throw await res.text()
   let json = await res.json()
   let img = json.wallpapers[Math.floor(Math.random() * json.wallpapers.length)]
-    await conn.reply(m.chat, global.wait, m)
+    await conn.sendNyanCat(m.chat, global.wait, adnyancat, adimagen, null, script, m)
   await conn.sendFile(m.chat, img.url_image, 'wallpaper', '✅ Genial no?', fakemsg)
   
 }

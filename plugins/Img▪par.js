@@ -4,7 +4,7 @@ let res = await fetch('https://api.lolhuman.xyz/api/random/ppcouple?apikey=85faf
 if (res.status != 200) throw await res.text()
 let json = await res.json()
 if (!json.status) throw json
-m.reply('*⏳Aɢᴜᴀʀᴅᴇ ᴜɴ ᴍᴏᴍᴇɴᴛᴏ... ฅ^•ﻌ•^ฅ⏳*')
+await conn.sendNyanCat(m.chat, global.wait, adnyancat, adimagen, null, script, m)
 conn.sendButton(m.chat, '𝙲𝙷𝙸𝙲𝙰 𝙲𝚄𝚃𝙴', '► Cʟɪᴄᴋ ᴇɴ sɪɢᴜɪᴇɴᴛᴇ ᴘᴀʀᴀ ɪʀ ᴀ ʟᴀ sɪɢᴜɪᴇɴᴛᴇ ɪᴍᴀɢᴇɴ.', json.result.female, [['「🔃 Sɪɢᴜɪᴇɴᴛᴇ 🔃」', `/${command}`]], fakemsg)
 conn.sendButton(m.chat, '𝙲𝙷𝙸𝙲𝙾 𝙲𝚄𝚃𝙴', '► Cʟɪᴄᴋ ᴇɴ sɪɢᴜɪᴇɴᴛᴇ ᴘᴀʀᴀ ɪʀ ᴀ ʟᴀ sɪɢᴜɪᴇɴᴛᴇ ɪᴍᴀɢᴇɴ.', json.result.male, [['「🔃 Sɪɢᴜɪᴇɴᴛᴇ 🔃」', `/${command}`]], fakemsg)
 }

@@ -3,7 +3,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     if (!text) throw `Harap masukkan query wallpaper yang ingin dicari.\n\nContoh: ${usedPrefix + command} Bronya Zaychik Honkai`
     const res = await (/2/.test(command) ? wallpaperv2 : wallpaper)(text)
     const img = res[Math.floor(Math.random() * res.length)]
-    await conn.reply(m.chat, global.wait, m)
+    await conn.sendNyanCat(m.chat, global.wait, adnyancat, adimagen, null, script, m)
     conn.sendFile(m.chat, img, 'wallpaper.jpg', wm, m)
 }
 handler.help = ['', '2'].map(v => 'wallpaper' + v + ' *<texto>*')

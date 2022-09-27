@@ -4,7 +4,7 @@ let name = await conn.getName(m.sender)
 let res = await axios(pickRandom(meme))
 let json = res.data
 let url = json.url
-await conn.reply(m.chat, global.wait, m)
+await conn.sendNyanCat(m.chat, global.wait, adnyancat, adimagen, null, script, m)
 conn.sendButton(m.chat, `Tenga su meme :v`, `*◈${name}*`, url, [['「🔃 Sɪɢᴜɪᴇɴᴛᴇ 🔃」', `/${command}`]], fakemsg)
 }
 handler.help = ['meme']
