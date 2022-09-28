@@ -16,7 +16,7 @@ let source = await jimp.read(await link)
 let height = await source.getHeight()
 let width = await source.getWidth()
 
-m.reply(`_*${hsquere[0]}  RESOLUCIÓN:*_ ${width} x ${height}
+m.reply(`*_💠 RESOLUCIÓN:_* ${width} x ${height}
 
 *> Ancho :* ${width}
 *> Altura :* ${height}
