@@ -8,7 +8,7 @@ let handler = async (m, { text, usedPrefix, command }) => {
 }
 handler.help = ['saveplugin'].map(v => v + ' *<nombre>*')
 handler.tags = ['owner']
-handler.command = ["save", "salvar", "saveplugin"]
+handler.command = ["salvar", "saveplugin"]
 
 handler.rowner = true
 export default handler
