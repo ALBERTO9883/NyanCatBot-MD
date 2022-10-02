@@ -12,7 +12,7 @@ let buttonMessage= {
 'forwardingScore': 200,
 'isForwarded': true,
 'externalAdReply': {
-'mediaUrl': 'https://github.com/ALBERTO9883',
+'mediaUrl': script,
 'mediaType': 2,
 'previewType': 'pdf',
 'title': ``,
