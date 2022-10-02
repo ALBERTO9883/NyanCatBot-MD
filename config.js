@@ -109,7 +109,7 @@ global.adnyancat = fs.readFileSync('./storage/image/adnyancat.png')
 
 
 //᭥🌿᭢━━━━━━━◜𝑳𝑰𝑵𝑲𝑺◞━━━━━━━᭥🌿᭢
-global.linkgc = 'https://chat.whatsapp.com/Hckwp8I9JQv9f7o1DxzGJF'
+global.linkgc = 'https://chat.whatsapp.com/D2kkLywqKa0G3IfIm7eNf2'
 global.nycuser = 'https://github.com/ALBERTO9883'
 global.script = 'https://github.com/ALBERTO9883/NyanCatBot-MD'
 //╰─────────────────────╯
@@ -155,8 +155,15 @@ global.fproducto = { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(
 //᭥🌺᭢━━━◜𝑳𝑰𝑽𝑬 𝑳𝑶𝑪𝑨𝑳𝑰𝒁𝑨𝑪𝑰𝑶́𝑵◞━━━᭥🌺᭢
 global.liveloc = { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(false  ? { remoteJid: "status@broadcast" } : {}) }, message: { "liveLocationMessage": { "caption":"🐱⸽⃕NʏᴀɴCᴀᴛBᴏᴛ - MD🍁⃨፝⃕✰","h": `🐱⸽⃕NʏᴀɴCᴀᴛBᴏᴛ - MD🍁⃨፝⃕✰`, 'jpegThumbnail': catalogo}}}
 //╰─────────────────────╯
-//᭥🌺᭢━━━◜𝑳𝑰𝑽𝑬 𝑳𝑶𝑪𝑨𝑳𝑰𝒁𝑨𝑪𝑰𝑶́𝑵◞━━━᭥🌺᭢
+//᭥🌺᭢━━◜𝑷𝑹𝑶𝑫𝑼𝑪𝑻𝑶 𝑽𝑬𝑹𝑰𝑭𝑰𝑪𝑨𝑫𝑶 2◞━━᭥🌺᭢
 global.fproducto2 = { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(false ? { remoteJid: "status@broadcast" } : {})}, message: { "productMessage": { "product": { "productImage":{ "mimetype": "image/jpeg", "jpegThumbnail": catalogo }, "title": `🐱⸽⃕NʏᴀɴCᴀᴛBᴏᴛ - MD🍁⃨፝⃕✰`, "retailerId": "🐱⸽⃕NʏᴀɴCᴀᴛBᴏᴛ - MD🍁⃨፝⃕✰", "productImageCount": 1 }, "businessOwnerJid": `0@s.whatsapp.net` }}}
+//╰─────────────────────╯
+//᭥🌺᭢━━◜𝑽𝑰𝑬𝑾𝑶𝑵𝑪𝑬 𝑽𝑬𝑹𝑰𝑭𝑰𝑪𝑨𝑫𝑶◞━━᭥🌺᭢
+global.fakevo = { key: { fromMe: false, participant: '0@s.whatsapp.net', remoteJid: 'status@broadcast' }, message: { imageMessage: { mimetype: 'image/jpeg', caption: botname, jpegThumbnail: catalogo, viewOnce: true }}}
+//╰─────────────────────╯
+//᭥🌺᭢━━◜𝑽𝑰𝑬𝑾𝑶𝑵𝑪𝑬 𝑽𝑬𝑹𝑰𝑭𝑰𝑪𝑨𝑫𝑶 #2◞━━᭥🌺᭢
+global.fakevo = { key: { fromMe: false, participant: '0@s.whatsapp.net', remoteJid: 'status@broadcast' }, message: { videoMessage: { mimetype: 'video/mp4', caption: botname, jpegThumbnail: catalogo, viewOnce: true }}}
+//╰─────────────────────╯
 
 //᭥🌄᭢━━━━━◜𝑨𝑫 𝑫𝑬 𝑮𝑹𝑼𝑷𝑶◞━━━━━᭥🌄᭢
 global.adgp = { contextInfo: { externalAdReply: { showAdAttribution: true, title: '🐱⸽⃕NʏᴀɴCᴀᴛBᴏᴛ - MD🍁⃨፝⃕✰', body: global.botname, sourceUrl: global.linkgc, thumbnail: miniurl }}}
