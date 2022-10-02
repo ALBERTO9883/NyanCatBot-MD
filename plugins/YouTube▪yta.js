@@ -4,7 +4,7 @@ import fetch from 'node-fetch'
 import { youtubedl, youtubedlv2, youtubedlv3, youtubeSearch } from '@bochilteam/scraper';
 let handler = async (m, { conn, args, isPrems, isOwner, usedPrefix, command, text }) => {
 if (!args || !args[0]) throw `*_⚠️ Inserte el comando más el enlace de YouTube._*`
-await m.reply(global.wait)
+conn.sendNyanCat(m.chat, global.wait, adnyancat, adyoutube, null, script, m) 
 let chat = global.db.data.chats[m.chat]
 const isY = /y(es)/gi.test(args[1])
 let vid = (await youtubeSearch(text)).video[0]
@@ -28,7 +28,7 @@ if (source instanceof ArrayBuffer) break
 audio = link = source = null
 lastError = e
 }}
-if ((!(source instanceof ArrayBuffer) || !link || !res.ok) && !isLimit) throw '⚠️ *_Error, ' + (lastError || 'no fue posible descargar el audio._*')
+if ((!(source instanceof ArrayBuffer) || !link || !res.ok) && !isLimit) throw '⚠️ *Error, ' + (lastError || 'no fue posible descargar el audio.*')
 //conn.sendFile(m.chat, source, title + '.mp3', null, m, false, { contextInfo: { mimetype: 'audio/mp4', externalAdReply: { showAdAttribution: false, mediaType: 2, title: `${title}`, body: `${authorName}`, sourceUrl: `${url}`, thumbnailUrl: thumbnail }}})
 conn.sendMessage(m.chat, { audio: { url: link }, mimetype: "audio/mp4", fileName: title + '.mp3', quoted: m, contextInfo: {
 'forwardingScore': 200,

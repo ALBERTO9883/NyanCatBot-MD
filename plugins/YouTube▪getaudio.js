@@ -8,13 +8,12 @@ let handler = async (m, { conn, args, isPrems, isOwner, text }) => {
 let vid = (await youtubeSearch(text)).video[0]
 let { authorName, description, videoId, durationH, viewH, publishedTime, thumbnail } = vid
 const url = 'https://www.youtube.com/watch?v=' + videoId
-
+try {
 
   let q = '128kbps'
   let v = args[0]
 
 
-// Kocak
 const yt = await youtubedl(v).catch(async () => await  youtubedlv2(v))
 const dl_url = await yt.audio[q].download()
   const ttl = await yt.title
@@ -34,6 +33,9 @@ body: `${authorName}`,
 mediaType: 2, 
 sourceUrl: `${url}`,
 thumbnailUrl: thumbnail}}}, { quoted: m })
+}catch(e){
+m.reply('⚠️ *_Error, no se pudo descargar el audio..._*')
+console.log(e)}
 }
 
 handler.command = /^(getaud)$/i

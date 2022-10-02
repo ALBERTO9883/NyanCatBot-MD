@@ -26,7 +26,7 @@ const size = await yt.video[q].fileSizeH
 ${global.wait}`)
   await conn.sendMessage(m.chat, { [/^(?:-|--)doc$/i.test(args[1]) || null ? 'document' : 'video']: { url: dl_url }, fileName: `${me}.mp4`, mimetype: 'video/mp4', ..._thumb }, { quoted: m })
 }catch(e){
-m.reply('⚠️ *_Error, calidad de video no encontrada.._*')
+m.reply('⚠️ *_Error, no se pudo descargar el video o quizás esta calidad de video no exista..._*')
 console.log(e)}}
 
 

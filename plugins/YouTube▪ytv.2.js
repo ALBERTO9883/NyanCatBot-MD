@@ -4,7 +4,7 @@ import fetch from 'node-fetch'
 import { youtubedl, youtubedlv2, youtubedlv3, youtubeSearch } from '@bochilteam/scraper';
 let handler = async (m, { conn, args, isPrems, isOwner, text }) => {
 if (!args || !args[0]) throw '*_⚠️ Inserte el comando más el enlace de YouTube._*'
-conn.reply(m.chat, global.wait, m)
+conn.sendNyanCat(m.chat, global.wait, adnyancat, adyoutube, null, script, m) 
 let chat = global.db.data.chats[m.chat]
 const isY = /y(es)/gi.test(args[1])
 let vid = (await youtubeSearch(text)).video[0]
