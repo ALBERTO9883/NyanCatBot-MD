@@ -378,7 +378,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command, __dirname }) => {
 ┃⋄ 📊 *Nivel*: ${level}
 ┃⋄ ✨ *Exp*: ${user.exp - min}/${xp}
 ┃⋄ 📍 *Rol*: ${role}
-┃⋄ 🪪 *Premium*: ${global.prem ? '✅' : '❌'}
+┃⋄ 🪪 *Premium*: ${global.prems ? '✅' : '❌'}
 ┗━━◘`,
             footer: saludo,
             title: null,
