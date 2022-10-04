@@ -383,7 +383,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command, __dirname }) => {
             footer: saludo,
             title: null,
             mentions: [m.sender],
-            buttonText: "Click Here",
+            buttonText: "Click Aquí",
             sections
         }
         await conn.sendMessage(m.chat, listMessage, { quoted: m})
