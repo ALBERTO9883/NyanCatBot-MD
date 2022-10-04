@@ -42,7 +42,7 @@ const defaultMenu = {
 ┃⋄ 📊 *Nivel*: %level (%exp / %maxexp) 
 ┃⋄ ✨ *Exp*: %totalexp
 ┃⋄ 📍 *Rol*: %role
-┃⋄ 🪪 *Premium*: ${global.prem ? '✅' : '❌'}
+┃⋄ 🪪 *Premium*: ${global.prems ? '✅' : '❌'}
 ┗━━◘
 
 ┏━━⊜ *_INFO BOT_* ━⊜
