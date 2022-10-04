@@ -27,10 +27,8 @@
 ### `—◉ INSTALACIÓN TERMUX`
 ```bash
 ESCRIBE LOS SIGUIENTES COMANDOS UNO POR UNO:
-> cd
 > termux-setup-storage
-> apt update 
-> pkg upgrade 
+> pkg upgrade -y && pkg update -y
 > pkg install git -y
 > pkg install nodejs -y
 > pkg install ffmpeg -y
@@ -40,7 +38,7 @@ ESCRIBE LOS SIGUIENTES COMANDOS UNO POR UNO:
 > cd NyanCatBot-MD
 > yarn install 
 > npm update
-> node .
+> npm start
 ```
 
 ## `COLABORADORES DEL BOT` 
