@@ -31,7 +31,7 @@ function handler(m, { text }) {
         }[v.toLowerCase()] || v
     }))
 }
-handler.help = ['namaninja *<texto>*']
+handler.help = ['nombreninja *<texto>*']
 handler.tags = ['fun']
 handler.command = ['nombreninja']
 handler.register = true
