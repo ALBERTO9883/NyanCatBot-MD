@@ -8,7 +8,7 @@ let name = await conn.getName[who]
 if (command == 'wpmontaña') {
 let haha = await conn.getFile(`https://api-reysekha.herokuapp.com/api/wallpaper/mountain?apikey=APIKEY`)
 await conn.sendNyanCat(m.chat, global.wait, adnyancat, adimagen, null, script, m)
-conn.sendButton(m.chat, `_${command}_`.trim(), `*◈•@${who.split("@s.whatsapp.net")[0]}*`, haha.data, [['「🔃 Sɪɢᴜɪᴇɴᴛᴇ 🔃」', `/${command}`]], fakemsg, { contextInfo: { externalAdReply: { showAdAttribution: true, mediaUrl: "https://www.facebook.com/SoyMikoTV/videos/1056204045099343/?mibextid=czN3j3d8ZRtOGkTb", mediaType: "VIDEO", description: "https://www.facebook.com/SoyMikoTV/videos/1056204045099343/?mibextid=czN3j3d8ZRtOGkTb",  title: 'Test', body: `hola`, thumbnail: miniurl, sourceUrl: 'http://s.id/0x404' }}})}
+conn.sendButton(m.chat, `_${command}_`.trim(), `*◈•@${who.split("@s.whatsapp.net")[0]}*`, haha.data, [['「🔃 Sɪɢᴜɪᴇɴᴛᴇ 🔃」', `/${command}`]], fakemsg, { mentions: [who] })}
 if (command == 'pubg') {
 let haha = await conn.getFile(`https://api-reysekha.herokuapp.com/api/wallpaper/pubg?apikey=APIKEY`)
 await conn.sendNyanCat(m.chat, global.wait, adnyancat, adimagen, null, script, m)
