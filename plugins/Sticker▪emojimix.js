@@ -16,12 +16,12 @@ reject(err)
 let handler = async (m, { conn, text, args, usedPrefix, command }) => {
 	
 if (!args[0]) throw `📌 *_Ejemplo_* : ${usedPrefix + command} 😎+🤑`
-await conn.reply(m.chat, global.wait, m)
+await conn.sendNyanCat(m.chat, global.wait, adnyancat, adsticker, null, script, m) 
 let [emoji, emoji2] = text.split`+`
 let anu = await fetchJson(`https://tenor.googleapis.com/v2/featured?key=AIzaSyAyimkuYQYF_FXVALexPuGQctUWRURdCYQ&contentfilter=high&media_filter=png_transparent&component=proactive&collection=emoji_kitchen_v5&q=${encodeURIComponent(emoji)}_${encodeURIComponent(emoji2)}`)
 for (let res of anu.results) {
 let stiker = await sticker(false, res.url, global.packname, global.author)
-conn.sendFile(m.chat, stiker, null, { asSticker: true }, m)
+conn.sendFile(m.chat, stiker, null, { asSticker: true }, m, true, { contextInfo: { 'forwardingScore': 200, 'isForwarded': false, externalAdReply:{ showAdAttribution: false, title: botname, body: `h`, mediaType: 2, sourceUrl: linkgc, thumbnail: miniurl}}}, { quoted: m })
 }}
 
 handler.help = ['emojimix *<emoji+emoji>*']

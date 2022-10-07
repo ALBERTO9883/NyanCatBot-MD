@@ -20,6 +20,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
       } catch (e) {
         console.error(e)
       } finally {
+      await conn.sendNyanCat(m.chat, global.wait, adnyancat, adsticker, null, script, m) 
         if (!stiker) {
           if (/webp/g.test(mime)) out = await webp2png(img)
           else if (/image/g.test(mime)) out = await uploadImage(img)
@@ -36,7 +37,6 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
     console.error(e)
     if (!stiker) stiker = e
   } finally {
-  await conn.reply(m.chat, global.wait, m)
     if (stiker) conn.sendFile(m.chat, stiker, 'sticker.webp', '',m, true, { contextInfo: { 'forwardingScore': 200, 'isForwarded': false, externalAdReply:{ showAdAttribution: false, title: botname, body: `h`, mediaType: 2, sourceUrl: linkgc, thumbnail: miniurl}}}, { quoted: m })
     else throw '⚠️ *_La conversión ha fallado, intenta enviar primero imagen/video/gif y luego responde con el comando._*'
   }

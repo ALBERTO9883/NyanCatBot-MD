@@ -10,6 +10,7 @@ handler.all = async function (m) {
 	global.adimagen = `🌅| Iᴍᴀ́ɢᴇɴᴇs Bʏ NʏᴀɴCᴀᴛBᴏᴛ🌿`
 	global.adanime = `🌸| Aɴɪᴍᴇ Bʏ NʏᴀɴCᴀᴛBᴏᴛ🈴`
 	global.adyoutube = `🍁| Dᴇsᴄᴀʀɢᴀs ᴅᴇ YᴏᴜTᴜʙᴇ🍄`
+	global.adsticker = `🏞️| Sᴛɪᴄᴋᴇʀs Bʏ NʏᴀɴCᴀᴛBᴏᴛ🌺`
 	
 	//Fotos
 	

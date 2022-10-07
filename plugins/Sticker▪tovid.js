@@ -7,7 +7,7 @@ let handler = async (m, { conn }) => {
     if (!/webp|audio/.test(mime)) throw '⚠️ *_Responde a un sticker animado._*'
     let media = await m.quoted.download()
     let out = Buffer.alloc(0)
-    await conn.reply(m.chat, global.wait, m)
+    await conn.sendNyanCat(m.chat, global.wait, adnyancat, adsticker, null, script, m)
     if (/webp/.test(mime)) {
         out = await webp2mp4(media)
     } else if (/audio/.test(mime)) {
@@ -19,7 +19,7 @@ let handler = async (m, { conn }) => {
             '-shortest'
         ], 'mp3', 'mp4')
     }
-    await conn.sendFile(m.chat, out, 'tovid.mp4', '*✅ sticker a video ฅ^•ﻌ•^ฅ⚘*' , m)
+    await conn.sendFile(m.chat, out, 'tovid.mp4', '*✅ Sticker a video ฅ^•ﻌ•^ฅ⚘*' , m)
 }
 handler.help = ['tovid']
 handler.tags = ['sticker']

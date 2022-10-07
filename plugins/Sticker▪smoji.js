@@ -41,8 +41,8 @@ Solo puede usar 1 emoji, preste atención a los espacios`
           emoji.get(`${args[1]}`)
             .then(async emoji => {
               let stiker = await sticker(false, emoji.images[6].url, global.packname, global.author)
-              await conn.reply(m.chat, global.wait, m)
-              conn.sendFile(m.chat, stiker, null, { asSticker: true }, m)
+              await conn.sendNyanCat(m.chat, global.wait, adnyancat, adsticker, null, script, m) 
+              conn.sendFile(m.chat, stiker, null, { asSticker: true }, m, true, { contextInfo: { 'forwardingScore': 200, 'isForwarded': false, externalAdReply:{ showAdAttribution: false, title: botname, body: `h`, mediaType: 2, sourceUrl: linkgc, thumbnail: miniurl}}}, { quoted: m })
             })
           break
         case 'facebook':
@@ -51,8 +51,8 @@ Solo puede usar 1 emoji, preste atención a los espacios`
           emoji.get(`${args[1]}`)
             .then(async emoji => {
               let stiker = await sticker(false, emoji.images[6].url, global.packname, global.author)
-              await conn.reply(m.chat, global.wait, m)
-              conn.sendFile(m.chat, stiker, null, { asSticker: true }, m)
+              await conn.sendNyanCat(m.chat, global.wait, adnyancat, adsticker, null, script, m) 
+              conn.sendFile(m.chat, stiker, null, { asSticker: true }, m, true, { contextInfo: { 'forwardingScore': 200, 'isForwarded': false, externalAdReply:{ showAdAttribution: false, title: botname, body: `h`, mediaType: 2, sourceUrl: linkgc, thumbnail: miniurl}}}, { quoted: m })
            })
           break
         case 'google':
@@ -60,8 +60,8 @@ Solo puede usar 1 emoji, preste atención a los espacios`
           emoji.get(`${args[1]}`)
             .then(async emoji => {
               let stiker = await sticker(false, emoji.images[1].url, global.packname, global.author)
-              await conn.reply(m.chat, global.wait, m)
-              conn.sendFile(m.chat, stiker, null, { asSticker: true }, m)
+              await conn.sendNyanCat(m.chat, global.wait, adnyancat, adsticker, null, script, m) 
+              conn.sendFile(m.chat, stiker, null, { asSticker: true }, m, true, { contextInfo: { 'forwardingScore': 200, 'isForwarded': false, externalAdReply:{ showAdAttribution: false, title: botname, body: `h`, mediaType: 2, sourceUrl: linkgc, thumbnail: miniurl}}}, { quoted: m })
             })
           break
         case 'htc':
@@ -69,8 +69,8 @@ Solo puede usar 1 emoji, preste atención a los espacios`
           emoji.get(`${args[1]}`)
             .then(async emoji => {
               let stiker = await sticker(false, emoji.images[12].url, global.packname, global.author)
-              await conn.reply(m.chat, global.wait, m)
-              conn.sendFile(m.chat, stiker, null, { asSticker: true }, m)
+              await conn.sendNyanCat(m.chat, global.wait, adnyancat, adsticker, null, script, m) 
+              conn.sendFile(m.chat, stiker, null, { asSticker: true }, m, true, { contextInfo: { 'forwardingScore': 200, 'isForwarded': false, externalAdReply:{ showAdAttribution: false, title: botname, body: `h`, mediaType: 2, sourceUrl: linkgc, thumbnail: miniurl}}}, { quoted: m })
             })
           break
         case 'lg':
@@ -79,8 +79,8 @@ Solo puede usar 1 emoji, preste atención a los espacios`
           emoji.get(`${args[1]}`)
             .then(async emoji => {
               let stiker = await sticker(false, emoji.images[11].url, global.packname, global.author)
-              await conn.reply(m.chat, global.wait, m)
-              conn.sendFile(m.chat, stiker, null, { asSticker: true }, m)
+              await conn.sendNyanCat(m.chat, global.wait, adnyancat, adsticker, null, script, m) 
+              conn.sendFile(m.chat, stiker, null, { asSticker: true }, m, true, { contextInfo: { 'forwardingScore': 200, 'isForwarded': false, externalAdReply:{ showAdAttribution: false, title: botname, body: `h`, mediaType: 2, sourceUrl: linkgc, thumbnail: miniurl}}}, { quoted: m })
             })
           break
         case 'microsoft':
@@ -89,8 +89,8 @@ Solo puede usar 1 emoji, preste atención a los espacios`
           emoji.get(`${args[1]}`)
             .then(async emoji => {
               let stiker = await sticker(false, emoji.images[3].url, global.packname, global.author)
-              await conn.reply(m.chat, global.wait, m)
-              conn.sendFile(m.chat, stiker, null, { asSticker: true }, m)
+              await conn.sendNyanCat(m.chat, global.wait, adnyancat, adsticker, null, script, m) 
+              conn.sendFile(m.chat, stiker, null, { asSticker: true }, m, true, { contextInfo: { 'forwardingScore': 200, 'isForwarded': false, externalAdReply:{ showAdAttribution: false, title: botname, body: `h`, mediaType: 2, sourceUrl: linkgc, thumbnail: miniurl}}}, { quoted: m })
             })
           break
         case 'mozilla':
@@ -99,8 +99,8 @@ Solo puede usar 1 emoji, preste atención a los espacios`
           emoji.get(`${args[1]}`)
             .then(async emoji => {
               let stiker = await sticker(false, emoji.images[13].url, global.packname, global.author)
-              await conn.reply(m.chat, global.wait, m)
-              conn.sendFile(m.chat, stiker, null, { asSticker: true }, m)
+              await conn.sendNyanCat(m.chat, global.wait, adnyancat, adsticker, null, script, m) 
+              conn.sendFile(m.chat, stiker, null, { asSticker: true }, m, true, { contextInfo: { 'forwardingScore': 200, 'isForwarded': false, externalAdReply:{ showAdAttribution: false, title: botname, body: `h`, mediaType: 2, sourceUrl: linkgc, thumbnail: miniurl}}}, { quoted: m })
             })
           break
         case 'openmoji':
@@ -109,8 +109,8 @@ Solo puede usar 1 emoji, preste atención a los espacios`
           emoji.get(`${args[1]}`)
             .then(async emoji => {
               let stiker = await sticker(false, emoji.images[8].url, global.packname, global.author)
-              await conn.reply(m.chat, global.wait, m)
-              conn.sendFile(m.chat, stiker, null, { asSticker: true }, m)
+              await conn.sendNyanCat(m.chat, global.wait, adnyancat, adsticker, null, script, m) 
+              conn.sendFile(m.chat, stiker, null, { asSticker: true }, m, true, { contextInfo: { 'forwardingScore': 200, 'isForwarded': false, externalAdReply:{ showAdAttribution: false, title: botname, body: `h`, mediaType: 2, sourceUrl: linkgc, thumbnail: miniurl}}}, { quoted: m })
             })
           break
         case 'pixel':
@@ -118,8 +118,8 @@ Solo puede usar 1 emoji, preste atención a los espacios`
           emoji.get(`${args[1]}`)
             .then(async emoji => {
               let stiker = await sticker(false, emoji.images[7].url, global.packname, global.author)
-              await conn.reply(m.chat, global.wait, m)
-              conn.sendFile(m.chat, stiker, null, { asSticker: true }, m)
+              await conn.sendNyanCat(m.chat, global.wait, adnyancat, adsticker, null, script, m) 
+              conn.sendFile(m.chat, stiker, null, { asSticker: true }, m, true, { contextInfo: { 'forwardingScore': 200, 'isForwarded': false, externalAdReply:{ showAdAttribution: false, title: botname, body: `h`, mediaType: 2, sourceUrl: linkgc, thumbnail: miniurl}}}, { quoted: m })
             })
           break
         case 'samsung':
@@ -127,8 +127,8 @@ Solo puede usar 1 emoji, preste atención a los espacios`
           emoji.get(`${args[1]}`)
             .then(async emoji => {
               let stiker = await sticker(false, emoji.images[2].url, global.packname, global.author)
-              await conn.reply(m.chat, global.wait, m)
-              conn.sendFile(m.chat, stiker, null, { asSticker: true }, m)
+              await conn.sendNyanCat(m.chat, global.wait, adnyancat, adsticker, null, script, m) 
+              conn.sendFile(m.chat, stiker, null, { asSticker: true }, m, true, { contextInfo: { 'forwardingScore': 200, 'isForwarded': false, externalAdReply:{ showAdAttribution: false, title: botname, body: `h`, mediaType: 2, sourceUrl: linkgc, thumbnail: miniurl}}}, { quoted: m })
             })
           break
         case 'twitter':
@@ -136,8 +136,8 @@ Solo puede usar 1 emoji, preste atención a los espacios`
           emoji.get(`${args[1]}`)
             .then(async emoji => {
               let stiker = await sticker(false, emoji.images[5].url, global.packname, global.author)
-              await conn.reply(m.chat, global.wait, m)
-              conn.sendFile(m.chat, stiker, null, { asSticker: true }, m)
+              await conn.sendNyanCat(m.chat, global.wait, adnyancat, adsticker, null, script, m) 
+              conn.sendFile(m.chat, stiker, null, { asSticker: true }, m, true, { contextInfo: { 'forwardingScore': 200, 'isForwarded': false, externalAdReply:{ showAdAttribution: false, title: botname, body: `h`, mediaType: 2, sourceUrl: linkgc, thumbnail: miniurl}}}, { quoted: m })
             })
           break
         case 'whatsapp':
@@ -147,8 +147,8 @@ Solo puede usar 1 emoji, preste atención a los espacios`
           emoji.get(`${args[1]}`)
             .then(async emoji => {
             let stiker = await sticker(null, emoji.images[4].url, global.packname, global.author)
-            await conn.reply(m.chat, global.wait, m)
-             conn.sendFile(m.chat, stiker, null, { asSticker: true }, m)
+            await conn.sendNyanCat(m.chat, global.wait, adnyancat, adsticker, null, script, m) 
+             conn.sendFile(m.chat, stiker, null, { asSticker: true }, m, true, { contextInfo: { 'forwardingScore': 200, 'isForwarded': false, externalAdReply:{ showAdAttribution: false, title: botname, body: `h`, mediaType: 2, sourceUrl: linkgc, thumbnail: miniurl}}}, { quoted: m })
              })
           break
       }

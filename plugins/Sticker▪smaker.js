@@ -23,13 +23,13 @@ let url = await uploadImage(img)
 let apiUrl = global.API('https://some-random-api.ml/canvas/', encodeURIComponent(effect), {
 avatar: url
 })
-await conn.reply(m.chat, global.wait, m)
+await conn.sendNyanCat(m.chat, global.wait, adnyancat, adsticker, null, script, m) 
 try {
 let stiker = await sticker(null, apiUrl, global.packname, global.author)
-conn.sendFile(m.chat, stiker, null, { asSticker: true }, m)
+conn.sendFile(m.chat, stiker, null, { asSticker: true }, m, true, { contextInfo: { 'forwardingScore': 200, 'isForwarded': false, externalAdReply:{ showAdAttribution: false, title: botname, body: `h`, mediaType: 2, sourceUrl: linkgc, thumbnail: miniurl}}}, { quoted: m })
 } catch (e) {
 m.reply('*_Error de conversión a sticker, se envía como imagen en su lugar_*')
-await conn.sendFile(m.chat, apiUrl, 'smaker.png', null, m)
+await conn.sendFile(m.chat, apiUrl, 'smaker.png', null, m, true, { contextInfo: { 'forwardingScore': 200, 'isForwarded': false, externalAdReply:{ showAdAttribution: false, title: botname, body: `h`, mediaType: 2, sourceUrl: linkgc, thumbnail: miniurl}}}, { quoted: m })
 }}
 handler.help = ['smaker']
 handler.tags = ['sticker']
