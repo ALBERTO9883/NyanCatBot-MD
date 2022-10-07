@@ -18,7 +18,7 @@ let pp = await conn.profilePictureUrl(who, 'image').catch(_ => './src/avatar_con
 
 if ((m.isBaileys && m.fromMe) || m.fromMe ) return true
 
-if (chat.sticker && isAdmin) {
+if (chat.chatbot) {
 //▪AQUÍ AGREGA LOS COMANDOS▪
 let sticker1A = /Xd|xd|xD|XD/i
 let sticker1B = sticker1A.exec(m.text)

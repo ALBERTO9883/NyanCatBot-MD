@@ -11,10 +11,12 @@ let handler = m => m
 
 handler.before = async function (m, { conn, command, MessageType, text, usedPrefix }) {
 let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
+let chat = global.db.data.chats[m.chat]
 let user = global.db.data.users[who]
 
 if ((m.isBaileys && m.fromMe) || m.fromMe ) return true
 
+if (chat.chatbot) {
 //━━━━━━━━◜🌾Textos🌾◞━━━━━━━━
 let audio1A = /mujer|Mujer|wom|Wom/i
 let audio1B = audio1A.exec(m.text)
@@ -56,7 +58,8 @@ if (audio2B) {
 	conn.sendFile(m.chat, vn, 'vladimir.mp3', null, m, true, { type: 'audioMessage', ptt: true })
 	} 
 //━━━━━━━━━━━━━━━━━━━━━━━
-
+}
+return !0
 
 }
 

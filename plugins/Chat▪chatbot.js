@@ -11,11 +11,12 @@ let handler = m => m
 
 handler.before = async function (m, { conn, command, MessageType, text, usedPrefix }) {
 let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
+let chat = global.db.data.chats[m.chat]
 let user = global.db.data.users[who]
 let fkowner = { "key": {"participants":"0@s.whatsapp.net", "remoteJid": "status@broadcast", "fromMe": false, "id": "Halo"}, "message": { "contactMessage": { "vcard": `BEGIN:VCARD\nVERSION:3.0\nN:Sy;Bot;;;\nFN:y\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD` }}, "participant": "0@s.whatsapp.net"}
 
 if ((m.isBaileys && m.fromMe) || m.fromMe ) return true
-
+if (chat.chatbot) {
 //━━━━━━━━◜🌾Textos🌾◞━━━━━━━━
 let texto1A = /hola/i
 let texto1B = texto1A.exec(m.text)
@@ -36,7 +37,8 @@ await conn.sendPresenceUpdate('composing', m.chat)
         conn.reply(m.chat, `Genial :D`, m)
         }
 //━━━━━━━━━━━━━━━━━━━━━━━
-
+}
+return !0
 
 }
 
