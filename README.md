@@ -36,8 +36,9 @@ ESCRIBE LOS SIGUIENTES COMANDOS UNO POR UNO:
 > pkg install yarn
 > git clone https://github.com/ALBERTO9883/NyanCatBot-MD
 > cd NyanCatBot-MD
-> yarn install 
+> npm i
 > npm update
+> yarn install
 > npm start
 ```
 
