@@ -1,14 +1,23 @@
-import { facebookDl } from './scraper.js'
-import { savefrom } from '@bochilteam/scraper'
-let handler = async (m, { conn, args, usedPrefix, command }) => {
-if (!args[0]) throw `⚠️ *_Ingrese un -enlace/url- de Facebook._*`
-try {
-m.reply(global.wait)
-let res = await facebookDl(args[0]).catch(async _ => await savefrom(args[0])).catch(_ => null)
-let url = res?.url?.[0]?.url || res?.url?.[1]?.url || res?.['720p'] || res?.['360p']
-conn.sendMessage(m.chat, { video: { url }, caption: res?.meta?.title || '*Aqui está su video⚘*' }, { quoted: m })
-} catch (e) {
-m.reply('*⚠️Error, vuelva a intentarlo*')
-}}
-handler.command = /^((facebook|fb)(downloder|dl)?)$/i
+import fetch from 'node-fetch'
+let handler = async (m, { conn, command, text, args }) => {
+
+if (command == 'facebook') {
+if (!text) throw `⚠️ *_Ingrese el link o enlace de Facebook._*`
+await conn.sendNyanCat(m.chat, global.wait, adnyancat, addescargas, null, script, m)
+let res = await fetch(`https://api.lolhuman.xyz/api/facebook?apikey=85faf717d0545d14074659ad&url=${text}`)
+let json = await res.json()
+let { result } = json
+conn.sendFile(m.chat, result, 'error.mp4', `*Aquí tiene su video de Facebook. ฅ^•ﻌ•^ฅ⚘*`, m)}
+if (command == 'facebook2') {
+if (!text) throw `⚠️ *_Ingrese el link o enlace de Facebook._*`
+await conn.sendNyanCat(m.chat, global.wait, adnyancat, addescargas, null, script, m)
+let res = await fetch(`https://api.lolhuman.xyz/api/facebook2?apikey=85faf717d0545d14074659ad&url=${text}`)
+let json = await res.json()
+let { result } = json
+conn.sendFile(m.chat, result, 'error.mp4', `*Aquí tiene su video de Facebook. ฅ^•ﻌ•^ฅ⚘*`, m)}
+}
+handler.tags = ['downloader']
+handler.command = handler.help = ['facebook', 'facebook2']
+handler.register = true
+
 export default handler
