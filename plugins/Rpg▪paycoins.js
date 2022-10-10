@@ -8,7 +8,7 @@ let handler = async (m, { conn, text }) => {
     else who = m.chat
     if (!who) throw '⚠️️ *_Menciona al usuario con @user._*'
     let txt = text.replace('@' + who.split`@`[0], '').trim()
-    if (!txt) throw '⚠️️ *_Ingrese la cantidad de *Diamantes* que quiere transferir._*'
+    if (!txt) throw '⚠️️ *_Ingrese la cantidad de -Monedas- que quiere transferir._*'
     if (isNaN(txt)) throw '🔢 *sólo números.*'
     let poin = parseInt(txt)
     let limit = poin
@@ -28,9 +28,9 @@ let handler = async (m, { conn, text }) => {
 ┗━━━━━━━━━━━━━⬣`)
     conn.fakeReply(m.chat, `⊜ *_Recibiste_*\n\n *+${poin}* *_Monedas🪙._*`, who, m.text)
 }
-handler.help = ['paydi *@user <monto>*']
+handler.help = ['paycoins *@user <cantidad>*']
 handler.tags = ['xp']
-handler.command = ['paydi', 'transfercoins', 'transfercn'] 
+handler.command = ['paycoins', 'transfercoins', 'transfercn'] 
 handler.rowner = false
 
 export default handler

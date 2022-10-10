@@ -411,5 +411,5 @@ let buttonMessage= {
 handler.help = ['tienda <vender|comprar> <item>', 'shop <buy|sell> <item>']
 handler.tags = ['rpg']
     
-handler.command = /^(shop|tienda|vender|buy|sell|comprar)$/i
+handler.command = /^(shop|tienda|vender|sell|comprar)$/i
 export default handler

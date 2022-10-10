@@ -8,7 +8,7 @@ let handler = async (m, { conn, text }) => {
     else who = m.chat
     if (!who) throw '⚠️️ *_Taguea al usuario_*'
     let txt = text.replace('@' + who.split`@`[0], '').trim()
-    if (!txt) throw '⚠️️ *_Ingrese la cantidad de monedas que quiere añadir_*'
+    if (!txt) throw '⚠️️ *_Ingrese la cantidad de -Monedas- que quiere añadir_*'
     if (isNaN(txt)) throw '🔢 *sólo números*'
     let dmt = parseInt(txt)
     let limit = dmt

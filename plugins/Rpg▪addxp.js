@@ -8,7 +8,7 @@ let handler = async (m, { conn, text }) => {
   else who = m.chat
   if (!who) throw '⚠️ *_Taguea al usuario_*'
   let txt = text.replace('@' + who.split`@`[0], '').trim()
-  if (!txt) throw '⚠️️ *_Ingrese la cantidad de XP que quiere añadir_*'
+  if (!txt) throw '⚠️️ *_Ingrese la cantidad de -XP- que quiere añadir_*'
   if (isNaN(txt)) throw ' 🔢 *_sólo números_*'
   let xp = parseInt(txt)
   let exp = xp
