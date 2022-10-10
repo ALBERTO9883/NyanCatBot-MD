@@ -33,65 +33,70 @@ const sections = [
 	rowId: `${usedPrefix + command} autosticker`}]}, {
 	title: `━━◌*̥₊「 6 」₊*̥◌━━`,
 	rows: [
+	{title: "💀 | ANTI-TRABAS", 
+	description: "⊜ ❝Active o Desactive para que la persona que envie una traba sea eliminado del grupo.❞",
+	rowId: `${usedPrefix + command} antitraba`}]}, {
+	title: `━━◌*̥₊「 7 」₊*̥◌━━`,
+	rows: [
 	{title: "📛 | ANTI PRIVADO", 
 	description: "⊜ ❝Active o Desactive para que nadie excepto el creador pueda escribirle al privado al bot❞",
 	rowId: `${usedPrefix + command} antiprivado`}]}, {
-	title: `━━◌*̥₊「 7 」₊*̥◌━━`,
+	title: `━━◌*̥₊「 8 」₊*̥◌━━`,
 	rows: [
 	{title: "📵 | ANTI LLAMADAS", 
 	description: "⊜ ❝Active o Desactive para que el bot bloqueé a los que llaman al privado❞",
 	rowId: `${usedPrefix + command} anticall`}]}, {
-	title: `━━◌*̥₊「 8 」₊*̥◌━━`,
+	title: `━━◌*̥₊「 9 」₊*̥◌━━`,
 	rows: [
 	{title: "🧬 | ANTI FAKES", 
 	description: "⊜ ❝Active o Desactive para que el bot elimine números extranjeros❞",
 	rowId: `${usedPrefix + command} antifakes`}]}, {
-	title: `━━◌*̥₊「 9 」₊*̥◌━━`,
+	title: `━━◌*̥₊「 10 」₊*̥◌━━`,
 	rows: [
 	{title: "🔗 | ANTILINK", 
 	description: "⊜ ❝Active o Desactive para que el bot elimine a los que envíen enlaces de WhatsApp❞",
 	rowId: `${usedPrefix + command} antilink`}]}, {
-	title: `━━◌*̥₊「 10 」₊*̥◌━━`,
+	title: `━━◌*̥₊「 11 」₊*̥◌━━`,
 	rows: [
     {title: "🚫 | ANTIDELETE", 
     description: "⊜ ❝Active o Desactive para que el bot reenvie los mensajes eliminados❞",
     rowId: `${usedPrefix + command} antidelete`}]}, {
-	title: `━━◌*̥₊「 11 」₊*̥◌━━`,
+	title: `━━◌*̥₊「 12 」₊*̥◌━━`,
 	rows: [
 	{title: "⏏️ | AUTOLEVELUP", 
 	description: "⊜ ❝Active o Desactive para subir de nivel automáticamente❞",
 	rowId: `${usedPrefix + command} autolevelup`}]}, {
-	title: `━━◌*̥₊「 12 」₊*̥◌━━`,
+	title: `━━◌*̥₊「 13 」₊*̥◌━━`,
 	rows: [
 	{title: "🔎 | DETECT", 
 	description: "⊜ ❝Active o Desactive la info sobre las modificaciones del grupo❞",
 	rowId: `${usedPrefix + command} detect`}]}, {
-	title: `━━◌*̥₊「 13 」₊*̥◌━━`,
+	title: `━━◌*̥₊「 14 」₊*̥◌━━`,
 	rows: [
 	{title: "👁 | ANTIVIEWONCE", 
 	description: "⊜ ❝Active o Desactive para reenviar los mensajes viewOnce❞",
 	rowId: `${usedPrefix + command} antiviewonce`}]}, {
-	title: `━━◌*̥₊「 14 」₊*̥◌━━`,
+	title: `━━◌*̥₊「 15 」₊*̥◌━━`,
 	rows: [
 	{title: "🛡️ | RESTRICT", 
 	description: "⊜ ❝Active o Desactive las restricciones para sacar gente del grupo❞",
 	rowId: `${usedPrefix + command} restrict`}]}, {
-	title: `━━◌*̥₊「 15 」₊*̥◌━━`,
+	title: `━━◌*̥₊「 16 」₊*̥◌━━`,
 	rows: [
 	{title: "👀 | AUTOREAD", 
 	description: "⊜ ❝Active o Desactive para que el bot lea automáticamente los mensajes❞",
 	rowId: `${usedPrefix + command} autoread`}]}, {
-	title: `━━◌*̥₊「 16 」₊*̥◌━━`,
+	title: `━━◌*̥₊「 17 」₊*̥◌━━`,
 	rows: [
 	{title: "⛔ | ANTI STICKERS", 
 	description: "⊜ ❝Active o Desactive para que el bot elimine los que mandan stickers❞",
 	rowId: `${usedPrefix + command} antisticker`}]}, {
-	title: `━━◌*̥₊「 17 」₊*̥◌━━`,
+	title: `━━◌*̥₊「 18 」₊*̥◌━━`,
 	rows: [
 	{title: "💬 | ONLYPV", 
 	description: "⊜ ❝Active o Desactive para que el bot solo se pueda utilizar en privado❞",
 	rowId: `${usedPrefix + command} pconly`}]}, {
-	title: `━━◌*̥₊「 18 」₊*̥◌━━`,
+	title: `━━◌*̥₊「 19 」₊*̥◌━━`,
 	rows: [
 	{title: "👥 | ONLYGP", 
 	description: "⊜ ❝Active o Desactive para que el bot solo se pueda utilizar en grupos❞",
@@ -107,6 +112,7 @@ const listMessage = {
 ┃⋄ chatbot 
 ┃⋄ nsfw
 ┃⋄ autosticker
+┃⋄ antitraba
 ┃⋄ antiprivado
 ┃⋄ anticall 
 ┃⋄ antifakes 
@@ -236,6 +242,16 @@ throw false
 }
 }
 chat.chatbot = isEnable
+break
+
+case 'antitraba':
+if (m.isGroup) {
+if (!(isAdmin || isOwner)) {
+global.dfail('admin', m, conn)
+throw false
+}
+}
+chat.antiTraba = isEnable
 break
 
 case 'antifakes':
