@@ -330,6 +330,8 @@ export async function handler(chatUpdate) {
                     chat.antiSticker = false                      
                 if (!('antiLink' in chat))
                     chat.antiLink = false
+                if (!('antiTraba' in chat))
+                    chat.antiTraba = false
                 if (!('antiLink2' in chat))
                     chat.antiLink2 = false
                 if (!('antiviewonce' in chat))
@@ -359,6 +361,7 @@ export async function handler(chatUpdate) {
                     antiToxic: false,
                     chatbot: true,
                     antiSticker: false,
+                    antiTraba: false,
                     expired: 0,
                 }
             let settings = global.db.data.settings[this.user.jid]
