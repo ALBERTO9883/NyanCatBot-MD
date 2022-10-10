@@ -778,6 +778,9 @@ export async function callUpdate(callUpdate) {
     }
 }
 export async function deleteUpdate(message) {
+let d = new Date(new Date + 3600000)
+let date = d.toLocaleDateString('es', { day: 'numeric', month: 'long', year: 'numeric' })
+ let time = d.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true })
     try {
         const { fromMe, id, participant } = message
         if (fromMe)
@@ -788,7 +791,7 @@ export async function deleteUpdate(message) {
         let chat = global.db.data.chats[msg.chat] || {}
         if (chat.delete)
             return
-        await this.reply(msg.chat, `
+        /*await this.reply(msg.chat, `
 ━━━━⬣  𝘼𝙉𝙏𝙄 𝘿𝙀𝙇𝙀𝙏𝙀  ⬣━━━━
 *■ Nombre:* @${participant.split`@`[0]}
 *■ Enviando el mensaje..*
@@ -798,7 +801,8 @@ export async function deleteUpdate(message) {
 ━━━━⬣  𝘼𝙉𝙏𝙄 𝘿𝙀𝙇𝙀𝙏𝙀  ⬣━━━━
 `.trim(), fakemsg, {
             mentions: [participant]
-        })
+        })*/
+        await conn.relayMessage(msg.chat, { extendedTextMessage: { text: `┏━━━━⬣  𝘼𝙉𝙏𝙄 𝘿𝙀𝙇𝙀𝙏𝙀  ⬣━━━━\n┃🐢 *❏ Nombre:* @${participant.split`@`[0]}\n┃🕒 *❏ Hora:* ${time}\n┃📅 *❏ Fecha:* ${date}\n┃🥗 *❏ Enviando mensaje...*\n┗━━━━━━━━━━━━━━━━━⬣`, contextInfo: { externalAdReply: { title: '🐱*̥₊NʏᴀɴCᴀᴛBᴏᴛ Sᴜᴘᴘᴏʀᴛ❐🎋༉', body: '', thumbnail: verificado, sourceUrl: linkgc }, mentionedJid: [participant] }}}, { quoted: fakemsg })
         this.copyNForward(msg.chat, msg).catch(e => console.log(e, msg))
     } catch (e) {
         console.error(e)
