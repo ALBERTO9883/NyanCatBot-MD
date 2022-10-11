@@ -13,7 +13,7 @@ let handler = async (m, { conn, usedPrefix, args}) => {
 	
 let q = m.quoted ? m.quoted : m
 let mime = (q.msg || q).mimetype || ''
-if (!mime) throw "⚠️ *_Recuerde etiquetar una imágen._*"
+if (!mime) throw `⚠️ *_Recuerde etiquetar una imágen._*\n*📌 Ejemplo:* ${usedPrefix + command} 400 400`
 
 let media = await q.download()
 let isMedia = /image\/(png|jpe?g|gif)|video\/mp4/.test(mime)
@@ -48,7 +48,7 @@ conn.sendFile(m.chat, compres, null, `*🌿 COMPRESIÓN DE RESIZE 🌿*
 ❏ Original : ${link}
 ❏ Comprimido : ${linkcompres}`, m)
 }
-handler.help = ['resize <width> <height> (reply|caption)']
+handler.help = ['resize *<ancho> <altura> <foto>']
 handler.tags = ['tools']
 handler.command = /^(resize)$/i
 
