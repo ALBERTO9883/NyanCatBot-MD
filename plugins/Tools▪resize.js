@@ -48,7 +48,7 @@ conn.sendFile(m.chat, compres, null, `*🌿 COMPRESIÓN DE RESIZE 🌿*
 ❏ Original : ${link}
 ❏ Comprimido : ${linkcompres}`, m)
 }
-handler.help = ['resize *<ancho> <altura> <foto>']
+handler.help = ['resize *<ancho> <altura> <foto>*']
 handler.tags = ['tools']
 handler.command = /^(resize)$/i
 
