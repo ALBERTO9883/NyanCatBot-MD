@@ -25,6 +25,6 @@ thumbnail: imgmenu}}}, { quoted: m })
 return conn.sendMessage(m.chat, { video: {url: url}, caption: `Aqui tienes`, fileLength: `${text}`, mentions: [m.sender] }, { ephemeralExpiration: 24*3600, quoted: m })}
 }
 handler.tags = ['tools']
-handler.help = ['edittamaño *<cantidad>*']
-handler.command = /^(length|filelength|edittamaño)$/i
+handler.help = ['tamaño *<cantidad>*']
+handler.command = /^(length|filelength|edittamaño|totamaño|tamaño)$/i
 export default handler
