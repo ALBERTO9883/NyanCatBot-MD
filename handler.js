@@ -724,7 +724,7 @@ export async function participantsUpdate({ id, participants, action }) {
                         this.sendButton(id, text, groupMetadata.subject, pp, [
                         [(action == 'add' ? 'Gracias ❤' : 'Adios 👋'), 'ura'],    
                             ['Menú 📒', '/menu']
-                            ], fakemsg, { mentions: [user] })
+                            ], fakemsg, { contextInfo: { externalAdReply: { showAdAttribution: false, title: '🐱*̥₊NʏᴀɴCᴀᴛBᴏᴛ Sᴜᴘᴘᴏʀᴛ❐🎋༉', body: global.botname, sourceUrl: global.linkgc, thumbnail: miniurl }}, mentions: [user]})
                     }
                 }
             }
@@ -791,18 +791,7 @@ let date = d.toLocaleDateString('es', { day: 'numeric', month: 'long', year: 'nu
         let chat = global.db.data.chats[msg.chat] || {}
         if (chat.delete)
             return
-        /*await this.reply(msg.chat, `
-━━━━⬣  𝘼𝙉𝙏𝙄 𝘿𝙀𝙇𝙀𝙏𝙀  ⬣━━━━
-*■ Nombre:* @${participant.split`@`[0]}
-*■ Enviando el mensaje..*
-*■ Para desactivar esta función escriba el comando:*
-*—◉ #disable antidelete*
-*—◉ #enable delete*
-━━━━⬣  𝘼𝙉𝙏𝙄 𝘿𝙀𝙇𝙀𝙏𝙀  ⬣━━━━
-`.trim(), fakemsg, {
-            mentions: [participant]
-        })*/
-        await conn.relayMessage(msg.chat, { extendedTextMessage: { text: `┏━━━━⬣  𝘼𝙉𝙏𝙄 𝘿𝙀𝙇𝙀𝙏𝙀  ⬣━━━━\n┃🐢 *❏ Nombre:* @${participant.split`@`[0]}\n┃🕒 *❏ Hora:* ${time}\n┃📅 *❏ Fecha:* ${date}\n┃🥗 *❏ Enviando mensaje...*\n┗━━━━━━━━━━━━━━━━━⬣`, contextInfo: { externalAdReply: { title: '🐱*̥₊NʏᴀɴCᴀᴛBᴏᴛ Sᴜᴘᴘᴏʀᴛ❐🎋༉', body: '', thumbnail: verificado, sourceUrl: linkgc }, mentionedJid: [participant] }}}, { quoted: fakemsg })
+        await conn.relayMessage(msg.chat, { extendedTextMessage: { text: `┏━━━━⬣  𝘼𝙉𝙏𝙄 𝘿𝙀𝙇𝙀𝙏𝙀  ⬣━━━━⬣\n┃🐢 *❏ Nombre:* @${participant.split`@`[0]}\n┃🕒 *❏ Hora:* ${time}\n┃📅 *❏ Fecha:* ${date}\n┃🥗 *❏ Enviando mensaje...*\n┗━━━━━━━━━━━━━━━━━⬣`, contextInfo: { externalAdReply: { title: '🐱*̥₊NʏᴀɴCᴀᴛBᴏᴛ Sᴜᴘᴘᴏʀᴛ❐🎋༉', body: '', thumbnail: verificado, sourceUrl: linkgc }, mentionedJid: [participant] }}}, { quoted: fakemsg })
         this.copyNForward(msg.chat, msg).catch(e => console.log(e, msg))
     } catch (e) {
         console.error(e)
