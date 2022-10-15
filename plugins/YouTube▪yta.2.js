@@ -28,7 +28,7 @@ if (source instanceof ArrayBuffer) break
 audio = link = source = null
 lastError = e
 }}
-await conn.sendMessage(m.chat, { document: { url: link }, mimetype: "audio/mp4", fileName: title + '.mp3', quoted: m, contextInfo: {
+await conn.sendMessage(m.chat, { document: { url: link }, mimetype: "audio/mpeg", fileName: title + '.mp3', quoted: m, contextInfo: {
 'forwardingScore': 200,
 'isForwarded': false,
 externalAdReply:{
@@ -37,7 +37,7 @@ title: `${title}`,
 body: `${authorName}`,
 mediaType: 2, 
 sourceUrl: `${url}`,
-thumbnailUrl: thumbnail}}}, { quoted: m })
+thumbnail: await (await fetch(thumbnail)).buffer()}}}, { quoted: m })
 }
 handler.help = ['ytadoc *<link yt>*']
 handler.tags = ['downloader']

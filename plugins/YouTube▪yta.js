@@ -39,7 +39,7 @@ title: `${title}`,
 body: `${authorName}`,
 mediaType: 2, 
 sourceUrl: `${url}`,
-thumbnailUrl: thumbnail}}}, { quoted: m })
+thumbnail: await (await fetch(thumbnail)).buffer()}}}, { quoted: m })
 }
 handler.help = ['mp3', 'a'].map(v => 'yt' + v + ` <url>`)
 handler.tags = ['downloader']

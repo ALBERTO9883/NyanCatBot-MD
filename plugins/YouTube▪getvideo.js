@@ -29,6 +29,7 @@ ${global.wait}`)
 m.reply('⚠️ *_Error, no se pudo descargar el video o quizás esta calidad de video no exista..._*')
 console.log(e)}}
 
-
+handler.tags = ['downloader']
+handler.help = ['getvid *<url yt>*']
 handler.command = /^(getvid)$/i
 export default handler

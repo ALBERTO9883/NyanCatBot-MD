@@ -37,7 +37,7 @@ title: `${title}`,
 body: `${authorName}`,
 mediaType: 2, 
 sourceUrl: `${url}`,
-thumbnailUrl: thumbnail}}}, { quoted: m })
+thumbnail: await (await fetch(thumbnail)).buffer()}}}, { quoted: m })
 }
 handler.help = ['ytvdoc *<link yt>*']
 handler.tags = ['downloader']

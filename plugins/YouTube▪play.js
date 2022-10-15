@@ -1,5 +1,6 @@
 import { youtubeSearch } from '@bochilteam/scraper'
 import fs from 'fs'
+import fetch from 'node-fetch' 
 let handler = async (m, { conn, command, text, usedPrefix }) => {
 if (!text) throw `⚠️ *_Ingresa el título de una canción._*\n\n*_📌 Ejemplo :_* *${usedPrefix + command}* Sit Down Be Side Me`
 let vid = (await youtubeSearch(text)).video[0]
@@ -38,7 +39,7 @@ contextInfo: {
 "title": `${title}`,
 "mediaType": 2, 
 "previewType": "VIDEO",
-"thumbnailUrl": thumbnail,
+"thumbnail": await (await fetch(thumbnail)).buffer(),
 "mediaUrl": `${url}`,
 "sourceUrl": linkgc }}} 
 conn.sendMessage(m.chat, buttonMessage, { quoted: m })

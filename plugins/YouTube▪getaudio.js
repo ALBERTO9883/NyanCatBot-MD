@@ -3,6 +3,7 @@ import {
     youtubedlv2,
     youtubeSearch
 } from '@bochilteam/scraper'
+import fetch from 'node-fetch' 
 
 let handler = async (m, { conn, args, isPrems, isOwner, text }) => {
 let vid = (await youtubeSearch(text)).video[0]
@@ -32,11 +33,12 @@ title: `${ttl}`,
 body: `${authorName}`,
 mediaType: 2, 
 sourceUrl: `${url}`,
-thumbnailUrl: thumbnail}}}, { quoted: m })
+thumbnail: await (await fetch(thumbnail)).buffer()}}}, { quoted: m })
 }catch(e){
 m.reply('⚠️ *_Error, no se pudo descargar el audio..._*')
 console.log(e)}
 }
-
+handler.tags = ['downloader']
+handler.help = ['getaud *<url yt>*']
 handler.command = /^(getaud)$/i
 export default handler

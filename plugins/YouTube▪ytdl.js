@@ -12,11 +12,10 @@ let vid = (await youtubeSearch(text)).video[0]
 let { authorName, description, videoId, durationH, viewH, publishedTime, thumbnail, title } = vid
 const url = 'https://www.youtube.com/watch?v=' + videoId
   
-    if (!args[0]) return m.reply('*Y el Link?*')
+    if (!args || !args[0]) throw `*_⚠️ Inserte el comando más el enlace de YouTube._*`
   
   
 global.estilo = { key: {  fromMe: false, participant: `0@s.whatsapp.net`, ...(false ? { remoteJid: "5219992095479-1625305606@g.us" } : {}) }, message: { orderMessage: { itemCount : -999999, status: 1, surface : 1, message: '🐱⸽⃕NʏᴀɴCᴀᴛBᴏᴛ - MD🍁⃨፝⃕✰\n⚘Aʟʙᴇʀᴛᴏ Y Asʜʟʏ⚘', orderTitle: 'Bang', thumbnail: catalogo, sellerJid: '0@s.whatsapp.net'}}}
-  
 const sections = [
 	{
 	title: "⚠️ Seleccione su tipo de archivo!",
@@ -48,13 +47,10 @@ const listMessage = {
   buttonText: "*⛾ RESULTADOS*",
   sections
 }
-
 return conn.sendMessage(m.chat, listMessage, { quoted: estilo  })
 }
 
 
-handler.help = ['ytgetdl *<link>*']
-handler.tags = ['downloader']
 handler.command = ['ytgetdl']
 handler.exp = 3
 
