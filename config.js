@@ -90,6 +90,14 @@ global.me = '⚘Aʟʙᴇʀᴛᴏ Y Asʜʟʏ⚘'
 //╰─────────────────────╯
 
 
+//Texto
+	global.adimagen = `🌅| Iᴍᴀ́ɢᴇɴᴇs Bʏ NʏᴀɴCᴀᴛBᴏᴛ🌿`
+	global.adanime = `🌸| Aɴɪᴍᴇ Bʏ NʏᴀɴCᴀᴛBᴏᴛ🈴`
+	global.adyoutube = `🍁| Dᴇsᴄᴀʀɢᴀs ᴅᴇ YᴏᴜTᴜʙᴇ🍄`
+	global.adsticker = `🏞️| Sᴛɪᴄᴋᴇʀs Bʏ NʏᴀɴCᴀᴛBᴏᴛ🌺`
+	global.addescargas = `📤| Dᴇsᴄᴀʀɢᴀs Bʏ NʏᴀɴCᴀᴛ🌸`
+ 
+
 //᭥🌼᭢━━━━◜𝑴𝑺𝑮 𝑫𝑬 𝑬𝑺𝑷𝑬𝑹𝑨◞━━━━᭥🌼᭢
 global.wait = '*⏳Aɢᴜᴀʀᴅᴇ ᴜɴ ᴍᴏᴍᴇɴᴛᴏ... ฅ^•ﻌ•^ฅ⏳*'
 //╰─────────────────────╯
