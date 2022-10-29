@@ -5,21 +5,18 @@ import fetch from 'node-fetch'
 import fs from 'fs'
 let handler = async (m, {text, usedPrefix, command, conn}) => {
 if (!text) throw `*⚠️ Ingrese el nombre de la apk o app que desea buscar.*`
-const res = await googleImage(text)
-let image = res.getRandom()
-let link = image
+let sfoto = fs.readFileSync('./storage/image/apksearch.png')
 
-let json = await fetch(`https://api-reysekha.herokuapp.com/api/download/apk?query=${text}&apikey=APIKEY`)
+let json = await fetch(`https://api.akuari.my.id/search/searchapk2?query=${text}`)
 let jsons = await json.json()
 let caption = `*⊜ RESULTADOS🔎*\n`
-for (let x of jsons.result) {
+for (let x of jsons.respon) {
 caption += `
-*• 🏷 Nombre:* *_${x.name}_*
-*• 🔗 Url:* _${x.url}_
-*• 📥 Linkdl:* _${x.dl_url}_
-*• 📋 Desc:* _${x.desc}_\n───
+*• 🏷 Nombre:* *_${x.title}_*
+*• 🔗 Url:* _${x.link}_
+*• 🎋 Actualizado:* ${x.update}\n───
 `}
-await conn.sendFile(m.chat, link, 'error.mp3', caption, m)}
+conn.sendNyanCat(m.chat, caption, sfoto, `• Resultados Encontrados🔎`, me, script, m)}
 
 handler.tags = ['search']
 handler.command = handler.help = ['apksearch']
