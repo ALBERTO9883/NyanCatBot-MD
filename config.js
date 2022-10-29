@@ -67,18 +67,13 @@ global.APIKeys = { // APIKey Here
 }
 
 //᭥🕒᭢━━━━━━◜𝑻𝑰𝑬𝑴𝑷𝑶◞━━━━━━᭥🕒᭢
-let d = new Date(new Date + 3600000)
-let locale = 'es'
-let week = d.toLocaleDateString(locale, { weekday: 'long' })
-let date = d.toLocaleDateString('es', { day: 'numeric', month: 'long', year: 'numeric' })
-let time = d.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true })
-//╰─────────────────────╯
-
-//᭥🍃᭢━━━━━━◜𝑺𝑻𝑰𝑪𝑲𝑬𝑹𝑺◞━━━━━━᭥🍃᭢
-global.packname = ``
-global.author = `
- 🐱×𝕹ʏᴀɴ𝕮ᴀᴛ𝕭ᴏᴛ×🐱\n\t\t\t\t\t\ 🐢\n⚘Aʟʙᴇʀᴛᴏ Y Asʜʟʏ⚘\n\t\t\t\t\t\ 🕒\n\t\t\t${time}\n\t\t\t\t\t\ 📅\n${date}
- `
+global.d = new Date(new Date + 3600000)
+global.locale = 'es'
+global.dia = d.toLocaleDateString(locale, { weekday: 'long' })
+global.fecha = d.toLocaleDateString('es', { day: 'numeric', month: 'numeric', year: 'numeric' })
+global.mes = d.toLocaleDateString('es', { month: 'long' })
+global.año = d.toLocaleDateString('es', { year: 'numeric' })
+global.tiempo = d.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true })
 //╰─────────────────────╯
 
 
@@ -90,13 +85,20 @@ global.me = '⚘Aʟʙᴇʀᴛᴏ Y Asʜʟʏ⚘'
 //╰─────────────────────╯
 
 
-//Texto
-	global.adimagen = `🌅| Iᴍᴀ́ɢᴇɴᴇs Bʏ NʏᴀɴCᴀᴛBᴏᴛ🌿`
-	global.adanime = `🌸| Aɴɪᴍᴇ Bʏ NʏᴀɴCᴀᴛBᴏᴛ🈴`
-	global.adyoutube = `🍁| Dᴇsᴄᴀʀɢᴀs ᴅᴇ YᴏᴜTᴜʙᴇ🍄`
-	global.adsticker = `🏞️| Sᴛɪᴄᴋᴇʀs Bʏ NʏᴀɴCᴀᴛBᴏᴛ🌺`
-	global.addescargas = `📤| Dᴇsᴄᴀʀɢᴀs Bʏ NʏᴀɴCᴀᴛ🌸`
+//᭥🥗᭢━━━━━━◜𝑻𝑬𝑿𝑻𝑶𝑺◞━━━━━━᭥🥗᭢
+global.adimagen = `🌅| Iᴍᴀ́ɢᴇɴᴇs Bʏ NʏᴀɴCᴀᴛBᴏᴛ🌿` 
+global.adanime = `🌸| Aɴɪᴍᴇ Bʏ NʏᴀɴCᴀᴛBᴏᴛ🈴` 
+global.adyoutube = `🍁| Dᴇsᴄᴀʀɢᴀs ᴅᴇ YᴏᴜTᴜʙᴇ🍄` 
+global.adsticker = `🏞️| Sᴛɪᴄᴋᴇʀs Bʏ NʏᴀɴCᴀᴛBᴏᴛ🌺` 
+global.addescargas = `📤| Dᴇsᴄᴀʀɢᴀs Bʏ NʏᴀɴCᴀᴛ🌸`
+ //╰─────────────────────╯
+
  
+//᭥🍃᭢━━━━━━◜𝑺𝑻𝑰𝑪𝑲𝑬𝑹𝑺◞━━━━━━᭥🍃᭢
+global.packname = `🐢 ❑ Owner:\n📅 ❑ Día:\n🕒 ❑ Hora:\n🗓️ ❑ Fecha:\n🐱 ❑ By:`
+global.author = `▸ Aʟʙᴇʀᴛᴏ Y Asʜʟʏ🎋\n▸ ${dia}\n▸ ${tiempo}\n▸ ${fecha}\n▸ ${botname}`
+//╰────────────────────╯	
+	
 
 //᭥🌼᭢━━━━◜𝑴𝑺𝑮 𝑫𝑬 𝑬𝑺𝑷𝑬𝑹𝑨◞━━━━᭥🌼᭢
 global.wait = '*⏳Aɢᴜᴀʀᴅᴇ ᴜɴ ᴍᴏᴍᴇɴᴛᴏ... ฅ^•ﻌ•^ฅ⏳*'
