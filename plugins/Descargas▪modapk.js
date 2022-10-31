@@ -1,6 +1,6 @@
 import fetch from 'node-fetch' 
 let handler = async (m, { conn, args, usedPrefix, command }) => {
-    if (!args[0]) throw `⚠️️ *_Ingrese el link de modlatest junto al comando_*`
+    if (!args[0]) throw `⚠️️ *_Ingrese el link/enlace junto al comando_*`
     if (!args[0].match(/rexdl.com/gi)) throw `❎ Link incorrecto`
    
     let res = await fetch(`https://api.akuari.my.id/downloader/dlmod2?link=${args[0]}`)
