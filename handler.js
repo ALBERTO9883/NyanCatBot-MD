@@ -720,11 +720,11 @@ export async function participantsUpdate({ id, participants, action }) {
                     } finally {
                     let about = (await this.fetchStatus(user).catch(console.error) || {}).status || '×'
                         text = (action === 'add' ? (chat.sWelcome || this.welcome || Connection.conn.welcome || 'Bienvenido, @user').replace('@group', await this.getName(id)).replace('@date', date).replace('@bio', about).replace('@time', time).replace('@desc', groupMetadata.desc?.toString() || 'unknow') :
-                            (chat.sBye || this.bye || Connection.conn.bye || 'Adiós, @user')).replace('@user', '@' + user.split('@')[0])
+                            (chat.sBye || this.bye || Connection.conn.bye || 'Adiós, @user')).replace('@user', '@' + user.split('@')[0]).replace('@date', date).replace('@bio', about).replace('@time', time)
                         this.sendButton(id, text, groupMetadata.subject, pp, [
                         [(action == 'add' ? 'Gracias ❤' : 'Adios 👋'), 'ura'],    
                             ['Menú 📒', '/menu']
-                            ], fakemsg, { contextInfo: { externalAdReply: { showAdAttribution: false, title: '🐱*̥₊NʏᴀɴCᴀᴛBᴏᴛ Sᴜᴘᴘᴏʀᴛ❐🎋༉', body: global.botname, sourceUrl: global.linkgc, thumbnail: miniurl }}, mentions: [user]})
+                            ], fgclink, { contextInfo: { externalAdReply: { showAdAttribution: false, title: '🐱*̥₊NʏᴀɴCᴀᴛBᴏᴛ Sᴜᴘᴘᴏʀᴛ❐🎋༉', body: global.botname, sourceUrl: global.linkgc, thumbnail: miniurl }}, mentions: [user]})
                     }
                 }
             }
@@ -732,18 +732,30 @@ export async function participantsUpdate({ id, participants, action }) {
         case 'promote':
         case 'daradmin':
         case 'darpoder':
-            text = (chat.sPromote || this.spromote || conn.spromote || '@user ```is now Admin```')
+            text = (chat.sPromote || this.spromote || conn.spromote || '@user ```is now Admin```').replace('@date', global.fecha).replace('@time', global.tiempo)
         case 'demote':
         case 'quitarpoder':
         case 'quitaradmin':
             if (!text)
-                text = (chat.sDemote || this.sdemote || conn.sdemote || '@user ```is no longer Admin```')
+                text = (chat.sDemote || this.sdemote || conn.sdemote || '@user ```is no longer Admin```').replace('@date', global.fecha).replace('@time', global.tiempo)
             text = text.replace('@user', '@' + participants[0].split('@')[0])
+        let who = id.mentionedJid && m.mentionedJid[0] ? id.mentionedJid[0] : id.fromMe ? conn.user.jid : id.sender
+        let user = global.db.data.users[who]
+        for (let user of participants) {
+                    let pp = './src/avatar_contact.png'
+                    try {
+                        pp = await this.profilePictureUrl(user, 'image')
+                    } catch (e) {
+                    } finally {
+                    let biot = await conn.fetchStatus(user).catch(_ => 'undefined')
+  let bio = biot.status?.toString() || 'Sin Info'
             if (chat.detect)
-                this.sendMessage(id, { text, mentions: this.parseMention(text) }, { quoted: fgclink })
+                this.sendButton(id, text, saludo, pp, [['Menú 📒', '/menu']], false, { contextInfo: { externalAdReply: { showAdAttribution: false, title: '🐱*̥₊NʏᴀɴCᴀᴛBᴏᴛ Sᴜᴘᴘᴏʀᴛ❐🎋༉', body: global.botname, sourceUrl: global.linkgc, thumbnail: miniurl }}, mentions: this.parseMention(text) })
             break
-    }
-}
+            }
+            }
+            }
+            }
 
 export async function groupsUpdate(groupsUpdate) {
     if (opts['self'])
