@@ -28,5 +28,7 @@ await m.reply(''+ result2)
 } catch { 
 await m.reply('*_Error inesperado, vuelva a intentarlo más tarde :)_*')    
 }}}
+handler.tags = ['tools']
+handler.help = ['translate <idioma> <texto>']
 handler.command = /^(translate|traducir|trad)$/i
 export default handler
