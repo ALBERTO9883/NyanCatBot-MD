@@ -1,15 +1,16 @@
 /* Creado por https://github.com/FG98F */
 
-import fetch from 'node-fetch'
-import instagramGetUrl from 'fg-ig'
-let handler = async (m, { conn, args, usedPrefix, command }) => {
-if (!(args[0])) throw `*_⚠️ Ingrese un enlace de Instagram_*\n📌 *Ejemplo: ${usedPrefix + command}* https://www.instagram.com/reel/Cc0NuYBg8CR/?utm_source=ig_web_copy_link`
-let results = (await instagramGetUrl(args[0])).url_list[0]
-let shortUrl = await (await fetch(`https://tinyurl.com/api-create.php?url=${results}`)).text()
-let txt = `🔗 *Url:* ${shortUrl}`.trim()
-m.reply(global.wait)
-await conn.sendFile(m.chat, results, 'error.mp4', txt, m)}
+import fg from 'api-dylux'
 
-handler.command =/^(instagram|ig(dl)?)$/i
-handler.dfail = null
-export default handler
+let handler = async (m, { conn, args, usedPrefix, command }) => {
+    if (!args[0]) throw `*_📌️ Uso del comamdo_*\n *${usedPrefix + command}* https://www.instagram.com/p/CYHeKxyMj-J/?igshid=YmMyMTA2M2Y=`
+    let res = await fg.igdl(args[0])
+    for (let result of res.url_list) {
+    conn.sendFile(m.chat, result, 'igdl.mp4', ``, m)}}
+handler.help = ['instagram *<link ig>*']
+handler.tags = ['dl']
+handler.command = ['ig', 'igdl', 'instagram', 'igimg', 'igvid'] 
+handler.register = true
+handler.limit = true
+
+export default handler 
