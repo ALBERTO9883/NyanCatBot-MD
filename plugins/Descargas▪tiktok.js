@@ -1,27 +1,31 @@
-import fetch from 'node-fetch'
-import fs from 'fs' 
-let handler = async (m, { conn, text, usedPrefix, command }) => {
-if (!text) throw `*_⚠️ Porfavor ingrese un link/enlace de tiktok._*`
-if (!/(?:https:?\/{2})?(?:w{3}|vm|vt|t)?\.?tiktok.com\/([^\s&]+)/gi.test(text)) throw `*_⚠️ Enlace de TikTok incorrecto._*`
-let url = (await fetch(text)).url
-let res = await (await fetch(`https://api2.musical.ly/aweme/v1/aweme/detail/?aweme_id=${url.split('?')[0].split('/')[5]}`)).json()
-let data = res.aweme_detail.video.play_addr.url_list
-if (!data.length) throw '*_❎Error, ocurrio un error inesperado vuelva a intentarlo_*'
-let meta = await getInfo(url).catch(_ => {})
-await m.reply(global.wait)
-//let buttons = [{ buttonText: { displayText: '𝙰𝚄𝙳𝙸𝙾' }, buttonId: `${usedPrefix}tomp3` }]
-//conn.sendMessage(m.chat, { video: { url: data[data.length - 1] }, caption: '_ᴛʜᴇ ᴍʏsᴛɪᴄ ﹣ ʙᴏᴛ_', footer: await shortUrl(data[data.length - 1]), buttons }, { quoted: m })}
-conn.sendButton(m.chat, `*Aqui tiene su video ฅ^•ﻌ•^ฅ⚘*`, ``, data[data.length - 1], [['「AUDIO🔊」', `.tomp3`]], m, { contextInfo: { externalAdReply: { showAdAttribution: false, title: '🌿 TikTok Downloader', body: me, sourceUrl: global.script, thumbnail: fs.readFileSync('./storage/image/tiktoklogo.jpg') }}})}
+import fg from 'api-dylux' 
+import { tiktokdl, tiktokdlv2, tiktokdlv3 } from '@bochilteam/scraper'
 
-handler.help = ['tiktok']
+let handler = async (m, { conn, text, args, usedPrefix, command}) => {
+if (!args[0]) throw `*_⚠️ Porfavor ingrese un link/enlace de tiktok._*`
+if (!args[0].match(/tiktok/gi)) throw `❎ *_Verifica que el link sea de tiktok._*`
+await conn.sendNyanCat(m.chat, global.wait, adnyancat, addescargas, null, script, m)
+try {
+    let p = await fg.tiktok(args[0]) 
+    let te = `*Aqui tiene ฅ^•ﻌ•^ฅ⚘*`
+    conn.sendButton(m.chat, te, wm, p.nowm, [['⎘ Stalkig', `${usedPrefix}ttstalk ${p.author.replace(/^@/, '')}`], ['♫ Audio', `${usedPrefix}tomp3`]], m)
+    } catch {  	
+    try { 
+	const { author: { nickname }, video, description } = await tiktokdl(args[0])
+         .catch(async _ => await tiktokdlv2(args[0]))
+         .catch(async _ => await tiktokdlv3(args[0]))
+    const url = video.no_watermark2 || video.no_watermark || 'https://tikcdn.net' + video.no_watermark_raw || video.no_watermark_hd
+    if (!url) throw '❎ Error al descargar el video'
+    conn.sendButton(m.chat, `*Aqui tiene ฅ^•ﻌ•^ฅ⚘*`, wm, url, [['♫ Audio', `${usedPrefix}tomp3`]], m)
+} catch {
+    m.reply(`❎ Error al descargar el video`)
+}
+} 
+    
+}  
+handler.help = ['tiktok *<link tt>*']
 handler.tags = ['downloader']
-handler.alias = ['tiktok', 'tikdl', 'tiktokdl', 'tiktoknowm']
-handler.command = /^(tt|tiktok)(dl|nowm)?$/i
-export default handler
+handler.command = /^(tiktok|ttdl|tiktokdl|tiktoknowm)$/i
+handler.register = true
 
-async function getInfo(url) {
-let id = url.split('?')[0].split('/')
-let res = await (await fetch(`https://www.tiktok.com/node/share/video/${id[3]}/${id[5]}/`)).json()
-return res?.seoProps?.metaParams}
-async function shortUrl(url) {
-return await (await fetch(`https://tinyurl.com/api-create.php?url=${url}`)).text()}
+export default handler
