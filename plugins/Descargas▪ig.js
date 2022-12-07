@@ -8,7 +8,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
     for (let result of res.url_list) {
     conn.sendFile(m.chat, result, 'igdl.mp4', ``, m)}}
 handler.help = ['instagram *<link ig>*']
-handler.tags = ['dl']
+handler.tags = ['downloader']
 handler.command = ['ig', 'igdl', 'instagram', 'igimg', 'igvid'] 
 handler.register = true
 handler.limit = true
