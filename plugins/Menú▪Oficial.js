@@ -3,6 +3,8 @@ import { join } from 'path'
 import fetch from 'node-fetch'
 import { xpRange } from '../lib/levelling.js'
 
+let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
+let prem = global.prems.includes(m.sender.split`@`[0])
 let tags = {
   'main': 'Menús📒',
   'info': 'Información👨‍💻',
@@ -42,7 +44,7 @@ const defaultMenu = {
 ┃⋄ 📊 *Nivel*: %level (%exp / %maxexp) 
 ┃⋄ ✨ *Exp*: %totalexp
 ┃⋄ 📍 *Rol*: %role
-┃⋄ 🪪 *Premium*: ${global.prems ? '✅' : '❌'}
+┃⋄ 🪪 *Premium*: ${prem ? '✅' : '❌'}
 ┗━━◘
 
 ┏━━⊜ *_INFO BOT_* ━⊜
@@ -68,7 +70,6 @@ const defaultMenu = {
   after: '',
 }
 
-let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
   try {
     let _package = JSON.parse(await promises.readFile(join(__dirname, '../package.json')).catch(_ => ({}))) || {}
     let { exp, limit, level, role } = global.db.data.users[m.sender]
