@@ -115,7 +115,7 @@ global.nyanregis = fs.readFileSync('./storage/image/nyanregis.jpg')
 global.imginv = fs.readFileSync('./storage/image/inventario.jpg')
 global.imgshop = fs.readFileSync('./storage/image/shop.jpg')
 global.menugif = fs.readFileSync('./storage/mp4/menu.mp4')
-global.adnyancat = fs.readFileSync('./storage/image/adnyancat.png')
+global.adnyancat = fs.readFileSync('./storage/image/adnyancat.jpg')
 global.verificado = fs.readFileSync('./storage/image/verificado.png')
 //╰─────────────────────╯
 
