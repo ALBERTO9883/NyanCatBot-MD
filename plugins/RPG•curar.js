@@ -10,7 +10,7 @@ tus 🥤Pociones no son suficientes, solo tienes *${user.potion}* 🥤Pociones
 escribe *${usedPrefix}conprar potion ${count - user.potion}* para comprar 🥤Pociones
 `.trim())
     user.potion -= count * 1
-    user.healt += heal * count
+    user.health += heal * count
     m.reply(`
 Usado correctamente *${count}* 🥤Pocion(es)
 `.trim())
