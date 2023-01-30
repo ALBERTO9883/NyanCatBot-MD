@@ -10,11 +10,11 @@ let handler = async (m, {conn, text }) => {
   let teks = results.all.map(v => {
     switch (v.type) {
       case 'video': return `
-🍂 ⋄ *${v.title}*
-🔗 ⋄ *Link* : ${v.url}
-⏱ ⋄ *Duración* : ${v.timestamp}
-📥 ⋄ *Subido :* ${v.ago}
-👁 ⋄ *Vistas:* ${v.views}`}}).filter(v => v).join('\n\n────────\n\n')
+° *_${v.title}_*
+↳ 🫐 *_Link :_* ${v.url}
+↳ 🕒 *_Duración :_* ${v.timestamp}
+↳ 📥 *_Subido :_* ${v.ago}
+↳ 👁 *_Vistas :_* ${v.views}`}}).filter(v => v).join('\n\n◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦\n\n')
   conn.sendFile(m.chat, tes[0].thumbnail, 'yts.jpeg', teks, m)
 }
 handler.help = ['ytsearch *<texto>*'] 
