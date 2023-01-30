@@ -15,6 +15,7 @@ const buttons = [
 { buttonId: `.ytgetdl ${url}`, buttonText: { displayText: 'Cᴀʟɪᴅᴀᴅᴇs📁' }, type: 1 }, ]    
 let texto1 = `*⊜─⌈📻 ◜YouTube Play◞ 📻⌋─⊜*
 
+❏ 🐢 *Autor:* ${vid.author.name}
 ❏ 📓 *Título:* ${title}
 ❏ 🗓️ *Publicado:* ${ago}
 ❏ ⏰ *Duración:* ${timestamp}
