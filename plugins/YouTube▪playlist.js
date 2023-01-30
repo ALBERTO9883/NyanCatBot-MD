@@ -1,16 +1,18 @@
 
-import { youtubeSearch } from '@bochilteam/scraper'
+import yts from 'yt-search'
 
 let handler = async(m, { conn, usedPrefix, text, args, command }) => {
 
     if (!text) throw `⚠️ *_Ingresa el título de una canción._*\n\n*_📌 Ejemplo :_* *${usedPrefix + command}* Sit Down Be Side Me`
-    let result = await youtubeSearch(text)
-    let ytres = result.video
+    let results = await yts(text)
+    let tes = results.all
     let listSections = []
-	Object.values(ytres).map((v, index) => {
+	Object.values(tes).map((v, index) => {
 	listSections.push([`${index}┃ ${v.title}`, [
-          ['Aᴜᴅɪᴏ 🎵', `${usedPrefix}ytmp3 ${v.url} yes`, `❏⌚ Dᴜʀᴀᴄɪᴏ́ɴ: ${v.durationH}\n❏📆 Pᴜʙʟɪᴄᴀᴅᴏ: ${v.publishedTime}\n`],
-          ['Vɪᴅᴇᴏ 🎥', `${usedPrefix}ytmp4 ${v.url} yes`, `❏⌚ Dᴜʀᴀᴄɪᴏ́ɴ: ${v.durationH}\n❏📆 Pᴜʙʟɪᴄᴀᴅᴏ: ${v.publishedTime}\n`]
+          ['Aᴜᴅɪᴏ 🎵', `${usedPrefix}ytmp3 ${v.url} yes`, `❏🐢 Autor: ${v.author.name} • ${v.timestamp}\n❏📆 Pᴜʙʟɪᴄᴀᴅᴏ: ${v.ago}\n`],
+          ['Aᴜᴅɪᴏ Doc🎵', `${usedPrefix}ytmp3 ${v.url} yes`, `❏🐢 Autor: ${v.author.name} • ${v.timestamp}\n❏📆 Pᴜʙʟɪᴄᴀᴅᴏ: ${v.ago}\n`],
+          ['Vɪᴅᴇᴏ 🎥', `${usedPrefix}ytmp4 ${v.url} yes`, `❏🐢 Autor: ${v.author.name} • ${v.timestamp}\n❏📆 Pᴜʙʟɪᴄᴀᴅᴏ: ${v.ago}\n`],
+          ['Vɪᴅᴇᴏ Doc🎥', `${usedPrefix}ytmp4 ${v.url} yes`, `❏🐢 Autor: ${v.author.name} • ${v.timestamp}\n❏📆 Pᴜʙʟɪᴄᴀᴅᴏ: ${v.ago}\n`] 
         ]])
 	})
 	m.react('🎧')
