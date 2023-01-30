@@ -1,14 +1,11 @@
 import { 
     youtubedl,
-    youtubedlv2,
-    youtubeSearch
+    youtubedlv2
 } from '@bochilteam/scraper'
+import yts from 'yt-search'
 import fetch from 'node-fetch' 
 
 let handler = async (m, { conn, args, isPrems, isOwner, text }) => {
-let vid = (await youtubeSearch(text)).video[0]
-let { authorName, description, videoId, durationH, viewH, publishedTime, thumbnail } = vid
-const url = 'https://www.youtube.com/watch?v=' + videoId
 try {
 
   let q = '128kbps'
@@ -17,20 +14,22 @@ try {
 
 const yt = await youtubedl(v).catch(async () => await  youtubedlv2(v))
 const dl_url = await yt.audio[q].download()
-  const ttl = await yt.title
 const size = await yt.audio[q].fileSizeH
+
+let vid = (await yts(text)).all[0]
+let { title, description, thumbnail, videoId, timestamp, views, ago, url } = vid
   
- await m.reply(`❏ 📓 *Tɪ́ᴛᴜʟᴏ:* ${ttl}
+ await m.reply(`❏ 📓 *Tɪ́ᴛᴜʟᴏ:* ${title}
 ❏ 📁 Tᴀᴍᴀɴ̃ᴏ: ${size}
 
 ${global.wait}`)
-  await conn.sendMessage(m.chat, { audio: { url: dl_url }, mimetype: "audio/mp4", fileName: ttl + '.mp3', quoted: m, contextInfo: {
+  await conn.sendMessage(m.chat, { audio: { url: dl_url }, mimetype: "audio/mp4", fileName: title + '.mp3', quoted: m, contextInfo: {
 'forwardingScore': 200,
 'isForwarded': false,
 externalAdReply:{
 showAdAttribution: false,
-title: `${ttl}`,
-body: `${authorName}`,
+title: `${title}`,
+body: `${vid.author.name}`,
 mediaType: 2, 
 sourceUrl: `${url}`,
 thumbnail: await (await fetch(thumbnail)).buffer()}}}, { quoted: m })
