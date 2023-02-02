@@ -9,7 +9,7 @@ conn.sendNyanCat(m.chat, global.wait, adnyancat, adyoutube, null, script, m)
 let chat = global.db.data.chats[m.chat]
 const isY = /y(es)/gi.test(args[1])
 let vid = (await yts(text)).all[0]
-let { description, videoId, timestamp, views, ago, url } = vid
+let { timestamp, views, ago, url } = vid
 const { thumbnail, audio: _audio, title } = await youtubedl(args[0]).catch(async _ => await youtubedlv2(args[0])).catch(async _ => await youtubedlv3(args[0]))
 const limitedSize = (isPrems || isOwner ? 350 : limit) * 3074
 let audio, source, res, link, lastError, isLimit

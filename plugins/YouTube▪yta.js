@@ -9,7 +9,7 @@ conn.sendNyanCat(m.chat, global.wait, adnyancat, adyoutube, null, script, m)
 let chat = global.db.data.chats[m.chat]
 const isY = /y(es)/gi.test(args[1])
 let vid = (await yts(text)).all[0]
-let { description, videoId, timestamp, views, ago, url } = vid
+let { timestamp, views, ago, url } = vid
 const { thumbnail, audio: _audio, title } = await youtubedl(args[0]).catch(async _ => await youtubedlv2(args[0])).catch(async _ => await youtubedlv3(args[0]))
 const limitedSize = (isPrems || isOwner ? 350 : limit) * 3074
 let audio, source, res, link, lastError, isLimit
@@ -29,7 +29,6 @@ audio = link = source = null
 lastError = e
 }}
 if ((!(source instanceof ArrayBuffer) || !link || !res.ok) && !isLimit) throw '⚠️ *Error, ' + (lastError || 'no fue posible descargar el audio.*')
-//conn.sendFile(m.chat, source, title + '.mp3', null, m, false, { contextInfo: { mimetype: 'audio/mp4', externalAdReply: { showAdAttribution: false, mediaType: 2, title: `${title}`, body: `${authorName}`, sourceUrl: `${url}`, thumbnailUrl: thumbnail }}})
 conn.sendMessage(m.chat, { audio: { url: link }, mimetype: "audio/mp4", fileName: title + '.mp3', quoted: m, contextInfo: {
 'forwardingScore': 200,
 'isForwarded': false,
