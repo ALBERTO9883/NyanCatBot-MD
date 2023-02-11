@@ -4,7 +4,7 @@ import { mediafiredl } from '@bochilteam/scraper'
  let handler = async (m, { conn, args, usedPrefix, command, isOwner, isPrems }) => { 
          var limit 
       if((isOwner || isPrems)) limit = 500 
-      else limit = 100 
+      else limit = 400 
     if (!args[0]) throw `⚠️️ *_Ingrese el link de mediafire junto al comando_*`
     if (!args[0].match(/mediafire/gi)) throw `❎ Link incorrecto`
      let full = /f$/i.test(command) 
@@ -20,9 +20,9 @@ import { mediafiredl } from '@bochilteam/scraper'
 ❏ 📁 *Tamaño:* ${filesizeH}
 ❏ 📄 *Extension:* ${ext}
 ❏ 📤 *Subido:* ${aploud}
- ${isLimit ? `\n▢ El archivo supera el límite de descarga *+${limit} MB*\nPásate a premium para poder descargar archivos más de *900 MB*` : ''}  
+ ${isLimit ? `\n• El archivo supera el límite de descarga *+${limit} MB*\nPásate a premium para poder descargar archivos más de *900 MB*` : ''}  
  `.trim() 
-     await conn.sendFile(m.chat, ss, 'ssweb.png', caption, m) 
+     m.reply(caption)
       
      if(!isLimit) await conn.sendFile(m.chat, url, filename, '', m, null, { mimetype: ext, asDocument: true }) 
  } 
