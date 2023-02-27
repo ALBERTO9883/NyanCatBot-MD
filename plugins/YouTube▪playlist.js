@@ -9,10 +9,10 @@ let handler = async(m, { conn, usedPrefix, text, args, command }) => {
     let listSections = []
 	Object.values(tes).map((v, index) => {
 	listSections.push([`${index}┃ ${v.title}`, [
-          ['Aᴜᴅɪᴏ 🎵', `${usedPrefix}ytmp3 ${v.url} yes`, `❏🐢 Autor: ${v.author.name} • ${v.timestamp}\n❏📆 Pᴜʙʟɪᴄᴀᴅᴏ: ${v.ago}\n`],
-          ['Aᴜᴅɪᴏ Doc🎵', `${usedPrefix}ytadoc ${v.url} yes`, `❏🐢 Autor: ${v.author.name} • ${v.timestamp}\n❏📆 Pᴜʙʟɪᴄᴀᴅᴏ: ${v.ago}\n`],
-          ['Vɪᴅᴇᴏ 🎥', `${usedPrefix}ytmp4 ${v.url} yes`, `❏🐢 Autor: ${v.author.name} • ${v.timestamp}\n❏📆 Pᴜʙʟɪᴄᴀᴅᴏ: ${v.ago}\n`],
-          ['Vɪᴅᴇᴏ Doc🎥', `${usedPrefix}ytvdoc ${v.url} yes`, `❏🐢 Autor: ${v.author.name} • ${v.timestamp}\n❏📆 Pᴜʙʟɪᴄᴀᴅᴏ: ${v.ago}\n`] 
+          ['Aᴜᴅɪᴏ 🎵', `${usedPrefix}ytmp3 ${v.url} yes`, `❏🐢 Autor: ${v.author.name || 'No se encontró al author'} • ${v.timestamp}\n❏📆 Pᴜʙʟɪᴄᴀᴅᴏ: ${v.ago}\n`],
+          ['Aᴜᴅɪᴏ Doc🎵', `${usedPrefix}ytadoc ${v.url} yes`, `❏🐢 Autor: ${v.author.name || 'No se encontró al author'} • ${v.timestamp}\n❏📆 Pᴜʙʟɪᴄᴀᴅᴏ: ${v.ago}\n`],
+          ['Vɪᴅᴇᴏ 🎥', `${usedPrefix}ytmp4 ${v.url} yes`, `❏🐢 Autor: ${v.author.name || 'No se encontró al author'} • ${v.timestamp}\n❏📆 Pᴜʙʟɪᴄᴀᴅᴏ: ${v.ago}\n`],
+          ['Vɪᴅᴇᴏ Doc🎥', `${usedPrefix}ytvdoc ${v.url} yes`, `❏🐢 Autor: ${v.author.name || 'No se encontró al author'} • ${v.timestamp}\n❏📆 Pᴜʙʟɪᴄᴀᴅᴏ: ${v.ago}\n`] 
         ]])
 	})
 	m.react('🎧')
