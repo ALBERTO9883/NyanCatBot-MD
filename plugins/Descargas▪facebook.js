@@ -1,23 +1,15 @@
-import fetch from 'node-fetch'
-let handler = async (m, { conn, command, text, args }) => {
+import fg from 'api-dylux'
 
-if (command == 'facebook') {
-if (!text) throw `⚠️ *_Ingrese el link o enlace de Facebook._*`
-await conn.sendNyanCat(m.chat, global.wait, adnyancat, addescargas, null, script, m)
-let res = await fetch(`https://api.lolhuman.xyz/api/facebook?apikey=BrunoSobrino&url=${text}`)
-let json = await res.json()
-let { result } = json
-conn.sendFile(m.chat, result, 'error.mp4', `*Aquí tiene su video de Facebook. ฅ^•ﻌ•^ฅ⚘*`, m)}
-if (command == 'facebook2') {
-if (!text) throw `⚠️ *_Ingrese el link o enlace de Facebook._*`
-await conn.sendNyanCat(m.chat, global.wait, adnyancat, addescargas, null, script, m)
-let res = await fetch(`https://api.lolhuman.xyz/api/facebook2?apikey=BrunoSobrino&url=${text}`)
-let json = await res.json()
-let { result } = json
-conn.sendFile(m.chat, result, 'error.mp4', `*Aquí tiene su video de Facebook. ฅ^•ﻌ•^ฅ⚘*`, m)}
-}
-handler.tags = ['downloader']
-handler.command = handler.help = ['facebook', 'facebook2']
+let handler = async (m, { conn, args, usedPrefix, command }) => {
+    if (!args[0]) throw `*_📌️ Uso del comando_*\n *${usedPrefix + command}* https://fb.watch/d7nB8-L-gR/=`
+    await conn.sendNyanCat(m.chat, global.wait, adnyancat, addescargas, null, script, m)
+    let res = await fg.igdl(args[0])
+    for (let result of res.url_list) {
+    conn.sendFile(m.chat, result, 'igdl.mp4', ``, m)}}
+ handler.help = ['facebook'].map(v => v + ' *<url>*') 
+ handler.tags = ['downloader'] 
+ handler.command = /^((facebook|fb)(downloder|dl)?)$/i 
+ handler.limit = true
 handler.register = true
-
-export default handler
+  
+ export default handler
