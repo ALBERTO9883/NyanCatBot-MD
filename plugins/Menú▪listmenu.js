@@ -137,6 +137,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command, __dirname }) => {
       month: 'long',
       year: 'numeric'
     })
+    let prem = global.prems.includes(m.sender.split`@`[0])
     let dateIslamic = Intl.DateTimeFormat(locale + '-TN-u-ca-islamic', {
       day: 'numeric',
       month: 'long',
@@ -378,7 +379,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command, __dirname }) => {
 ┃⋄ 📊 *Nivel*: ${level}
 ┃⋄ ✨ *Exp*: ${user.exp - min}/${xp}
 ┃⋄ 📍 *Rol*: ${role}
-┃⋄ 🪪 *Premium*: ${global.prems ? '✅' : '❌'}
+┃⋄ 🪪 *Premium*: ${prem ? '✅' : '❌'}
 ┗━━◘`,
             footer: saludo,
             title: null,
