@@ -1,21 +1,18 @@
 
-import axios from 'axios'
+import fetch from 'node-fetch'
 
 let handler = async(m, { conn, usedPrefix, command }) => {
 let name = await conn.getName(m.sender)
 	
-	let asu = ["asupan", "asupan-la"]
-    let asufg = asu[Math.floor(Math.random() * asu.length)]
-	
-	let asupan = (await axios.get(`https://raw.githubusercontent.com/FG98F/team-fg/main/img/${asufg}.json`)).data
+	let asupan = await conn.getFile('https://api.akuari.my.id/asupan/tiktok')
 	
   await conn.reply(m.chat, global.wait, m)
-await conn.sendHydrated(m.chat, `✅ Aquí tiene`, `◈•${name}`, pickRandom(asupan), null, null, null, null, [['「🔃 Sɪɢᴜɪᴇɴᴛᴇ 🔃」', `${usedPrefix + command}`]], m)
+conn.sendButton(m.chat, `_${command}_`.trim(), `*◈•@${m.sender.split`@`[0]}*`, asupan.data, [['「🔃 Sɪɢᴜɪᴇɴᴛᴇ 🔃」', `/${command}`]], fakemsg, { mentions: [m.sender]})
 }
 handler.help = ['asupan']
 handler.tags = ['premium']
 handler.command = ['asupan']
-handler.premium = false
+handler.premium = true
 handler.limit = true
 
 export default handler
