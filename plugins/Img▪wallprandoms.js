@@ -6,17 +6,19 @@ let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? c
 let user = global.db.data.users[who]
 let name = await conn.getName[who]
 if (command == 'wpmontaña') {
-let haha = await conn.getFile(`https://api-reysekha.herokuapp.com/api/wallpaper/mountain?apikey=APIKEY`)
+let json = await fetch(`https://latam-api.vercel.app/api/wpp2?apikey=nyancat&q=mountain`)
+let montaña = await json.json()
 await conn.sendNyanCat(m.chat, global.wait, adnyancat, adimagen, null, script, m)
-conn.sendButton(m.chat, `_${command}_`.trim(), `*◈•@${who.split("@s.whatsapp.net")[0]}*`, haha.data, [['「🔃 Sɪɢᴜɪᴇɴᴛᴇ 🔃」', `/${command}`]], fakemsg, { mentions: [who] })}
+conn.sendButton(m.chat, `_${command}_`.trim(), `*◈•@${who.split("@s.whatsapp.net")[0]}*`, montaña.wallpaper, [['「🔃 Sɪɢᴜɪᴇɴᴛᴇ 🔃」', `/${command}`]], fakemsg, { mentions: [who] })}
 if (command == 'pubg') {
-let haha = await conn.getFile(`https://api-reysekha.herokuapp.com/api/wallpaper/pubg?apikey=APIKEY`)
+let haha = await conn.getFile(`https://api.zahwazein.xyz/randomimage/pubg?apikey=f58283d46bae`)
 await conn.sendNyanCat(m.chat, global.wait, adnyancat, adimagen, null, script, m)
 conn.sendButton(m.chat, `_${command}_`.trim(), `*◈•@${who.split("@s.whatsapp.net")[0]}*`, haha.data, [['「🔃 Sɪɢᴜɪᴇɴᴛᴇ 🔃」', `/${command}`]], fakemsg, { mentions: [who] })}
 if (command == 'wpgaming') {
-let haha = await conn.getFile(`https://api-reysekha.herokuapp.com/api/wallpaper/gaming?apikey=APIKEY`)
+let json = await fetch(`https://latam-api.vercel.app/api/wpp2?apikey=nyancat&q=wallpaper%20gaming`)
+let gaming = await json.json()
 await conn.sendNyanCat(m.chat, global.wait, adnyancat, adimagen, null, script, m)
-conn.sendButton(m.chat, `_${command}_`.trim(), `*◈•@${who.split("@s.whatsapp.net")[0]}*`, haha.data, [['「🔃 Sɪɢᴜɪᴇɴᴛᴇ 🔃」', `/${command}`]], fakemsg, { mentions: [who] })}
+conn.sendButton(m.chat, `_${command}_`.trim(), `*◈•@${who.split("@s.whatsapp.net")[0]}*`, gaming.wallpaper, [['「🔃 Sɪɢᴜɪᴇɴᴛᴇ 🔃」', `/${command}`]], fakemsg, { mentions: [who] })}
 if (command == 'wpaesthetic') {
 let haha = await conn.getFile(`https://api-reysekha.herokuapp.com/api/wallpaper/wallhp?apikey=APIKEY`)
 await conn.sendNyanCat(m.chat, global.wait, adnyancat, adimagen, null, script, m)
@@ -112,8 +114,13 @@ if (command == 'wpmoto') {
 let haha = await conn.getFile(`https://zenzapis.xyz/randomimage/motor?apikey=${apikey}`)
 await conn.sendNyanCat(m.chat, global.wait, adnyancat, adimagen, null, script, m)
 conn.sendButton(m.chat, `_${command}_`.trim(), `*◈•@${who.split("@s.whatsapp.net")[0]}*`, haha.data, [['「🔃 Sɪɢᴜɪᴇɴᴛᴇ 🔃」', `/${command}`]], fakemsg, { mentions: [who] })}
+if (command == 'goku') {
+let json = await fetch(`https://latam-api.vercel.app/api/wpp2?apikey=nyancat&q=goku`)
+let goku = await json.json()
+await conn.sendNyanCat(m.chat, global.wait, adnyancat, adimagen, null, script, m)
+conn.sendButton(m.chat, `_${command}_`.trim(), `*◈•@${who.split("@s.whatsapp.net")[0]}*`, goku.wallpaper, [['「🔃 Sɪɢᴜɪᴇɴᴛᴇ 🔃」', `/${command}`]], fakemsg, { mentions: [who] })}
 }
-handler.command = handler.help = ['wpmontaña', 'pubg', 'wpgaming', 'wpaesthetic', 'wprandom', 'cristianoronaldo', 'cat', 'itzy', 'messi', 'navidad', 'coffee', 'pentol', 'caricatura', 'ciberespacio', 'technology', 'doraemon', 'hacker', 'wpcat', 'planeta', 'randomprofile', 'wpaesthetic2', 'wpvehiculo', 'wallhp', 'wpmoto']
+handler.command = handler.help = ['wpmontaña', 'pubg', 'wpgaming', 'wpaesthetic', 'wprandom', 'cristianoronaldo', 'cat', 'itzy', 'messi', 'navidad', 'coffee', 'pentol', 'caricatura', 'ciberespacio', 'technology', 'doraemon', 'hacker', 'wpcat', 'planeta', 'randomprofile', 'wpaesthetic2', 'wpvehiculo', 'wallhp', 'wpmoto', 'goku']
 handler.tags = ['img']
 handler.limit = false
 handler.register = true
