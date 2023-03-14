@@ -1,3 +1,4 @@
+import fetch from 'node-fetch'
 import axios from "axios"
 import db from '../lib/database.js'
 let handler = async (m, {command, conn}) => {
