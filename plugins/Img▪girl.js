@@ -1,13 +1,13 @@
-
+import fetch from 'node-fetch'
 import axios from 'axios'
 
 let handler = async(m, { conn, usedPrefix, command }) => {
 	
-	let girl = (await axios.get(`https://raw.githubusercontent.com/FG98F/team-fg/main/img/girl.json`)).data
+	let girl = await conn.getFile(`https://api-fgmods.ddns.net/api/girl?apikey=${fgapikey}`)
   
-//await conn.sendFile(m.chat, pickRandom(girl), 'girl.jpg', ✅ Resultado 🤭', m)
+
 await conn.sendNyanCat(m.chat, global.wait, adnyancat, adimagen, null, script, m)
-await conn.sendButton(m.chat, '✅ Resultado :3', '• Click en siguiente para ir a la siguiente imagen', pickRandom(girl), [['「🔃 Sɪɢᴜɪᴇɴᴛᴇ 🔃」', `${usedPrefix + command}`]], fakemsg)
+await conn.sendButton(m.chat, '✅ Resultado :3', '• Click en siguiente para ir a la siguiente imagen', girl.data, [['「🔃 Sɪɢᴜɪᴇɴᴛᴇ 🔃」', `${usedPrefix + command}`]], fakemsg)
 }
 handler.help = ['girl']
 handler.tags = ['img']
