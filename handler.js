@@ -615,7 +615,7 @@ export async function handler(chatUpdate) {
                                 if (data.exists)
                                     m.reply(`*_⌜⚠️ Se ha detectado un comando con fallas.⌟_*\n\n*❑ Plugin:* ${m.plugin}\n*❑ Usuario:* ${m.sender}\n*❑ Comando:* ${usedPrefix}${command} ${args.join(' ')}\n\n\`\`\`${text}\`\`\`\n\n⚠️• *_Utilice el comando #report para informarle al creador._*`.trim(), data.jid)
                             }
-                        m.reply(text)
+                        conn.sendNyanCat(m.chat, 'El comando ha presentado un error, porfavor reportelo a mi creador con el comando *.reportar* y especificación del problema.', nyancaterror, '🐱◌*̥₊ NʏᴀɴCᴀᴛBᴏᴛ - MD◌❐🎋༉', 'Pᴇʀᴅᴏ́ɴ Pᴏʀ Eʟ Iɴᴄᴏɴᴠᴇɴɪᴇɴᴛᴇ😿', script, m)
                     }
                 } finally {
                     // m.reply(util.format(_user))
