@@ -9,15 +9,11 @@ let name = await conn.getName(m.sender)
    m.reply(`❎ Eres menor de edad! vuelve cuando tengas más de 18 años`)
    throw false
 	}
-   
-   let pw = ["https://meme-api.herokuapp.com/gimme/pussy", "https://meme-api.herokuapp.com/gimme/LegalTeens"] 
- let nk = pw[Math.floor(Math.random() * pw.length)]
-    let res = await fetch(nk)
-    if (!res.ok) throw await res.text()
-    let json = await res.json()
-    if (!json.url) throw '❎ Error'
+   let json = await fetch(`https://api-fgmods.ddns.net/api/nsfw/pussy?apikey=${fgapikey}`)
+let pussy = await json.json()
+    
     await conn.reply(m.chat, global.wait, m)
-    conn.sendButton(m.chat, `_${command}_`.trim(), `*◈•${name}*`, json.url, [['「🔃 Sɪɢᴜɪᴇɴᴛᴇ 🔃」', `${usedPrefix + command }`]], fakemsg)
+    conn.sendButton(m.chat, `_${command}_`.trim(), `*◈•${name}*`, pussy.result, [['「🔃 Sɪɢᴜɪᴇɴᴛᴇ 🔃」', `${usedPrefix + command }`]], fakemsg)
 }
 handler.help = ['pussy']
 handler.tags = ['nsfw']
