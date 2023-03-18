@@ -8,7 +8,7 @@ var {age} = global.db.data.users[m.sender]
    throw false
 	}
 let res = pickRandom(asupan)
-m.reply('*⏳Aɢᴜᴀʀᴅᴇ ᴜɴ ᴍᴏᴍᴇɴᴛᴏ... ฅ^•ﻌ•^ฅ⏳*')
+await conn.sendNyanCat(m.chat, global.wait, adnyancat18, adnsfw, null, script, m)
 conn.sendHydrated(m.chat, `_${command}_`.trim(), `◈•${name}`, res, null, null, null, null, [['「🔃 Sɪɢᴜɪᴇɴᴛᴇ 🔃」', `/${command}`]], m)}
 handler.help = ['videoxxx']
 handler.tags = ['nsfw']

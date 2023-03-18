@@ -12,7 +12,7 @@ let name = await conn.getName(m.sender)
    let json = await fetch(`https://api-fgmods.ddns.net/api/nsfw/pussy?apikey=${fgapikey}`)
 let pussy = await json.json()
     
-    await conn.reply(m.chat, global.wait, m)
+    await conn.sendNyanCat(m.chat, global.wait, adnyancat18, adnsfw, null, script, m)
     conn.sendButton(m.chat, `_${command}_`.trim(), `*◈•${name}*`, pussy.result, [['「🔃 Sɪɢᴜɪᴇɴᴛᴇ 🔃」', `${usedPrefix + command }`]], fakemsg)
 }
 handler.help = ['pussy']

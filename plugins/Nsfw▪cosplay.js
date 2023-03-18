@@ -11,10 +11,9 @@ var {age} = global.db.data.users[m.sender]
    m.reply(`❎ Eres menor de edad! vuelve cuando tengas más de 18 años`)
    throw false
 	}
-let cosp = (await axios.get(`https://raw.githubusercontent.com/FG98F/team-fg/main/img/pack.json`)).data 
-let url = cosp[Math.floor(Math.random() * cosp.length)]
-m.reply('*⏳Aɢᴜᴀʀᴅᴇ ᴜɴ ᴍᴏᴍᴇɴᴛᴏ... ฅ^•ﻌ•^ฅ⏳*')
-conn.sendButton(m.chat, `_${command}_`.trim(), `*◈•${name}*`, url, [['「🔃 Sɪɢᴜɪᴇɴᴛᴇ 🔃」', `${usedPrefix + command}`]], fakemsg)
+let cosp = await conn.getFile(`https://api-fgmods.ddns.net/api/nsfw/cosplay?apikey=${fgapikey}`)
+await conn.sendNyanCat(m.chat, global.wait, adnyancat18, adnsfw, null, script, m)
+conn.sendButton(m.chat, `_${command}_`.trim(), `*◈•${name}*`, cosp.data, [['「🔃 Sɪɢᴜɪᴇɴᴛᴇ 🔃」', `${usedPrefix + command}`]], fakemsg)
 }
 handler.help = ['pack']
 handler.tags = ['nsfw']
