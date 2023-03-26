@@ -93,14 +93,19 @@ const sections = [
 	rowId: `${usedPrefix + command} antisticker`}]}, {
 	title: `━━◌*̥₊「 18 」₊*̥◌━━`,
 	rows: [
+	{title: "🛃 | ANTI-RAID", 
+	description: "⊜ ❝Active o Desactive para mostrar cuando alguien se convierte o se le quita admin❞",
+	rowId: `${usedPrefix + command} antiraid`}]}, {
+	title: `━━◌*̥₊「 19 」₊*̥◌━━`,
+	rows: [
 	{title: "💬 | ONLYPV", 
 	description: "⊜ ❝Active o Desactive para que el bot solo se pueda utilizar en privado❞",
 	rowId: `${usedPrefix + command} pconly`}]}, {
-	title: `━━◌*̥₊「 19 」₊*̥◌━━`,
+	title: `━━◌*̥₊「 20 」₊*̥◌━━`,
 	rows: [
 	{title: "👥 | ONLYGP", 
 	description: "⊜ ❝Active o Desactive para que el bot solo se pueda utilizar en grupos❞",
-	rowId: `${usedPrefix + command} gconly`}]},
+	rowId: `${usedPrefix + command} gconly`}]}
 ]
 const listMessage = {
   text: ' ',
@@ -124,6 +129,7 @@ const listMessage = {
 ┃⋄ restrict
 ┃⋄ autoread
 ┃⋄ antisticker
+┃⋄ antiraid
 ┃⋄ onlypv
 ┃⋄ onlygp
 ┗━━━━━━⬣`,
@@ -273,6 +279,16 @@ throw false
 }
 chat.antiSticker = isEnable
 break
+
+case 'antiraid':
+if (m.isGroup) {
+if (!(isAdmin || isOwner)) {
+global.dfail('admin', m, conn)
+throw false
+}
+}
+chat.antiRaid = isEnable
+break
       
 case 'nsfw':
 case '+18':
@@ -300,6 +316,7 @@ global.dfail('rowner', m, conn)
 throw false
 }
 bot.antiPrivate = isEnable
+break
     
      case 'toxic':
        if (m.isGroup) {
