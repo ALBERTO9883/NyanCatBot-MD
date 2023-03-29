@@ -195,6 +195,7 @@ global.keysZens = ['fiktod', 'c2459db922', 'BF39D349845E', '675e34de8a', '37CC84
 global.keysxxx = keysZens[Math.floor(keysZens.length * Math.random())]
 global.lolkeysapi = ['BrunoSobrino']
 global.fgapikey = ['fg-dylux']
+global.zenzapikey = ['hdiiofficial']
 //╰─────────────────────╯
 
 //᭥⚔᭢━━━━━◜𝑻𝑰𝑬𝑴𝑷𝑶 𝑹𝑷𝑮◞━━━━━᭥⚔᭢
