@@ -1,127 +1,116 @@
 import fetch from 'node-fetch'
 import axios from "axios"
 import db from '../lib/database.js'
+import translate from '@vitalets/google-translate-api'
 let handler = async (m, {command, conn}) => {
 let apikey = keysxxx[Math.floor(Math.random() * keysxxx.length)]
 let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
 let user = global.db.data.users[who]
 let name = await conn.getName[who]
 if (command == 'wpmontaña') {
-let json = await fetch(`https://latam-api.vercel.app/api/wpp2?apikey=nyancat&q=mountain`)
-let montaña = await json.json()
+let haha = await conn.getFile(`https://api.ibeng.tech/api/wallpaper/mountain?apikey=tamvan`)
 await conn.sendNyanCat(m.chat, global.wait, adnyancat, adimagen, null, script, m)
-conn.sendButton(m.chat, `_${command}_`.trim(), `*◈•@${who.split("@s.whatsapp.net")[0]}*`, montaña.wallpaper, [['「🔃 Sɪɢᴜɪᴇɴᴛᴇ 🔃」', `/${command}`]], fakemsg, { mentions: [who] })}
+conn.sendFile(m.chat, haha.data, 'out.png', `_${command}_`.trim(), m, true, { contextInfo: { 'forwardingScore': 200, 'isForwarded': false, externalAdReply:{ showAdAttribution: false, title: botname, body: `h`, mediaType: 2, sourceUrl: linkgc, thumbnail: miniurl}, mentions: [m.sender]}}, { quoted: m })}
 if (command == 'pubg') {
-let haha = await conn.getFile(`https://api.zahwazein.xyz/randomimage/pubg?apikey=f58283d46bae`)
+let haha = await conn.getFile(`https://api.ibeng.tech/api/wallpaper/pubg?apikey=tamvan`)
 await conn.sendNyanCat(m.chat, global.wait, adnyancat, adimagen, null, script, m)
-conn.sendButton(m.chat, `_${command}_`.trim(), `*◈•@${who.split("@s.whatsapp.net")[0]}*`, haha.data, [['「🔃 Sɪɢᴜɪᴇɴᴛᴇ 🔃」', `/${command}`]], fakemsg, { mentions: [who] })}
+conn.sendFile(m.chat, haha.data, 'out.png', `_${command}_`.trim(), m, true, { contextInfo: { 'forwardingScore': 200, 'isForwarded': false, externalAdReply:{ showAdAttribution: false, title: botname, body: `h`, mediaType: 2, sourceUrl: linkgc, thumbnail: miniurl}, mentions: [m.sender]}}, { quoted: m })}
 if (command == 'wpgaming') {
-let json = await fetch(`https://latam-api.vercel.app/api/wpp2?apikey=nyancat&q=wallpaper%20gaming`)
-let gaming = await json.json()
+let haha = await conn.getFile(`https://api.ibeng.tech/api/wallpaper/gaming?apikey=tamvan`)
 await conn.sendNyanCat(m.chat, global.wait, adnyancat, adimagen, null, script, m)
-conn.sendButton(m.chat, `_${command}_`.trim(), `*◈•@${who.split("@s.whatsapp.net")[0]}*`, gaming.wallpaper, [['「🔃 Sɪɢᴜɪᴇɴᴛᴇ 🔃」', `/${command}`]], fakemsg, { mentions: [who] })}
+conn.sendFile(m.chat, haha.data, 'out.png', `_${command}_`.trim(), m, true, { contextInfo: { 'forwardingScore': 200, 'isForwarded': false, externalAdReply:{ showAdAttribution: false, title: botname, body: `h`, mediaType: 2, sourceUrl: linkgc, thumbnail: miniurl}, mentions: [m.sender]}}, { quoted: m })}
 if (command == 'wpaesthetic') {
-let haha = await conn.getFile(`https://api-reysekha.herokuapp.com/api/wallpaper/wallhp?apikey=APIKEY`)
+let haha = await conn.getFile(`https://api.ibeng.tech/api/wallpaper/wallhp?apikey=tamvan`)
 await conn.sendNyanCat(m.chat, global.wait, adnyancat, adimagen, null, script, m)
-conn.sendButton(m.chat, `_${command}_`.trim(), `*◈•@${who.split("@s.whatsapp.net")[0]}*`, haha.data, [['「🔃 Sɪɢᴜɪᴇɴᴛᴇ 🔃」', `/${command}`]], fakemsg, { mentions: [who] })}
-if (command == 'wprandom') {
-let res = await axios("https://meme-api.herokuapp.com/gimme/wallpaper")
-await conn.sendNyanCat(m.chat, global.wait, adnyancat, adimagen, null, script, m)
-let json = res.data
-let url = json.url
-conn.sendButton(m.chat, `${res.data.title}`, `*◈•@${who.split("@s.whatsapp.net")[0]}*`, url, [['Gʀᴀᴄɪᴀs💖', `gracias`]], fakemsg, { mentions: [who] })}
-if (command == 'cristianoronaldo') {
-let res = await axios("https://meme-api.herokuapp.com/gimme/Cristianoronaldo")
-await conn.sendNyanCat(m.chat, global.wait, adnyancat, adimagen, null, script, m)
-let json = res.data
-let url = json.url
-conn.sendButton(m.chat, `_⚽${command}⚽_`.trim(), `*◈•@${who.split("@s.whatsapp.net")[0]}*`, url, [['「🔃 Sɪɢᴜɪᴇɴᴛᴇ 🔃」', `/${command}`]], fakemsg, { mentions: [who] })}
+conn.sendFile(m.chat, haha.data, 'out.png', `_${command}_`.trim(), m, true, { contextInfo: { 'forwardingScore': 200, 'isForwarded': false, externalAdReply:{ showAdAttribution: false, title: botname, body: `h`, mediaType: 2, sourceUrl: linkgc, thumbnail: miniurl}, mentions: [m.sender]}}, { quoted: m })}
 if (command == 'cat') {
-let haha = await conn.getFile(`https://cataas.com/cat`)
+let json = await fetch(`https://aws.random.cat/meow`)
+let jsons = await json.json()
 await conn.sendNyanCat(m.chat, global.wait, adnyancat, adimagen, null, script, m)
-conn.sendButton(m.chat, `_${command}_`.trim(), `*◈•@${who.split("@s.whatsapp.net")[0]}*`, haha.data, [['「🔃 Sɪɢᴜɪᴇɴᴛᴇ 🔃」', `/${command}`]], fakemsg, { mentions: [who] })}
-if (command == 'itzy') {
-let res = await axios("https://meme-api.herokuapp.com/gimme/Itzy")
-await conn.sendNyanCat(m.chat, global.wait, adnyancat, adimagen, null, script, m)
-let json = res.data
-let url = json.url
-conn.sendButton(m.chat, `_${command}_`.trim(), `*◈•@${who.split("@s.whatsapp.net")[0]}*`, url, [['「🔃 Sɪɢᴜɪᴇɴᴛᴇ 🔃」', `/${command}`]], fakemsg, { mentions: [who] })}
-if (command == 'messi') {
-let res = await axios("https://meme-api.herokuapp.com/gimme/messi")
-await conn.sendNyanCat(m.chat, global.wait, adnyancat, adimagen, null, script, m)
-let json = res.data
-let url = json.url
-conn.sendButton(m.chat, `_${command}_`.trim(), `*◈•@${who.split("@s.whatsapp.net")[0]}*`, url, [['「🔃 Sɪɢᴜɪᴇɴᴛᴇ 🔃」', `/${command}`]], fakemsg, { mentions: [who] })}
-if (command == 'navidad') {
-let res = await axios("https://meme-api.herokuapp.com/gimme/Christmas")
-await conn.sendNyanCat(m.chat, global.wait, adnyancat, adimagen, null, script, m)
-let json = res.data
-let url = json.url
-conn.sendButton(m.chat, `_${command}_`.trim(), `*◈•@${who.split("@s.whatsapp.net")[0]}*`, url, [['「🔃 Sɪɢᴜɪᴇɴᴛᴇ 🔃」', `/${command}`]], fakemsg, { mentions: [who] })}
+conn.sendFile(m.chat, `${jsons.file}`, 'out.png', `_${command}_`.trim(), m, true, { contextInfo: { 'forwardingScore': 200, 'isForwarded': false, externalAdReply:{ showAdAttribution: false, title: botname, body: `h`, mediaType: 2, sourceUrl: linkgc, thumbnail: miniurl}, mentions: [m.sender]}}, { quoted: m })}
 if (command == 'coffee') {
 let haha = await conn.getFile(`https://coffee.alexflipnote.dev/random`)
 await conn.sendNyanCat(m.chat, global.wait, adnyancat, adimagen, null, script, m)
-conn.sendButton(m.chat, `_${command}_`.trim(), `*◈•@${who.split("@s.whatsapp.net")[0]}*`, haha.data, [['「🔃 Sɪɢᴜɪᴇɴᴛᴇ 🔃」', `/${command}`]], fakemsg, { mentions: [who] })}
+conn.sendFile(m.chat, haha.data, 'out.png', `_${command}_`.trim(), m, true, { contextInfo: { 'forwardingScore': 200, 'isForwarded': false, externalAdReply:{ showAdAttribution: false, title: botname, body: `h`, mediaType: 2, sourceUrl: linkgc, thumbnail: miniurl}, mentions: [m.sender]}}, { quoted: m })}
 if (command == 'pentol') {
-let haha = await conn.getFile(`https://api-reysekha.herokuapp.com/api/wallpaper/pentol?apikey=APIKEY`)
+let haha = await conn.getFile(`https://api.ibeng.tech/api/wallpaper/pentol?apikey=tamvan`)
 await conn.sendNyanCat(m.chat, global.wait, adnyancat, adimagen, null, script, m)
-conn.sendButton(m.chat, `_${command}_`.trim(), `*◈•@${who.split("@s.whatsapp.net")[0]}*`, haha.data, [['「🔃 Sɪɢᴜɪᴇɴᴛᴇ 🔃」', `/${command}`]], fakemsg, { mentions: [who] })}
+conn.sendFile(m.chat, haha.data, 'out.png', `_${command}_`.trim(), m, true, { contextInfo: { 'forwardingScore': 200, 'isForwarded': false, externalAdReply:{ showAdAttribution: false, title: botname, body: `h`, mediaType: 2, sourceUrl: linkgc, thumbnail: miniurl}, mentions: [m.sender]}}, { quoted: m })}
 if (command == 'caricatura') {
-let haha = await conn.getFile(`https://api-reysekha.herokuapp.com/api/wallpaper/kartun?apikey=APIKEY`)
+let haha = await conn.getFile(`https://api.ibeng.tech/api/wallpaper/kartun?apikey=tamvan`)
 await conn.sendNyanCat(m.chat, global.wait, adnyancat, adimagen, null, script, m)
-conn.sendButton(m.chat, `_${command}_`.trim(), `*◈•@${who.split("@s.whatsapp.net")[0]}*`, haha.data, [['「🔃 Sɪɢᴜɪᴇɴᴛᴇ 🔃」', `/${command}`]], fakemsg, { mentions: [who] })}
+conn.sendFile(m.chat, haha.data, 'out.png', `_${command}_`.trim(), m, true, { contextInfo: { 'forwardingScore': 200, 'isForwarded': false, externalAdReply:{ showAdAttribution: false, title: botname, body: `h`, mediaType: 2, sourceUrl: linkgc, thumbnail: miniurl}, mentions: [m.sender]}}, { quoted: m })}
 if (command == 'ciberespacio') {
-let haha = await conn.getFile(`https://api-reysekha.herokuapp.com/api/wallpaper/cyberspace?apikey=APIKEY`)
+let haha = await conn.getFile(`https://api.ibeng.tech/api/wallpaper/cyberspace?apikey=tamvan`)
 await conn.sendNyanCat(m.chat, global.wait, adnyancat, adimagen, null, script, m)
-conn.sendButton(m.chat, `_${command}_`.trim(), `*◈•@${who.split("@s.whatsapp.net")[0]}*`, haha.data, [['「🔃 Sɪɢᴜɪᴇɴᴛᴇ 🔃」', `/${command}`]], fakemsg, { mentions: [who] })}
+conn.sendFile(m.chat, haha.data, 'out.png', `_${command}_`.trim(), m, true, { contextInfo: { 'forwardingScore': 200, 'isForwarded': false, externalAdReply:{ showAdAttribution: false, title: botname, body: `h`, mediaType: 2, sourceUrl: linkgc, thumbnail: miniurl}, mentions: [m.sender]}}, { quoted: m })}
 if (command == 'technology') {
-let haha = await conn.getFile(`https://api-reysekha.herokuapp.com/api/wallpaper/teknologi?apikey=APIKEY`)
+let haha = await conn.getFile(`https://api.ibeng.tech/api/wallpaper/teknologi?apikey=tamvan`)
 await conn.sendNyanCat(m.chat, global.wait, adnyancat, adimagen, null, script, m)
-conn.sendButton(m.chat, `_${command}_`.trim(), `*◈•@${who.split("@s.whatsapp.net")[0]}*`, haha.data, [['「🔃 Sɪɢᴜɪᴇɴᴛᴇ 🔃」', `/${command}`]], fakemsg, { mentions: [who] })}
+conn.sendFile(m.chat, haha.data, 'out.png', `_${command}_`.trim(), m, true, { contextInfo: { 'forwardingScore': 200, 'isForwarded': false, externalAdReply:{ showAdAttribution: false, title: botname, body: `h`, mediaType: 2, sourceUrl: linkgc, thumbnail: miniurl}, mentions: [m.sender]}}, { quoted: m })}
 if (command == 'doraemon') {
-let haha = await conn.getFile(`https://api-reysekha.herokuapp.com/api/wallpaper/doraemon?apikey=APIKEY`)
+let haha = await conn.getFile(`https://api.ibeng.tech/api/wallpaper/doraemon?apikey=tamvan`)
 await conn.sendNyanCat(m.chat, global.wait, adnyancat, adimagen, null, script, m)
-conn.sendButton(m.chat, `_${command}_`.trim(), `*◈•@${who.split("@s.whatsapp.net")[0]}*`, haha.data, [['「🔃 Sɪɢᴜɪᴇɴᴛᴇ 🔃」', `/${command}`]], fakemsg, { mentions: [who] })}
+conn.sendFile(m.chat, haha.data, 'out.png', `_${command}_`.trim(), m, true, { contextInfo: { 'forwardingScore': 200, 'isForwarded': false, externalAdReply:{ showAdAttribution: false, title: botname, body: `h`, mediaType: 2, sourceUrl: linkgc, thumbnail: miniurl}, mentions: [m.sender]}}, { quoted: m })}
 if (command == 'hacker') {
-let haha = await conn.getFile(`https://api-reysekha.herokuapp.com/api/wallpaper/hekel?apikey=APIKEY`)
+let haha = await conn.getFile(`https://api.ibeng.tech/api/wallpaper/hekel?apikey=tamvan`)
 await conn.sendNyanCat(m.chat, global.wait, adnyancat, adimagen, null, script, m)
-conn.sendButton(m.chat, `_${command}_`.trim(), `*◈•@${who.split("@s.whatsapp.net")[0]}*`, haha.data, [['「🔃 Sɪɢᴜɪᴇɴᴛᴇ 🔃」', `/${command}`]], fakemsg, { mentions: [who] })}
+conn.sendFile(m.chat, haha.data, 'out.png', `_${command}_`.trim(), m, true, { contextInfo: { 'forwardingScore': 200, 'isForwarded': false, externalAdReply:{ showAdAttribution: false, title: botname, body: `h`, mediaType: 2, sourceUrl: linkgc, thumbnail: miniurl}, mentions: [m.sender]}}, { quoted: m })}
 if (command == 'wpcat') {
-let haha = await conn.getFile(`https://api-reysekha.herokuapp.com/api/wallpaper/kucing?apikey=APIKEY`)
+let haha = await conn.getFile(`https://api.ibeng.tech/api/wallpaper/kucing?apikey=tamvan`)
 await conn.sendNyanCat(m.chat, global.wait, adnyancat, adimagen, null, script, m)
-conn.sendButton(m.chat, `_${command}_`.trim(), `*◈•@${who.split("@s.whatsapp.net")[0]}*`, haha.data, [['「🔃 Sɪɢᴜɪᴇɴᴛᴇ 🔃」', `/${command}`]], fakemsg, { mentions: [who] })}
+conn.sendFile(m.chat, haha.data, 'out.png', `_${command}_`.trim(), m, true, { contextInfo: { 'forwardingScore': 200, 'isForwarded': false, externalAdReply:{ showAdAttribution: false, title: botname, body: `h`, mediaType: 2, sourceUrl: linkgc, thumbnail: miniurl}, mentions: [m.sender]}}, { quoted: m })}
 if (command == 'planeta') {
-let haha = await conn.getFile(`https://api-kenisawadev.herokuapp.com/api/wallpaper/tatasurya?apikey=APIKEY`)
+let haha = await conn.getFile(`https://api.ibeng.tech/api/wallpaper/tatasurya?apikey=tamvan`)
 await conn.sendNyanCat(m.chat, global.wait, adnyancat, adimagen, null, script, m)
+conn.sendFile(m.chat, haha.data, 'out.png', `_${command}_`.trim(), m, true, { contextInfo: { 'forwardingScore': 200, 'isForwarded': false, externalAdReply:{ showAdAttribution: false, title: botname, body: `h`, mediaType: 2, sourceUrl: linkgc, thumbnail: miniurl}, mentions: [m.sender]}}, { quoted: m })}
+if (command == 'dog') {
+let haha = await conn.getFile(`https://api.ibeng.tech/api/wallpaper/anjing?apikey=tamvan`)
 await conn.sendNyanCat(m.chat, global.wait, adnyancat, adimagen, null, script, m)
-conn.sendButton(m.chat, `_${command}_`.trim(), `*◈•@${who.split("@s.whatsapp.net")[0]}*`, haha.data, [['「🔃 Sɪɢᴜɪᴇɴᴛᴇ 🔃」', `/${command}`]], fakemsg, { mentions: [who] })}
+conn.sendFile(m.chat, haha.data, 'out.png', `_${command}_`.trim(), m, true, { contextInfo: { 'forwardingScore': 200, 'isForwarded': false, externalAdReply:{ showAdAttribution: false, title: botname, body: `h`, mediaType: 2, sourceUrl: linkgc, thumbnail: miniurl}, mentions: [m.sender]}}, { quoted: m })}
 if (command == 'randomprofile') {
-let haha = await conn.getFile(`https://zenzapis.xyz/randomimage/profil?apikey=${apikey}`)
+let haha = await conn.getFile(`https://api.zahwazein.xyz/randomimage/profil?apikey=${zenzapikey}`)
 await conn.sendNyanCat(m.chat, global.wait, adnyancat, adimagen, null, script, m)
-conn.sendButton(m.chat, `_${command}_`.trim(), `*◈•@${who.split("@s.whatsapp.net")[0]}*`, haha.data, [['「🔃 Sɪɢᴜɪᴇɴᴛᴇ 🔃」', `/${command}`]], fakemsg, { mentions: [who] })}
+conn.sendFile(m.chat, haha.data, 'out.png', `_${command}_`.trim(), m, true, { contextInfo: { 'forwardingScore': 200, 'isForwarded': false, externalAdReply:{ showAdAttribution: false, title: botname, body: `h`, mediaType: 2, sourceUrl: linkgc, thumbnail: miniurl}, mentions: [m.sender]}}, { quoted: m })}
 if (command == 'wpaesthetic2') {
-let haha = await conn.getFile(`https://zenzapis.xyz/randomimage/aesthetic?apikey=${apikey}`)
+let haha = await conn.getFile(`https://api.ibeng.tech/api/wallpaper/aesthetic?apikey=tamvan`)
 await conn.sendNyanCat(m.chat, global.wait, adnyancat, adimagen, null, script, m)
-conn.sendButton(m.chat, `_${command}_`.trim(), `*◈•@${who.split("@s.whatsapp.net")[0]}*`, haha.data, [['「🔃 Sɪɢᴜɪᴇɴᴛᴇ 🔃」', `/${command}`]], fakemsg, { mentions: [who] })}
+conn.sendFile(m.chat, haha.data, 'out.png', `_${command}_`.trim(), m, true, { contextInfo: { 'forwardingScore': 200, 'isForwarded': false, externalAdReply:{ showAdAttribution: false, title: botname, body: `h`, mediaType: 2, sourceUrl: linkgc, thumbnail: miniurl}, mentions: [m.sender]}}, { quoted: m })}
 if (command == 'wpvehiculo') {
-let haha = await conn.getFile(`https://zenzapis.xyz/randomimage/mobil?apikey=${apikey}`)
+let haha = await conn.getFile(`https://api.zahwazein.xyz/randomimage/mobil?apikey=${zenzapikey}`)
 await conn.sendNyanCat(m.chat, global.wait, adnyancat, adimagen, null, script, m)
-conn.sendButton(m.chat, `_${command}_`.trim(), `*◈•@${who.split("@s.whatsapp.net")[0]}*`, haha.data, [['「🔃 Sɪɢᴜɪᴇɴᴛᴇ 🔃」', `/${command}`]], fakemsg, { mentions: [who] })}
+conn.sendFile(m.chat, haha.data, 'out.png', `_${command}_`.trim(), m, true, { contextInfo: { 'forwardingScore': 200, 'isForwarded': false, externalAdReply:{ showAdAttribution: false, title: botname, body: `h`, mediaType: 2, sourceUrl: linkgc, thumbnail: miniurl}, mentions: [m.sender]}}, { quoted: m })}
 if (command == 'wallhp') {
-let haha = await conn.getFile(`https://zenzapis.xyz/randomimage/wallhp?apikey=${apikey}`)
+let haha = await conn.getFile(`https://api.zahwazein.xyz/randomimage/wallhp?apikey=${zenzapikey}`)
 await conn.sendNyanCat(m.chat, global.wait, adnyancat, adimagen, null, script, m)
-conn.sendButton(m.chat, `_${command}_`.trim(), `*◈•@${who.split("@s.whatsapp.net")[0]}*`, haha.data, [['「🔃 Sɪɢᴜɪᴇɴᴛᴇ 🔃」', `/${command}`]], fakemsg, { mentions: [who] })}
+global.zenzapikey = ['hdiiofficial']
+conn.sendFile(m.chat, haha.data, 'out.png', `_${command}_`.trim(), m, true, { contextInfo: { 'forwardingScore': 200, 'isForwarded': false, externalAdReply:{ showAdAttribution: false, title: botname, body: `h`, mediaType: 2, sourceUrl: linkgc, thumbnail: miniurl}, mentions: [m.sender]}}, { quoted: m })}
 if (command == 'wpmoto') {
-let haha = await conn.getFile(`https://zenzapis.xyz/randomimage/motor?apikey=${apikey}`)
+let haha = await conn.getFile(`https://api.zahwazein.xyz/randomimage/motor?apikey=${zenzapikey}`)
 await conn.sendNyanCat(m.chat, global.wait, adnyancat, adimagen, null, script, m)
-conn.sendButton(m.chat, `_${command}_`.trim(), `*◈•@${who.split("@s.whatsapp.net")[0]}*`, haha.data, [['「🔃 Sɪɢᴜɪᴇɴᴛᴇ 🔃」', `/${command}`]], fakemsg, { mentions: [who] })}
+conn.sendFile(m.chat, haha.data, 'out.png', `_${command}_`.trim(), m, true, { contextInfo: { 'forwardingScore': 200, 'isForwarded': false, externalAdReply:{ showAdAttribution: false, title: botname, body: `h`, mediaType: 2, sourceUrl: linkgc, thumbnail: miniurl}, mentions: [m.sender]}}, { quoted: m })}
+if (command == 'cosplayer') {
+let haha = await conn.getFile(`https://api.zahwazein.xyz/randomimage/cosplay?apikey=${zenzapikey}`)
+await conn.sendNyanCat(m.chat, global.wait, adnyancat, adimagen, null, script, m)
+conn.sendFile(m.chat, haha.data, 'out.png', `_${command}_`.trim(), m, true, { contextInfo: { 'forwardingScore': 200, 'isForwarded': false, externalAdReply:{ showAdAttribution: false, title: botname, body: `h`, mediaType: 2, sourceUrl: linkgc, thumbnail: miniurl}, mentions: [m.sender]}}, { quoted: m })}
+if (command == 'minecraft') {
+let json = await fetch(`https://api.zahwazein.xyz/randomimage/minecraft?apikey=${zenzapikey}`)
+let jsons = await json.json()
+let { caption, image } = jsons.result
+let result = await translate(caption, { to: 'es', autoCorrect: true })
+await conn.sendNyanCat(m.chat, global.wait, adnyancat, adimagen, null, script, m)
+conn.sendFile(m.chat, image, 'out.png', result.text, m, true, { contextInfo: { 'forwardingScore': 200, 'isForwarded': false, externalAdReply:{ showAdAttribution: false, title: botname, body: `h`, mediaType: 2, sourceUrl: linkgc, thumbnail: miniurl}, mentions: [m.sender]}}, { quoted: m })}
+if (command == 'patricio') {
+let haha = await conn.getFile(`https://api.zahwazein.xyz/randomimage/patrick?apikey=${zenzapikey}`)
+await conn.sendNyanCat(m.chat, global.wait, adnyancat, adimagen, null, script, m)
+conn.sendFile(m.chat, haha.data, 'out.png', `_${command}_`.trim(), m, true, { contextInfo: { 'forwardingScore': 200, 'isForwarded': false, externalAdReply:{ showAdAttribution: false, title: botname, body: `h`, mediaType: 2, sourceUrl: linkgc, thumbnail: miniurl}, mentions: [m.sender]}}, { quoted: m })}
 if (command == 'goku') {
 let json = await fetch(`https://latam-api.vercel.app/api/wpp2?apikey=nyancat&q=goku`)
 let goku = await json.json()
 await conn.sendNyanCat(m.chat, global.wait, adnyancat, adimagen, null, script, m)
 conn.sendButton(m.chat, `_${command}_`.trim(), `*◈•@${who.split("@s.whatsapp.net")[0]}*`, goku.wallpaper, [['「🔃 Sɪɢᴜɪᴇɴᴛᴇ 🔃」', `/${command}`]], fakemsg, { mentions: [who] })}
 }
-handler.command = handler.help = ['wpmontaña', 'pubg', 'wpgaming', 'wpaesthetic', 'wprandom', 'cristianoronaldo', 'cat', 'itzy', 'messi', 'navidad', 'coffee', 'pentol', 'caricatura', 'ciberespacio', 'technology', 'doraemon', 'hacker', 'wpcat', 'planeta', 'randomprofile', 'wpaesthetic2', 'wpvehiculo', 'wallhp', 'wpmoto', 'goku']
+handler.command = handler.help = ['wpmontaña', 'pubg', 'wpgaming', 'wpaesthetic', 'cat', 'coffee', 'pentol', 'caricatura', 'ciberespacio', 'technology', 'doraemon', 'hacker', 'wpcat', 'planeta', 'dog', 'randomprofile', 'wpaesthetic2', 'wpvehiculo', 'wallhp', 'wpmoto', 'cosplayer', 'minecraft', 'patricio', 'goku']
 handler.tags = ['img']
 handler.limit = false
 handler.register = true
