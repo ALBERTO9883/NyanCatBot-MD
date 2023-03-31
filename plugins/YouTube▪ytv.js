@@ -57,16 +57,7 @@ let handler = async (m, { conn, text, isPrems, isOwner, usedPrefix, command }) =
          }
       })
    }
-   await conn.sendMessage(m.chat, { document: { url: res.url }, mimetype: "video/mp4", caption: `*${_res[0].title}  ‧  ${res.qualityLabel}*`, fileName: _res[0].title + '.mp4', quoted: m, contextInfo: {
-'forwardingScore': 200,
-'isForwarded': false,
-externalAdReply:{
-showAdAttribution: false,
-title: `${_res[0].title}`,
-body: `${_res[0].author.name}`,
-mediaType: 2, 
-sourceUrl: `${'https://youtu.be/' + _res[0].videoId}`,
-thumbnail: await (await fetch(_res[0].thumbnail)).buffer()}}}, { quoted: m })
+   await conn.sendFile(m.chat, res.url, _res[0].title + '.mp4', `*${_res[0].title}  ‧  ${res.qualityLabel}*`, m, false, { asDocument: false })
    await m.react('😸')
 }
 
