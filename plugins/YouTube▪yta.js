@@ -48,7 +48,7 @@ let handler = async (m, { conn, text, isPrems, isOwner, usedPrefix, command }) =
          }
       })
    }
-   conn.sendMessage(m.chat, { document: { url: res.url }, mimetype: "audio/mpeg", fileName: `${_res[0].title}` + '.mp3', quoted: m, contextInfo: {
+   conn.sendMessage(m.chat, { audio: { url: res.url }, mimetype: "audio/mpeg", fileName: `${_res[0].title}` + '.mp3', quoted: m, contextInfo: {
 'forwardingScore': 200,
 'isForwarded': false,
 externalAdReply:{
