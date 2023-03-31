@@ -13,7 +13,7 @@ let format = sizeFormatter({
    render: (literal, symbol) => `${literal} ${symbol}B`,
 })
 
-let limit = 350 // Limite de 100 MB
+let limit = 350 // Limite de 350 MB
 
 let handler = async (m, { conn, text, isPrems, isOwner, usedPrefix, command }) => {
    if (!text) return m.reply('Ingresa la url o título de un video de YouTube.')
