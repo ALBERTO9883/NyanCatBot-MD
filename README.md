@@ -24,6 +24,8 @@
 <a href="http://wa.me/50246028932" target="blank"><img src="https://img.shields.io/badge/SIN_NOMBRE_COLAB.2-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" />
   </a>
   
+ ### `⚠️BOT DISPONIBLE SOLO PARA HOSTS POR EL MOMENTO` 
+  
 ### `HOSTS PARA INSTALAR EL BOT`
   <p align="hihg">   
 <a href="https://portal.acidicnodes.com" target="_blank"> <img src="https://img.shields.io/badge/-AcidicNodes-%23E4405F?style=for-the-badge&logo=acidicnodes&logoColor=black" target="_blank"></a> <img src="https://github.com/DIEGO-OFC/DORRAT-BOT-MD/blob/main/galeria/acidicnodes.png" height="30px">
