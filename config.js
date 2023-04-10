@@ -120,6 +120,7 @@ global.adnyancat = fs.readFileSync('./storage/image/adnyancat.jpg')
 global.verificado = fs.readFileSync('./storage/image/verificado.png')
 global.adnyancat18 = fs.readFileSync('./storage/image/nyancat+18.jpg')
 global.nyancaterror = fs.readFileSync('./storage/image/nyancaterror.jpg')
+global.ftextjpg = fs.readFileSync('./storage/image/ftextjpg.jpg')
 //╰─────────────────────╯
 
 
