@@ -62,4 +62,4 @@ ESCRIBE LOS SIGUIENTES COMANDOS UNO POR UNO:
 <a href="https://github.com/ALBERTO9883"><img src="https://github.com/ALBERTO9883.png" width="300" height="300" alt="ALBERTO9883"/></a>
 
 `NyanCatBot-MD _ By Alberto Acosta`
-  ### `⚘Alberto Y Ashly⚘`
+  ### `Alberto`
