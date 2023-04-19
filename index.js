@@ -17,7 +17,7 @@ say('NyanCatBot - MD', {
 font: 'tiny',
 align: 'center',
 colors: ['#ff8000']})
-say(`WHATSAPP BOT BY ALBERTO\n-\nAlberto & Ashly`, {
+say(`WHATSAPP BOT BY ALBERTO\n-\nNyanCat | Staff`, {
 font: 'console',
 align: 'center',
 colors: ['red']})
