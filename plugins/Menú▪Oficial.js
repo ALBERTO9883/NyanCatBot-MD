@@ -77,10 +77,6 @@ const defaultMenu = {
     let name = await conn.getName(m.sender)
     let d = new Date(new Date + 3600000)
     let locale = 'es'
-    // d.getTimeZoneOffset()
-    // Offset -420 is 18.00
-    // Offset    0 is  0.00
-    // Offset  420 is  7.00
     let weton = ['Pahing', 'Pon', 'Wage', 'Kliwon', 'Legi'][Math.floor(d / 84600000) % 5]
     let week = d.toLocaleDateString(locale, { weekday: 'long' })
     let date = d.toLocaleDateString(locale, {
@@ -171,32 +167,18 @@ const defaultMenu = {
       readmore: readMore
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
-    
-    let buttons = [
-                    { buttonId: '!owner', buttonText: { displayText: 'Creador 🐢' }, type: 1 },
-                    { buttonId: '!infobot', buttonText: { displayText: 'Info 📌' }, type: 1 }
-                ]
-                let buttonMessage = {
-                    image: imgmenu,
-                    caption: text.trim(),
-                    mentions: conn.parseMention(text.trim()),
-                    footer: `*${greeting}*`,
-                    buttons: buttons,
-                    headerType: 4,
-                    contextInfo: {
-                    mentionedJid: [m.sender],
-                    externalAdReply: {
-                    showAdAttribution: true,
-                    mediaType: 'VIDEO',
-                    mediaUrl: 'https://pornhub.com',
-                    title: '🐱⸽⃕NʏᴀɴCᴀᴛBᴏᴛ-MD🍁⃨፝⃕✰',
-                    body: '💐Alberto Y Ashly💐',
-                    thumbnail: miniurl,
-                    sourceUrl: global.linkgc
-                    }}
-                }
+
                 await conn.sendMessage(m.chat, { react: { text: '🐱', key: m.key }})
-                conn.sendMessage(m.chat, buttonMessage, { quoted: m })
+                await conn.sendUrl(m.chat, text.trim(), m, {
+         externalAdReply: {
+            mediaType: 1,
+            renderLargerThumbnail: true,
+            thumbnail: imgmenu,
+            thumbnailUrl: imgmenu,
+            title: botname,
+         },
+         mentionedJid: conn.parseMention(text.trim())
+      })
 
   } catch (e) {
     conn.reply(m.chat, '❎ Lo sentimos, el menú tiene un error.', m)
