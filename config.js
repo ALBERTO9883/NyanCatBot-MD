@@ -5,11 +5,10 @@ import fs from 'fs'
  
 //• ↳ᏢϴΝ ᏞϴՏ ΝႮ́ᎷᎬᎡϴՏ ϘႮᎬ ϘႮᏆᎬᎡᎪՏ
 global.owner = [
-  ['50499698072', 'ī.am/☪︎𝐀𝐥𝐛𝐞𝐫𝐭𝐨🍃/ღᴀ', true],
-  ['972529277551', '🌿◌*̥₊⃬𝕬⃬𝖑𝖇⃬𝖊𝖗⃬𝖙𝖔⃬✭⃟྾⃦ᴀღᴀ', true],
-  ['19045209846', 'LevelUp㋡', true],
-  ['50246028932', 'SinNombre', true],
-  ['50232239315', 'Xavi', true]
+  ['50499698072', '۪〬.࠭⤿ 👑 ⋅ Aʟʙᴇʀᴛᴏ', true],
+  ['19045209846', '۪〬.࠭⤿ 👤 ⋅ LevelUp㋡', true],
+  ['50246028932', '۪〬.࠭⤿ 👤 ⋅ SinNombre', true],
+  ['50232239315', '۪〬.࠭⤿ 👤 ⋅ Xavi', true]
 ]
 global.mods = [] 
 global.prems = [] 
@@ -258,6 +257,6 @@ global.rpg = {
 let file = fileURLToPath(import.meta.url)
 watchFile(file, () => {
   unwatchFile(file)
-  console.log(chalk.redBright("↳ Actualizado : 'config.js'"))
+  console.log(chalk.magenta(" ⤿ Actualizado • 'config.js'"))
   import(`${file}?update=${Date.now()}`)
 })
