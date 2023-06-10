@@ -2,7 +2,7 @@
   code by G4TITO
              */
 
-import { WAMessageStubType } from '@adiwajshing/baileys'
+import { WAMessageStubType } from '@whiskeysockets/baileys'
 import moment from 'moment-timezone'
 import fetch from 'node-fetch'
 

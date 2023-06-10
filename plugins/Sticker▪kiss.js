@@ -1,6 +1,6 @@
 import { sticker } from '../lib/sticker.js'
 import fetch from 'node-fetch'
-import MessageType from '@adiwajshing/baileys'
+import MessageType from '@whiskeysockets/baileys'
 let handler = async (m, { conn}) => {
 try {   
 let who

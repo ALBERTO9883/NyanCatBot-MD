@@ -1,4 +1,4 @@
-import  MessageType  from '@adiwajshing/baileys'
+import  MessageType  from '@whiskeysockets/baileys'
 let handler = async (m, { conn, command, args, text, usedPrefix, DevMode }) => {
   try {
     let bruh = `${usedPrefix}abrir <comun|raro|mitico|legendario|jaula>\n< 1 | 10 | 100 | 1000 >\n\n*Asegurate de escribirlo tal cual está*\nEjemplos de uso: *${usedPrefix}abrir comun 10*\n\nLista de cofres:\n*📦Comun*\n*🛍️Raro*\n*🗃️Mitico*\n*🎁Legendario*\n*📫Jaula (de mascotas)*`

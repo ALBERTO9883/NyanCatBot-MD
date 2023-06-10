@@ -1,4 +1,4 @@
-import { generateWAMessageFromContent } from "@adiwajshing/baileys"
+import { generateWAMessageFromContent } from "@whiskeysockets/baileys"
 import { cpus as _cpus, totalmem, freemem } from 'os'
 // import util from 'util'
 import { performance } from 'perf_hooks'

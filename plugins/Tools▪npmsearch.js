@@ -1,4 +1,4 @@
-import { generateWAMessageFromContent } from "@adiwajshing/baileys"
+import { generateWAMessageFromContent } from "@whiskeysockets/baileys"
 import fetch from 'node-fetch'
 
 let handler = async (m, { text }) => {
