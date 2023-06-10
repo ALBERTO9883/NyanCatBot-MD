@@ -24,7 +24,7 @@
 <a href="http://wa.me/50246028932" target="blank"><img src="https://img.shields.io/badge/SIN_NOMBRE_COLAB.2-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" />
   </a>
   
- ### `⚠️BOT DISPONIBLE SOLO PARA HOSTS POR EL MOMENTO` 
+ 
   
 ### `HOSTS PARA INSTALAR EL BOT`
   <p align="hihg">   
@@ -50,7 +50,7 @@ ESCRIBE LOS SIGUIENTES COMANDOS UNO POR UNO:
 > npm i
 > npm update
 > yarn install
-> npm start
+> node .
 ```
 
 ## `COLABORADORES DEL BOT` 
