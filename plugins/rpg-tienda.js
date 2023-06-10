@@ -1,4 +1,4 @@
-import MessageType from '@adiwajshing/baileys'
+import MessageType from '@whiskeysockets/baileys'
 import fs from 'fs'
 const potion = 520
 const Spotion = 150 
