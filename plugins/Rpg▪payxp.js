@@ -1,6 +1,6 @@
 import db from '../lib/database.js'
 
-import MessageType from '@adiwajshing/baileys'
+import MessageType from '@whiskeysockets/baileys'
 let impuesto = 0.02
 let handler = async (m, { conn, text }) => {
   let who
