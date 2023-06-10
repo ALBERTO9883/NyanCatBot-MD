@@ -1,8 +1,8 @@
-import * as baileys from '@adiwajshing/baileys'
+import * as baileys from '@whiskeysockets/baileys'
 
 let handler = async (m, { conn, text }) => {
 	let [, code] = text.match(/chat\.whatsapp\.com\/(?:invite\/)?([0-9A-Za-z]{20,24})/i) || []
-	if (!code) throw 'Invalid URL'
+	if (!code) throw '⚠️ *_Ingrese un enlace de whatsapp_*'
 	let res = await conn.query({ tag: 'iq', attrs: { type: 'get', xmlns: 'w:g2', to: '@g.us' }, content: [{ tag: 'invite', attrs: { code } }] }),
 		data = extractGroupMetadata(res),
 		txt = Object.keys(data).map(v => `*${v.capitalize()}:* ${data[v]}`).join('\n'),
@@ -20,6 +20,7 @@ let handler = async (m, { conn, text }) => {
 {index: 1, urlButton: {displayText: `•Copiar Desc`, url: `https://www.whatsapp.com/otp/copy/${data.desc}`}},
 ]
 await conn.sendMessage(m.chat, { text: `*╭──────────────╮*\n│🐳 • ¿Desea copiar la descripción?\n*╰──────────────╯*`, templateButtons: botones, footer: botname })
+conn.sendNyanCat(m.chat, `${data.desc}`, adnyancat, 'Dᴇsᴄʀɪᴘᴄɪᴏ́ɴ Gʀᴀᴛɪs🐱', botname, script, m)
 }
 handler.tags = ['owner']
 handler.command = handler.help = ['inspect']
