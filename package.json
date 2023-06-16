@@ -31,7 +31,7 @@
         "@whiskeysockets/baileys": "^6.2.1",
         "@bochilteam/scraper": "^4.2.3",
         "acrcloud": "^1.4.0",
-        "api-dylux": "^1.4.4",
+        "api-dylux": "^1.5.4",
         "awesome-phonenumber": "^2.68.0",
         "axios": "^0.24.0",
         "cfonts": "^2.10.0",
