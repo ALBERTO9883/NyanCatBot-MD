@@ -27,7 +27,15 @@ let handler = async function (m, { conn, text, usedPrefix, command }) {
 *┃›* *Numero de serie* :
 *┃•* ${sn}
 *╰━━⬣*`
-conn.sendButton(m.chat, str, `${saludo}`, global.nyanregis, [['Creador 🐢', '.owner'],['Info 📌', '.infobot']], fakemsg, adgp)
+await conn.sendUrl(m.chat, str, m, {
+         externalAdReply: {
+            mediaType: 1,
+            renderLargerThumbnail: true,
+            thumbnail: nyanregis,
+            thumbnailUrl: nyanregis,
+            title: `${saludo}`,
+         }
+      })
 }
 handler.help = ['reg'].map(v => v + ' *<nombre.edad>*')
 handler.tags = ['rg']
