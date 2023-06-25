@@ -6,13 +6,7 @@ let handler = async (m, { conn, command, text, usedPrefix }) => {
 	let vid = (await yts(text)).all[0]
 	if (!vid) throw '⚠️️ *_Vídeo/Audio no encontrado :(._*'
 try {
-let { title, description, thumbnail, videoId, timestamp, views, ago, url } = vid
-var doc = ['pdf','zip','vnd.openxmlformats-officedocument.presentationml.presentation','vnd.openxmlformats-officedocument.spreadsheetml.sheet','vnd.openxmlformats-officedocument.wordprocessingml.document']
-var document = doc[Math.floor(Math.random() * doc.length)]
-const buttons = [
-{ buttonId: `.yta ${url}`, buttonText: { displayText: 'Aᴜᴅɪᴏ 🎵' }, type: 1 },
-{ buttonId: `.ytv ${url}`, buttonText: { displayText: 'Vɪᴅᴇᴏ 🎥' }, type: 1 },
-{ buttonId: `.ytgetdl ${url}`, buttonText: { displayText: 'Cᴀʟɪᴅᴀᴅᴇs📁' }, type: 1 }, ]    
+let { title, description, thumbnail, videoId, timestamp, views, ago, url } = vid    
 let texto1 = `*⊜─⌈📻 ◜YouTube Play◞ 📻⌋─⊜*
 
 ❏ 🐢 *Autor:* ${vid.author.name}
@@ -20,28 +14,9 @@ let texto1 = `*⊜─⌈📻 ◜YouTube Play◞ 📻⌋─⊜*
 ❏ 🗓️ *Publicado:* ${ago}
 ❏ ⏰ *Duración:* ${timestamp}
 ❏ 👀 *Vistas:* ${views}
+❏ 🌱 *Url:* ${url}
 `
-let buttonMessage = {
-"document": { url: "https://wa.me/50499698072" }, 
-"fileName": botname, 
-"mimetype": 'application/vnd.ms-excel',
-"caption": texto1,
-"fileLength": '99999999999999',
-"mentions": [m.sender],
-"footer": '\n*❏ 🌿 Reproductor de YouTube©*',
-"buttons": buttons,
-"headerType": 4,   
-contextInfo: {
-"mentionedJid": [m.sender],
-"externalAdReply": {
-"showAdAttribution": true,
-"title": `${title}`,
-"mediaType": 2, 
-"previewType": "VIDEO",
-"thumbnail": await (await fetch(thumbnail)).buffer(),
-"mediaUrl": `${url}`,
-"sourceUrl": linkgc }}} 
-conn.sendMessage(m.chat, buttonMessage, { quoted: m })
+conn.sendFile(m.chat, thumbnail, 'error.jpg', texto1, m)
 }catch(e){
 m.reply('⚠️ *_Error, porfavor vuelva a intentarlo._*')
 console.log(e)}}
