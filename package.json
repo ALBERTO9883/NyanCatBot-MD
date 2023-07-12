@@ -28,10 +28,10 @@
     "license": "GPL-3.0-or-later",
     "dependencies": {
         "@adiwajshing/keyed-db": "^0.2.4",
-        "@whiskeysockets/baileys": "^6.2.1",
+        "@whiskeysockets/baileys": "^6.3.1",
         "@bochilteam/scraper": "^4.2.3",
         "acrcloud": "^1.4.0",
-        "api-dylux": "^1.5.4",
+        "api-dylux": "^1.5.5",
         "aptoide-scraper": "^1.0.1",
         "awesome-phonenumber": "^2.68.0",
         "axios": "^0.24.0",
