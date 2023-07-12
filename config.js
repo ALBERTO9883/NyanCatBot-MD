@@ -101,8 +101,8 @@ global.adnsfw = `🔞| Nsғᴡ Bʏ NʏᴀɴCᴀᴛBᴏᴛ⭐`
  
 //▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰ 
 //• ↳ ◜𝑺𝑻𝑰𝑪𝑲𝑬𝑹𝑺◞ • 🍃
-global.packname = `🐢 ❑ Owner:\n📅 ❑ Día:\n🕒 ❑ Hora:\n🗓️ ❑ Fecha:\n🐱 ❑ By:`
-global.author = `▸ ${me}\n▸ ${dia}\n▸ ${tiempo}\n▸ ${fecha}\n▸ ${botname}`
+global.packname = `handler.exe = {\n  message: {\n    creator: "Alberto Acosta",\n    botname: "NyanCatBot",\n    fecha: "${fecha}"\n         }\n     };`
+global.author = `A\nL\nB\nE\nR\nT\nO\n\n🐢`
 //╰────────────────────╯	
 	
 
@@ -213,7 +213,7 @@ global.adyt = { contextInfo: { externalAdReply: { showAdAttribution: true, title
 //• ↳ ◜𝑲𝑬𝒀𝑺 𝑨𝑷𝑰𝑺◞ • 🌾
 global.keysZens = ['fiktod', 'c2459db922', 'BF39D349845E', '675e34de8a', '37CC845916', '0b917b905e6f', '6fb0eff124']
 global.keysxxx = keysZens[Math.floor(keysZens.length * Math.random())]
-global.lolkeysapi = ['BrunoSobrino']
+global.lolkeysapi = ['NyanCatBot']
 global.fgapikey = ['fg-dylux']
 global.zenzapikey = ['hdiiofficial']
 //▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰
