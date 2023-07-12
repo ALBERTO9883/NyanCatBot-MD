@@ -215,7 +215,7 @@ global.keysZens = ['fiktod', 'c2459db922', 'BF39D349845E', '675e34de8a', '37CC84
 global.keysxxx = keysZens[Math.floor(keysZens.length * Math.random())]
 global.lolkeysapi = ['NyanCatBot']
 global.fgapikey = ['fg-dylux']
-global.zenzapikey = ['hdiiofficial']
+global.zenzapikey = ['zenzkey_048b3b850d51']
 //▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰
 
 //▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰
