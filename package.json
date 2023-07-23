@@ -28,7 +28,7 @@
     "license": "GPL-3.0-or-later",
     "dependencies": {
         "@adiwajshing/keyed-db": "^0.2.4",
-        "@whiskeysockets/baileys": "^6.3.1",
+        "@whiskeysockets/baileys": "npm:@queenanya/baileys2@6.4.1",
         "@bochilteam/scraper": "^4.2.3",
         "acrcloud": "^1.4.0",
         "api-dylux": "^1.5.5",
