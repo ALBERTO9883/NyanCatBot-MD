@@ -29,6 +29,7 @@
     "dependencies": {
         "@adiwajshing/keyed-db": "^0.2.4",
         "@bochilteam/scraper": "^4.2.3",
+        "@fantox01/lyrics-scraper": "^2.0.0",
         "@whiskeysockets/baileys": "^6.3.0",
         "acrcloud": "^1.4.0",
         "api-dylux": "^1.5.5",
@@ -42,7 +43,6 @@
         "didyoumean": "^1.2.2",
         "emoji-api": "^1.0.2",
         "express": "^4.17.3",
-        "@fantox01/lyrics-scraper": "^2.0.0",
         "file-type": "^17.1.1",
         "fluent-ffmpeg": "^2.1.2",
         "formdata-node": "^4.3.2",
