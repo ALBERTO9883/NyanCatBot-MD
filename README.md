@@ -36,11 +36,3 @@ ESCRIBE LOS SIGUIENTES COMANDOS UNO POR UNO:
 > node .
 ```
 
-## `COLABORADORES DEL BOT` 
-<a href="https://github.com/HACHEJOTA-Hachiko-Bot-MD"><img src="https://github.com/SinNombre999.png" width="200" height="200" alt="SinNombre999"/></a>
-
-# `EDITOR & PROPIETARIO DEL BOT` 
-<a href="https://github.com/"><img src="https://github.com/HACHEJOTA.png" width="250" height="250" alt="HACHEJOTA"/></a>
-  
-`HachikoBot - By HacheJota`
-
