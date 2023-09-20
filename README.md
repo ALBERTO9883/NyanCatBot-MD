@@ -1,9 +1,7 @@
 <h1 align='center'>🐺𝗟𝗼𝗯𝗼-𝗕𝗼𝘁-𝗠𝗗🐺</h1>
 
   
-### `SI TIENES DUDAS CONTACTA A ESTOS NÚMEROS`
-<a href="http://wa.me/50576390682" target="blank"><img src="https://img.shields.io/badge/Ender_GB_25D366?style=for-the-badge&logo=whatsapp&logoColor=white" />
-<a 
+
   
  
   
