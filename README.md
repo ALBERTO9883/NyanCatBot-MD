@@ -1,7 +1,11 @@
 <h1 align='center'>🐺𝗟𝗼𝗯𝗼-𝗕𝗼𝘁-𝗠𝗗🐺</h1>
 
   
+### `∇𝐃𝐔𝐃𝐀𝐒 𝐒𝐎𝐁𝐑𝐄 𝐋𝐎𝐁𝐎-𝐁𝐎𝐓-𝐌𝐃?, 𝐂𝐎𝐍𝐓𝐀𝐂𝐓𝐀 𝐀𝐋 𝐎𝐖𝐍𝐄𝐑Δ `
+<a href="http://wa.me/50576390682" target="blank"><img src="https://img.shields.io/badge/HACHE_JOTA_CREADOR-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" />
 
+### `✦CUSTOMER SUPPORT✦`
+<a href="http://wa.me/50576390682" target="blank"><img src="https://img.shields.io/badge/ENDER_GB_COSTOMER_SUPPORT-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" />
   
  
   
