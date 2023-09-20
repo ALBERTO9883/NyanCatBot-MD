@@ -1,4 +1,4 @@
-<h1 align='center'>🐱◌*̥₊ NʏᴀɴCᴀᴛBᴏᴛ - MD◌❐🎋༉</h1>
+<h1 align='center'>🐺𝗟𝗼𝗯𝗼-𝗕𝗼𝘁-𝗠𝗗🐺</h1>
 
 <div align="center">
 
@@ -19,10 +19,8 @@
   </div>
   
 ### `SI TIENES DUDAS CONTACTA A ESTOS NÚMEROS`
-<a href="http://wa.me/50499698072" target="blank"><img src="https://img.shields.io/badge/ALBERTO_ACOSTA-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" />
-<a href="http://wa.me/19045209846" target="blank"><img src="https://img.shields.io/badge/HAROLD_MENDOZA_COLAB.1-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" />
-<a href="http://wa.me/50246028932" target="blank"><img src="https://img.shields.io/badge/SIN_NOMBRE_COLAB.2-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" />
-  </a>
+<a href="http://wa.me/50576390682" target="blank"><img src="https://img.shields.io/badge/Ender_GB_25D366?style=for-the-badge&logo=whatsapp&logoColor=white" />
+<a 
   
  
   
