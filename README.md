@@ -2,10 +2,10 @@
 
   
 ### `∇𝐃𝐔𝐃𝐀𝐒 𝐒𝐎𝐁𝐑𝐄 𝐋𝐎𝐁𝐎-𝐁𝐎𝐓-𝐌𝐃?, 𝐂𝐎𝐍𝐓𝐀𝐂𝐓𝐀 𝐀𝐋 𝐎𝐖𝐍𝐄𝐑Δ `
-<a href="http://wa.me/50576390682" target="blank"><img src="https://img.shields.io/badge/HACHE_JOTA_CREADOR-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" />
+<a href="http://wa.me/50576390682" target="blank"><img src="https://img.shields.io/badge/𝐄𝐍𝐃𝐄𝐑_𝐆𝐁_𝐂𝐑𝐄𝐀𝐃𝐎𝐑-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" />
 
 ### `✦CUSTOMER SUPPORT✦`
-<a href="http://wa.me/50576390682" target="blank"><img src="https://img.shields.io/badge/ENDER_GB_COSTOMER_SUPPORT-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" />
+<a href="http://wa.me/50576390682" target="blank"><img src="https://img.shields.io/badge/𝐇𝐀𝐂𝐇𝐄_𝐉𝐎𝐓𝐀_𝐂𝐎𝐒𝐓𝐎𝐌𝐄𝐑_𝐒𝐔𝐏𝐏𝐎𝐑𝐓-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" />
   
  
   
