@@ -1,4 +1,4 @@
-console.log('✅ㅤIniciando...')
+console.log('🐺ㅤIniciando Lobo-MD...')
 import { join, dirname } from 'path'
 import { createRequire } from "module";
 import { fileURLToPath } from 'url'
@@ -13,11 +13,11 @@ const { name, author } = require(join(__dirname, './package.json'))
 const { say } = cfonts
 const rl = createInterface(process.stdin, process.stdout)
 
-say('NyanCatBot - MD', {
+say('LoboBot - MD', {
 font: 'tiny',
 align: 'center',
 colors: ['#ff8000']})
-say(`WHATSAPP BOT BY ALBERTO\n-\nNyanCat • Staff`, {
+say(`Ender LB\n-\nLobo • Staff`, {
 font: 'console',
 align: 'center',
 colors: ['red']})
