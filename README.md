@@ -1,7 +1,7 @@
 <h1 align='center'>🐺𝗟𝗼𝗯𝗼-𝗕𝗼𝘁-𝗠𝗗🐺</h1>
 
   
-### `∇𝐃𝐔𝐃𝐀𝐒 𝐒𝐎𝐁𝐑𝐄 𝐋𝐎𝐁𝐎-𝐁𝐎𝐓-𝐌𝐃?, 𝐂𝐎𝐍𝐓𝐀𝐂𝐓𝐀 𝐀𝐋 𝐎𝐖𝐍𝐄𝐑Δ `
+### `𝐃𝐔𝐃𝐀𝐒 𝐒𝐎𝐁𝐑𝐄 𝐋𝐎𝐁𝐎-𝐁𝐎𝐓-𝐌𝐃?,𝐂𝐎𝐍𝐓𝐀𝐂𝐓𝐀 𝐀𝐋 𝐎𝐖𝐍𝐄𝐑𝗦 `
 <a href="http://wa.me/50576390682" target="blank"><img src="https://img.shields.io/badge/𝐄𝐍𝐃𝐄𝐑_𝐆𝐁_𝐂𝐑𝐄𝐀𝐃𝐎𝐑-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" />
 
 ### `✦CUSTOMER SUPPORT✦`
@@ -38,4 +38,4 @@ ESCRIBE LOS SIGUIENTES COMANDOS UNO POR UNO:
 ## `EDITOR & PROPIETARIO DEL BOT` 
 <a href="https://github.com/Ender-GB-Isis777"><img src="https://github.com/Ender-GB-Isis777.png" width="250" height="250" alt="ENDER"/></a>
   
-`𝗟𝗼𝗯𝗼 - 𝗕𝘆 𝗘𝗻𝗱𝗲𝗿 𝗚𝗕`
+`𝗟𝗼𝗯𝗼-𝗕𝗼𝘁-𝗠𝗗 - 𝗕𝘆 𝗘𝗻𝗱𝗲𝗿 𝗟𝗕`
