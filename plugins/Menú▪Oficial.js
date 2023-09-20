@@ -6,65 +6,65 @@ import { xpRange } from '../lib/levelling.js'
 let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
 let prem = global.prems.includes(m.sender.split`@`[0])
 let tags = {
-  'main': 'Menús📒',
-  'info': 'Información👨‍💻',
-  'search': 'Busquedas🔎',
-  'game': 'Juegos🕹️',
-  'xp': 'Nivel Y Economía⚖️',
-  'rpg': 'RPG⚔',
-  'rg': 'Registro🗃️',
-  'sticker': 'Sticker🏞️',
-  'frases': 'Frases🥀',
-   'img': 'Imágenes🪴',
-  'group': 'Grupo👻',
-  'logo': 'Maker Y Logos📝',
-  'nable': 'Des/Activar opciones⚙️', 
-  'premium': 'Premium🪪',
-  'nime': 'Anime㊗',
-  'downloader': 'Descargas📥',
-  'tools': 'Herramientas🧰',
-  'fun': 'Diversión🎭',
-  'database': 'Base de Datos🗄️',
-  'nsfw': 'Nsfw🔞', 
-  'owner': 'Creador📌', 
-  'advanced': 'Avanzado🖥️',
-  'audio': 'Efecto de Audios🔊', 
+  'main': '𝐌𝐞𝐧𝐮𝐬📒',
+  'info': '𝐈𝐧𝐟𝐨𝐫𝐦𝐚𝐜𝐢𝐨́𝐧👨‍💻',
+  'search': '𝐁𝐮𝐬𝐪𝐮𝐞𝐝𝐚𝐬🔎',
+  'game': '𝐉𝐮𝐞𝐠𝐨𝐬🕹️',
+  'xp': '𝐍𝐢𝐯𝐞𝐥 𝐲 𝐞𝐜𝐨𝐧𝐨𝐦𝐢𝐚⚖️',
+  'rpg': '𝐑𝐏𝐆⚔',
+  'rg': '𝐑𝐞𝐠𝐢𝐬𝐭𝐫𝐨🗃️',
+  'sticker': '𝐒𝐭𝐢𝐜𝐤𝐞𝐫☃️,
+  'frases': '𝐅𝐫𝐚𝐬𝐞𝐬🥀',
+   'img': '𝐈𝐦𝐚𝐠𝐞𝐧𝐞𝐬🪴',
+  'group': '𝐆𝐫𝐮𝐩𝐨👻',
+  'logo': '𝐌𝐚𝐫𝐤𝐞𝐫 𝐲 𝐥𝐨𝐠𝐨𝐬📝',
+  'nable': '𝐃𝐞𝐬/𝐀𝐜𝐭𝐢𝐯𝐚𝐫 𝐨𝐩𝐜𝐢𝐨𝐧𝐞𝐬⚙️', 
+  'premium': '𝐏𝐫𝐞𝐦𝐢𝐮𝐦💸,
+  'nime': '𝐀𝐧𝐢𝐦𝐞㊗',
+  'downloader': '𝐃𝐞𝐬𝐜𝐚𝐫𝐠𝐚𝐬📥',
+  'tools': '𝐇𝐞𝐫𝐫𝐚𝐦𝐢𝐞𝐧𝐭𝐚𝐬🧰',
+  'fun': '𝐃𝐢𝐯𝐞𝐫𝐬𝐢𝐨́𝐧🎭',
+  'database': '𝐁𝐚𝐬𝐞 𝐝𝐞 𝐝𝐚𝐭𝐨𝐬🗄️',
+  'nsfw': '𝐍𝐬𝐟𝐰🔞', 
+  'owner': '𝐂𝐫𝐞𝐚𝐝𝐨𝐫💻, 
+  'advanced': '𝐀𝐯𝐚𝐧𝐳𝐚𝐝𝐨🖥️',
+  'audio': '𝐄𝐟𝐞𝐜𝐭𝐨𝐬 𝐝𝐞 𝐚𝐮𝐝𝐢𝐨𝐬🔊', 
 }
 const defaultMenu = {
   before: `
-*┏━「🐱⸽⃕NʏᴀɴCᴀᴛBᴏᴛ-MD🍁⃨፝⃕✰」━⊜*
-┃⋄ 🕒 *Hora*: %time
-┃⋄ 🗓 *Fecha*: %date
-┃⋄ 📅 *Día*: %week
+┏━「✰𝗟𝗢𝗕𝗢-𝗕𝗢𝗧-𝗠𝗗✰」━⊜
+┃⋄ 🕒 𝐇𝐨𝐫𝐚: %time
+┃⋄ 🗓 𝐅𝐞𝐜𝐡𝐚: %date
+┃⋄ ☀️ 𝐃𝐢𝐚: %week
 ┗━━◘
 
-┏━━⊜ *_INFO USER_* ━⊜
-┃⋄ 📇 *Nombre*:  %taguser
-┃⋄ 🪙 *Monedas*: %limit
-┃⋄ 📊 *Nivel*: %level (%exp / %maxexp) 
-┃⋄ ✨ *Exp*: %totalexp
-┃⋄ 📍 *Rol*: %role
-┃⋄ 🪪 *Premium*: ${prem ? '✅' : '❌'}
+┏━━⊜ 𝐈𝐧𝐟𝐨 𝐮𝐬𝐮𝐚𝐫𝐢𝐨 ━⊜
+┃⋄ 📇 𝐍𝐨𝐦𝐛𝐫𝐞:  %taguser
+┃⋄ 🪙 𝐌𝐨𝐧𝐞𝐝𝐚𝐬: %limit
+┃⋄ ⬆️ 𝐍𝐢𝐯𝐞𝐥: %level (%exp / %maxexp) 
+┃⋄ 🔮 𝐄𝐱𝐩: %totalexp
+┃⋄ 🃏 𝐑𝐨𝐥: %role
+┃⋄ 🪪 𝐏𝐫𝐞𝐦𝐢𝐮𝐦: ${prem ? '✅' : '❌'}
 ┗━━◘
 
 ┏━━⊜ *_INFO BOT_* ━⊜
-┃⋄ 👤 *Owner*: @50499698072
-┃⋄ 💻 *Versión*: %version
-┃⋄ 📊 *Usuarios*: %totalreg
-┃⋄ 🗃️ *Lib*: Baileys-MD
-┃⋄ 🧪 *Modo:* ${global.opts['self'] ? 'Privado': 'Público'}
-┃⋄ 📈 *Tiempo Activo*: %uptime
+┃⋄ 👤 𝐎𝐰𝐧𝐞𝐫: @50576390682
+┃⋄ 💻 𝐕𝐞𝐫𝐬𝐢𝐨𝐧: %version
+┃⋄ 🪁 𝐔𝐬𝐮𝐚𝐫𝐢𝐨𝐬: %totalreg
+┃⋄ 🗃️ 𝐋𝐢𝐛: Baileys-MD
+┃⋄ 🕹️ 𝐌𝐨𝐝𝐨: ${global.opts['self'] ? 'Privado': 'Público'}
+┃⋄ ⏲️ 𝐓𝐢𝐞𝐦𝐩𝐨 𝐚𝐜𝐭𝐢𝐯𝐚𝐝𝐨: %uptime
 ┗━━◘
 %readmore
 ┏━━━━━━━━━━━━━━┓
-┃⋄ *_Características del Menú_*
+┃⋄ 𝐂𝐚𝐫𝐚𝐜𝐭𝐞𝐫𝐢́𝐬𝐭𝐢𝐜𝐚𝐬 𝐝𝐞𝐥 𝐌𝐞𝐧𝐮́
 ┃
-┃ •🪪 = *_Premium_*
-┃ •🪙 = *_Monedas_*
+┃ •🪪 = 𝐏𝐫𝐞𝐦𝐢𝐮𝐦
+┃ •🪙 = 𝐌𝐨𝐧𝐞𝐝𝐚𝐬
 ┗━━━━━━━━━━━━━━┛\n
   ≡ \`\`\`LISTA DE MENUS\`\`\`
 `.trimStart(),
-  header: '*┏━⊜「 %category 」*',
+  header: '┏━⊜「 %𝐂𝐚𝐭𝐞𝐠𝐨𝐫𝐢 」',
   body: '*┃›* %cmd %islimit %isPremium',
   footer: '*┗━⬣*\n',
   after: '',
@@ -181,7 +181,7 @@ const defaultMenu = {
       })
 
   } catch (e) {
-    conn.reply(m.chat, '❎ Lo sentimos, el menú tiene un error.', m)
+    conn.reply(m.chat, '[⛔] 𝐋𝐨 𝐬𝐞𝐧𝐭𝐢𝐦𝐨𝐬, 𝐄𝐥 𝐦𝐞𝐧𝐮 𝐭𝐢𝐞𝐧𝐞 𝐮𝐧 𝐞𝐫𝐫𝐨𝐫.', m)
     throw e
   }
 }
