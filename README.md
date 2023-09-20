@@ -36,6 +36,6 @@ ESCRIBE LOS SIGUIENTES COMANDOS UNO POR UNO:
 > node .
 ```
 ## `EDITOR & PROPIETARIO DEL BOT` 
-<a href="https://github.com/HACHEJOTA"><img src="https://github.com/HACHEJOTA.png" width="250" height="250" alt="HACHEJOTA"/></a>
+<a href="https://github.com/Ender-GB-Isis777"><img src="https://github.com/Ender-GB-Isis777.png" width="250" height="250" alt="ENDER"/></a>
   
 `𝗟𝗼𝗯𝗼 - 𝗕𝘆 𝗘𝗻𝗱𝗲𝗿 𝗚𝗕`
