@@ -135,14 +135,14 @@ conn.ev.off('connection.update', conn.connectionUpdate)
 conn.ev.off('creds.update', conn.credsUpdate)
 }
   
-conn.welcome = '*• Holaa :D Bienvenido/a al grupo!!*\n*━━━━━━━━━━━━━━━━*\n\n🌺 *• Nombre:* @user\n🌿 *• Bio:* @bio\n🕒 *• Hora:* @time\n🗓️ *• Fecha:* @date\n\n- *recuerda leer las reglas del grupo* -'
-conn.bye = '*👋 Hasta pronto, no te extrañaremos XD!!*\n*━━━━━━━━━━━━━━━━*\n\n🐢 *• Nombre:* @user\n🎋 *• Bio:* @bio\n🕒 *• Hora:* @time\n🗓️ *• Fecha:* @date\n\n- *Salúdame a Maradona bro* -'
-conn.spromote = '*⎡ •⚠️ Nuevo Admin detectado ⚠️• ⎦*\n*━━━━━━━━━━━━━━━━*\n🐢 *• Nombre:* @user\n🕒 *• Hora:* @time\n🗓️ *• Fecha:* @date\n*━━━━━━━━━━━━━━━━*'
-conn.sdemote = '❏ 🍃 *_@user ha dejado de ser administrador._*'
-conn.sDesc = '❏ 🍃 *_Se ha modificado la descripción del grupo._*\n\n*Nueva Descripción:* @desc'
-conn.sSubject = '❏ 🍃 *_Se ha modificado el nombre del grupo._*\n*Nuevo Nombre:* @subject'
-conn.sIcon = '❏ 🍃 *_Se ha cambiado la foto del grupo._*'
-conn.sRevoke = '❏ 🍃 *_Se ha actualizado el link del grupo._*\n*Link Nuevo:* @revoke'
+conn.welcome = '• 𝐇𝐨𝐥𝐚𝐚 :D, 𝐁𝐢𝐞𝐧𝐯𝐞𝐧𝐢𝐝𝐨/𝐚 𝐚𝐥 𝐆𝐫𝐮𝐩𝐨!!\n*━━━━━━━━━━━━━━━━*\n\n🐺 •𝐍𝐨𝐦𝐛𝐫𝐞 : @user\n🤍 • 𝐁𝐢𝐨: @bio\n🕒 • 𝐇𝐨𝐫𝐚: @time\n🗓️ • 𝐅𝐞𝐜𝐡𝐚: @date\n\n- 𝐑𝐞𝐜𝐮𝐞𝐫𝐝𝐚 𝐥𝐞𝐞𝐫 𝐥𝐚𝐬 𝐫𝐞𝐠𝐥𝐚𝐬 𝐝𝐞𝐥 𝐠𝐫𝐮𝐩𝐨 -'
+conn.bye = '𝐁𝐲𝐞, 𝐍𝐚𝐝𝐢𝐞 𝐭𝐞 𝐞𝐱𝐭𝐫𝐚𝐧̃𝐚𝐫𝐚!!\n*━━━━━━━━━━━━━━━━*\n\n🐺 • 𝐍𝐨𝐦𝐛𝐫𝐞: @user\n🤍 • 𝐁𝐢𝐨: @bio\n🕒 • 𝐇𝐨𝐫𝐚: @time\n🗓️ • 𝐅𝐞𝐜𝐡𝐚: @date\n\n- 𝐔𝐧 𝐟𝐚𝐧𝐝𝐞 𝐤𝐮𝐧𝐨 𝐦𝐞𝐧𝐨𝐬 -'
+conn.spromote = '⎡ •↪️ 𝐍𝐮𝐞𝐯𝐨 𝐚𝐝𝐦𝐢𝐧 𝐞𝐧 𝐞𝐥 𝐠𝐫𝐮𝐩𝐨 ↩️• ⎦\n*━━━━━━━━━━━━━━━━*\n🐺 • 𝐍𝐨𝐦𝐛𝐫𝐞: @user\n🕒 • 𝐇𝐨𝐫𝐚: @time\n🗓️ • 𝐅𝐞𝐜𝐡𝐚: @date\n*━━━━━━━━━━━━━━━━*'
+conn.sdemote = '❏ ❗ *_@user ha dejado de ser administrador._*'
+conn.sDesc = '❏ ❗ *_Se ha modificado la descripción del grupo._*\n\n*Nueva Descripción:* @desc'
+conn.sSubject = '❏ ❗ *_Se ha modificado el nombre del grupo._*\n*Nuevo Nombre:* @subject'
+conn.sIcon = '❏ ❗ *_Se ha cambiado la foto del grupo._*'
+conn.sRevoke = '❏ ❗ *_Se ha actualizado el link del grupo._*\n*Link Nuevo:* @revoke'
 
 conn.handler = handler.handler.bind(global.conn)
 conn.participantsUpdate = handler.participantsUpdate.bind(global.conn)
