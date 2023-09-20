@@ -45,20 +45,20 @@ let totalreg = Object.keys(global.db.data.users).length
   let neww = performance.now()
   let speed = neww - old
   let infobt = `
-≡ *INFO BOT*
+≡ ✦𝐋𝐨𝐛𝐨 𝐈𝐧𝐟𝐨✦
   
-*_ESTADO_*
-🐢͜͡ޮ ⋄ Chats de grupo: *${groupsIn.length}*
-🌺͜͡ޮ ⋄ Grupos unidos: *${groupsIn.length}*
-🐢͜͡ޮ ⋄ Grupos abandonados: *${groupsIn.length - groupsIn.length}*
-🌺͜͡ޮ ⋄ Chats privados: *${chats.length - groupsIn.length}*
-🐢͜͡ޮ ⋄ Total Chats: *${chats.length}*
-🌺͜͡ޮ ⋄ Registrados: *${totalreg}*
-🐢͜͡ޮ ⋄ Tiempo Activo: *${uptime}*
+^𝐄𝐒𝐓𝐀𝐃𝐎^
+🐺⋄ 𝐂𝐡𝐚𝐭 𝐝𝐞 𝐠𝐫𝐮𝐩𝐨𝐬: *${groupsIn.length}*
+🐺⋄ 𝐆𝐫𝐮𝐩𝐨𝐬 𝐮𝐧𝐢𝐝𝐨𝐬: *${groupsIn.length}*
+🐺⋄ 𝐆𝐫𝐮𝐩𝐨𝐬 𝐚𝐛𝐚𝐧𝐝𝐨𝐧𝐚𝐝𝐨𝐬: *${groupsIn.length - groupsIn.length}*
+🐺⋄ 𝐂𝐡𝐚𝐭 𝐩𝐫𝐢𝐯𝐚𝐝𝐨𝐬: *${chats.length - groupsIn.length}*
+🐺⋄ 𝐓𝐨𝐭𝐚𝐥 𝐜𝐡𝐚𝐭𝐬: *${chats.length}*
+🐺⋄ 𝐑𝐞𝐠𝐢𝐬𝐭𝐫𝐚𝐝𝐨𝐬: *${totalreg}*
+🐺⋄ 𝐓𝐢𝐞𝐦𝐩𝐨 𝐚𝐜𝐭𝐢𝐯𝐚𝐝𝐨: *${uptime}*
 
 
 
-*≡  _NodeJS Uso de memoria_*
+≡ ^𝐍𝐨𝐝𝐞𝐉𝐒 𝐢𝐧𝐟𝐨^
 ${'```' + Object.keys(used).map((key, _, arr) => `${key.padEnd(Math.max(...arr.map(v => v.length)), ' ')}: ${format(used[key])}`).join('\n') + '```'}
 `
 const prep = generateWAMessageFromContent(m.chat, { "orderMessage": { "orderId":"6288215463787", "itemCount": 2022, "message": infobt, "orderTitle": global.botname, "footerText": "NyanCatBot - MD", "token": "AR6xBKbXZn0Xwmu76Ksyd7rnxI+Rx87HfinVlW4lwXa6JA==", "thumbnail": imgmenu, "surface": "CATALOG" } }, { quoted: m })
