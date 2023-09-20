@@ -7,103 +7,103 @@ const sections = [
    {
 	title: `━━◌*̥₊「 1 」₊*̥◌━━`,
 	rows: [
-	{title: "🔮 | WELCOME", 
+	{title: "🧸 ☆||☆ 𝐖𝐄𝐋𝐂𝐎𝐌𝐄", 
 	description: "⊜ ❝Active o Desactive la Bienvenida en este grupo❞",
 	rowId: `${usedPrefix + command} welcome`}]}, {
 	title: `━━◌*̥₊「 2 」₊*̥◌━━`,
 	rows: [
-	{title: "🌎 | PUBLIC", 
+	{title: "🌎 ☆||☆ 𝐏𝐔𝐁𝐋𝐈𝐂", 
 	description: "⊜ ❝Active o Desactive para que el bot sea de uso publico y/o privado❞",
 	rowId: `${usedPrefix + command} public`}]}, {
 	title: `━━◌*̥₊「 3 」₊*̥◌━━`,
 	rows: [
-	{title: "🗣 | CHATBOT", 
+	{title: "🗣 ☆||☆ 𝐂𝐇𝐀𝐓𝐁𝐎𝐓", 
 	description: "⊜ ❝Active o Desactive para que el bot envíe mensajes,stickers y audios automáticamente❞",
 	rowId: `${usedPrefix + command} chatbot`}]},
 	 {
 	title: `━━◌*̥₊「 4 」₊*̥◌━━`,
 	rows: [
-	{title: "🔞 | NSFW", 
+	{title: "🔞 ☆||☆ 𝐍𝐒𝐅𝐖", 
 	description: "⊜ ❝Active o Desactive para que funcionen los comandos +18❞",
 	rowId: `${usedPrefix + command} nsfw`}]}, {
 	title: `━━◌*̥₊「 5 」₊*̥◌━━`,
 	rows: [
-	{title: "🌅 | AUTO STICKERS", 
+	{title: "👻 ☆||☆ 𝐀𝐔𝐓𝐎 𝐒𝐓𝐈𝐂𝐊𝐄𝐑𝐒", 
 	description: "⊜ ❝Active o Desactive para que toda imagen, videos o link se convierta en sticker❞",
 	rowId: `${usedPrefix + command} autosticker`}]}, {
 	title: `━━◌*̥₊「 6 」₊*̥◌━━`,
 	rows: [
-	{title: "💀 | ANTI-TRABAS", 
+	{title: "🧷 ☆||☆ 𝐀𝐍𝐓𝐈-𝐓𝐑𝐀𝐁𝐀𝐒", 
 	description: "⊜ ❝Active o Desactive para que la persona que envie una traba sea eliminado del grupo.❞",
 	rowId: `${usedPrefix + command} antitraba`}]}, {
 	title: `━━◌*̥₊「 7 」₊*̥◌━━`,
 	rows: [
-	{title: "📛 | ANTI PRIVADO", 
+	{title: "🚫 ☆||☆ 𝐀𝐍𝐓𝐈-𝐏𝐑𝐈𝐕𝐀𝐃𝐎", 
 	description: "⊜ ❝Active o Desactive para que nadie excepto el creador pueda escribirle al privado al bot❞",
 	rowId: `${usedPrefix + command} antiprivado`}]}, {
 	title: `━━◌*̥₊「 8 」₊*̥◌━━`,
 	rows: [
-	{title: "📵 | ANTI LLAMADAS", 
+	{title: "📵 ☆||☆ 𝐀𝐍𝐓𝐈-𝐋𝐋𝐀𝐌𝐀𝐃𝐀𝐒", 
 	description: "⊜ ❝Active o Desactive para que el bot bloqueé a los que llaman al privado❞",
 	rowId: `${usedPrefix + command} anticall`}]}, {
 	title: `━━◌*̥₊「 9 」₊*̥◌━━`,
 	rows: [
-	{title: "🧬 | ANTI FAKES", 
+	{title: "📴 ☆||☆ 𝐀𝐍𝐓𝐈-𝐅𝐀𝐊𝐄𝐒", 
 	description: "⊜ ❝Active o Desactive para que el bot elimine números extranjeros❞",
 	rowId: `${usedPrefix + command} antifakes`}]}, {
 	title: `━━◌*̥₊「 10 」₊*̥◌━━`,
 	rows: [
-	{title: "🔗 | ANTILINK", 
+	{title: "🔗 ☆||☆ 𝐀𝐍𝐓𝐈-𝐋𝐈𝐍𝐊", 
 	description: "⊜ ❝Active o Desactive para que el bot elimine a los que envíen enlaces de WhatsApp❞",
 	rowId: `${usedPrefix + command} antilink`}]}, {
 	title: `━━◌*̥₊「 11 」₊*̥◌━━`,
 	rows: [
-    {title: "🚫 | ANTIDELETE", 
+    {title: "🛑 ☆||☆ 𝐀𝐍𝐓𝐈-𝐃𝐄𝐋𝐄𝐓𝐄", 
     description: "⊜ ❝Active o Desactive para que el bot reenvie los mensajes eliminados❞",
     rowId: `${usedPrefix + command} antidelete`}]}, {
 	title: `━━◌*̥₊「 12 」₊*̥◌━━`,
 	rows: [
-	{title: "⏏️ | AUTOLEVELUP", 
+	{title: "⤴️ ☆||☆ 𝐀𝐔𝐓𝐎𝐋𝐄𝐕𝐄𝐋𝐔𝐏", 
 	description: "⊜ ❝Active o Desactive para subir de nivel automáticamente❞",
 	rowId: `${usedPrefix + command} autolevelup`}]}, {
 	title: `━━◌*̥₊「 13 」₊*̥◌━━`,
 	rows: [
-	{title: "🔎 | DETECT", 
+	{title: "🔎 ☆||☆ 𝐃𝐄𝐓𝐄𝐂𝐓", 
 	description: "⊜ ❝Active o Desactive la info sobre las modificaciones del grupo❞",
 	rowId: `${usedPrefix + command} detect`}]}, {
 	title: `━━◌*̥₊「 14 」₊*̥◌━━`,
 	rows: [
-	{title: "👁 | ANTIVIEWONCE", 
+	{title: "👁 ☆||☆ 𝐀𝐍𝐓𝐈-𝐕𝐈𝐄𝐖𝐎𝐍𝐂𝐄", 
 	description: "⊜ ❝Active o Desactive para reenviar los mensajes viewOnce❞",
 	rowId: `${usedPrefix + command} antiviewonce`}]}, {
 	title: `━━◌*̥₊「 15 」₊*̥◌━━`,
 	rows: [
-	{title: "🛡️ | RESTRICT", 
+	{title: "🛡️ ☆||☆ 𝐑𝐄𝐒𝐓𝐑𝐈𝐂𝐓", 
 	description: "⊜ ❝Active o Desactive las restricciones para sacar gente del grupo❞",
 	rowId: `${usedPrefix + command} restrict`}]}, {
 	title: `━━◌*̥₊「 16 」₊*̥◌━━`,
 	rows: [
-	{title: "👀 | AUTOREAD", 
+	{title: "🔮 ☆||☆ 𝐀𝐔𝐓𝐎𝐑𝐄𝐀𝐃", 
 	description: "⊜ ❝Active o Desactive para que el bot lea automáticamente los mensajes❞",
 	rowId: `${usedPrefix + command} autoread`}]}, {
 	title: `━━◌*̥₊「 17 」₊*̥◌━━`,
 	rows: [
-	{title: "⛔ | ANTI STICKERS", 
+	{title: "🧿 ☆||☆ 𝐀𝐍𝐓𝐈-𝐒𝐓𝐈𝐂𝐊𝐄𝐑𝐒", 
 	description: "⊜ ❝Active o Desactive para que el bot elimine los que mandan stickers❞",
 	rowId: `${usedPrefix + command} antisticker`}]}, {
 	title: `━━◌*̥₊「 18 」₊*̥◌━━`,
 	rows: [
-	{title: "🛃 | ANTI-RAID", 
+	{title: "🛃 ☆||☆ 𝐀𝐍𝐓𝐈-𝐑𝐀𝐈𝐃", 
 	description: "⊜ ❝Active o Desactive para mostrar cuando alguien se convierte o se le quita admin❞",
 	rowId: `${usedPrefix + command} antiraid`}]}, {
 	title: `━━◌*̥₊「 19 」₊*̥◌━━`,
 	rows: [
-	{title: "💬 | ONLYPV", 
+	{title: "💬 ☆||☆ 𝐎𝐍𝐋𝐘𝐏𝐕", 
 	description: "⊜ ❝Active o Desactive para que el bot solo se pueda utilizar en privado❞",
 	rowId: `${usedPrefix + command} pconly`}]}, {
 	title: `━━◌*̥₊「 20 」₊*̥◌━━`,
 	rows: [
-	{title: "👥 | ONLYGP", 
+	{title: "👥 ☆||☆ 𝐎𝐍𝐋𝐈𝐆𝐏", 
 	description: "⊜ ❝Active o Desactive para que el bot solo se pueda utilizar en grupos❞",
 	rowId: `${usedPrefix + command} gconly`}]}
 ]
@@ -111,28 +111,28 @@ const listMessage = {
   text: ' ',
   footer: wm,
   title: `≡ Lista de Opciones\n
-┏━⊜「 *📒LISTA* 」
-┃⋄ welcome 
-┃⋄ public 
-┃⋄ chatbot 
-┃⋄ nsfw
-┃⋄ autosticker
-┃⋄ antitraba
-┃⋄ antiprivado
-┃⋄ anticall 
-┃⋄ antifakes 
-┃⋄ antilink 
-┃⋄ antidelete 
-┃⋄ autolevelup 
-┃⋄ detect
-┃⋄ antiviewonce
-┃⋄ restrict
-┃⋄ autoread
-┃⋄ antisticker
-┃⋄ antiraid
-┃⋄ onlypv
-┃⋄ onlygp
-┗━━━━━━⬣`,
+┏━∇「 ⚙️ 𝐏𝐀𝐍𝐄𝐋 𝐋𝐈𝐒𝐓𝐀 ⚙️ 」
+┃✦ 𝐖𝐄𝐋𝐂𝐎𝐌𝐄
+┃✦ 𝐏𝐔𝐁𝐋𝐈𝐂
+┃✦ 𝐂𝐇𝐀𝐓𝐁𝐎𝐓 
+┃✦ 𝐍𝐒𝐅𝐖
+┃✦ 𝐀𝐔𝐓𝐎𝐒𝐓𝐈𝐂𝐊𝐄𝐑
+┃✦ 𝐀𝐍𝐓𝐈𝐓𝐑𝐀𝐁𝐀
+┃✦ 𝐀𝐍𝐓𝐈𝐏𝐑𝐈𝐕𝐀𝐃𝐎
+┃✦ 𝐀𝐍𝐓𝐈𝐂𝐀𝐋𝐋 
+┃✦ 𝐀𝐍𝐓𝐈𝐅𝐀𝐊𝐄𝐒 
+┃✦ 𝐀𝐍𝐓𝐈𝐋𝐈𝐍𝐊 
+┃✦ 𝐀𝐍𝐓𝐈𝐃𝐄𝐋𝐄𝐓𝐄 
+┃✦ 𝐀𝐔𝐓𝐎𝐋𝐄𝐕𝐄𝐋𝐔𝐏 
+┃✦ 𝐃𝐄𝐓𝐄𝐂𝐓
+┃✦ 𝐀𝐍𝐓𝐈𝐕𝐈𝐄𝐖𝐎𝐍𝐂𝐄
+┃✦ 𝐑𝐄𝐒𝐓𝐑𝐈𝐂𝐓
+┃✦ 𝐀𝐔𝐓𝐎𝐑𝐄𝐀𝐃
+┃✦ 𝐀𝐍𝐓𝐈𝐒𝐓𝐈𝐂𝐊𝐄𝐑
+┃✦ 𝐀𝐍𝐓𝐈𝐑𝐀𝐈𝐃
+┃✦ 𝐎𝐍𝐋𝐘𝐏𝐕
+┃✦ 𝐎𝐍𝐋𝐘𝐆𝐏
+┗━━━━━━Δ`,
   buttonText: "Click Aquí",
   sections
 }
