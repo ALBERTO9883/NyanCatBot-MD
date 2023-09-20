@@ -7,8 +7,8 @@ var number = text.split`@`[1]
 var number = text
 }
 	
-if(!text && !m.quoted) return conn.reply(m.chat, `*[❗] USO APROPIADO*\n\n*USO APROPIADO*\n\n📌 *_Ejemplo :_*
-${usedPrefix}quitaradmin *@tag*\n${usedPrefix}demote *responder a un mensaje*`, m)
+if(!text && !m.quoted) return conn.reply(m.chat, `[⁉️] 𝐔𝐬𝐮 𝐜𝐨𝐫𝐫𝐞𝐜𝐭𝐨 𝐝𝐞𝐥 𝐜𝐨𝐦𝐚𝐧𝐝𝐨\n\n📌 𝐄𝐣𝐞𝐦𝐩𝐥𝐨 :
+${usedPrefix}𝐪𝐮𝐢𝐭𝐚𝐫𝐚𝐝𝐦𝐢𝐧 *@tag*\n${usedPrefix}𝐝𝐞𝐦𝐨𝐭𝐞 𝐑𝐞𝐬𝐩𝐨𝐧𝐝𝐞 𝐚𝐥 𝐦𝐞𝐧𝐬𝐚𝐣𝐞 𝐨 𝐞𝐭𝐢𝐪𝐮𝐞𝐭𝐚𝐫 𝐚𝐥 𝐮𝐬𝐮𝐚𝐫𝐢𝐨`, m)
 if(number.length > 13 || (number.length < 11 && number.length > 0)) return conn.reply(m.chat, `⚠️ *_El número ingresado es incorrecto, por favor ingrese el número correctamente._*`, m)
   
 try {
@@ -22,7 +22,7 @@ var user = number + '@s.whatsapp.net'
 } catch (e) {
 } finally {
 conn.groupParticipantsUpdate(m.chat, [user], 'demote')
-conn.reply(m.chat, `✅ *_Ordenes realizadas._*`, m)
+conn.reply(m.chat, `[↪️] 𝐲𝐚 𝐧𝐨 𝐞𝐬 𝐚𝐝𝐦𝐢𝐧 𝐝𝐞𝐥 𝐠𝐫𝐮𝐩𝐨`, m)
 }}
 handler.help = ['*quitaradmin*'].m
 handler.tags = ['group']
