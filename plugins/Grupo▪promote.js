@@ -7,8 +7,8 @@ var number = text.split`@`[1]
 var number = text
 }
 	
-if(!text && !m.quoted) return conn.reply(m.chat, `*USO APROPIADO*\n\n📌 *_Ejemplo :_*
-${usedPrefix}daradmin *@tag*\n${usedPrefix}promote *responder a un mensaje*`, m)
+if(!text && !m.quoted) return conn.reply(m.chat, `[⁉️] 𝐔𝐬𝐨 𝐜𝐨𝐫𝐫𝐞𝐜𝐭𝐨 𝐝𝐞𝐥 𝐜𝐨𝐦𝐚𝐧𝐝𝐨\n\n📌 𝐄𝐣𝐞𝐦𝐩𝐥𝐨 :
+${usedPrefix}𝐝𝐚𝐫𝐚𝐝𝐦𝐢𝐧 *@tag*\n${usedPrefix}𝐩𝐫𝐨𝐦𝐨𝐭𝐞 𝐑𝐞𝐩𝐨𝐧𝐝𝐞 𝐚𝐥 𝐦𝐞𝐧𝐬𝐚𝐣𝐞 𝐨 𝐞𝐭𝐢𝐪𝐮𝐞𝐭𝐚𝐫 𝐚𝐥 𝐮𝐬𝐮𝐚𝐫𝐢𝐨`, m)
 if(number.length > 13 || (number.length < 11 && number.length > 0)) return conn.reply(m.chat, `⚠️ *_El número ingresado es incorrecto, por favor ingrese el número correctamente_*`, m)
 	
 try {
