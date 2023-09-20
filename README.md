@@ -35,4 +35,7 @@ ESCRIBE LOS SIGUIENTES COMANDOS UNO POR UNO:
 > yarn install
 > node .
 ```
-
+## `EDITOR & PROPIETARIO DEL BOT` 
+<a href="https://github.com/HACHEJOTA"><img src="https://github.com/HACHEJOTA.png" width="250" height="250" alt="HACHEJOTA"/></a>
+  
+`𝗟𝗼𝗯𝗼 - 𝗕𝘆 𝗘𝗻𝗱𝗲𝗿 𝗚𝗕`
