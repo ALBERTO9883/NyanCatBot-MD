@@ -39,8 +39,8 @@ ESCRIBE LOS SIGUIENTES COMANDOS UNO POR UNO:
 ## `COLABORADORES DEL BOT` 
 <a href="https://github.com/HACHEJOTA-Hachiko-Bot-MD"><img src="https://github.com/SinNombre999.png" width="200" height="200" alt="SinNombre999"/></a>
 
-<div align="center">
-  <h1 align="center">EDITOR Y PROPIETARIO DEL BOT</h1>
-
-<a href="(https://github.com/Ender-GB-Isis777)><img src="https://github.com/ALBERTO9883.png" width="300" height="300" alt="ALBERTO9883"/></a>
+# `EDITOR & PROPIETARIO DEL BOT` 
+<a href="https://github.com/"><img src="https://github.com/HACHEJOTA.png" width="250" height="250" alt="HACHEJOTA"/></a>
+  
+`HachikoBot - By HacheJota`
 
