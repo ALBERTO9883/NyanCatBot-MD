@@ -30,7 +30,7 @@
         "@adiwajshing/keyed-db": "^0.2.4",
         "@bochilteam/scraper": "^4.2.3",
         "@fantox01/lyrics-scraper": "^2.0.0",
-        "@whiskeysockets/baileys": "^6.3.0",
+        "@whiskeysockets/baileys": "npm:@whiskeysockets/baileys",
         "acrcloud": "^1.4.0",
         "api-dylux": "^1.5.5",
         "aptoide-scraper": "^1.0.1",
