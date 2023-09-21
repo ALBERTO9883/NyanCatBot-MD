@@ -1,17 +1,17 @@
-console.log('🐺ㅤIniciando Lobo-MD...')
-import { join, dirname } from 'path'
-import { createRequire } from "module";
-import { fileURLToPath } from 'url'
-import { setupMaster, fork } from 'cluster'
-import { watchFile, unwatchFile } from 'fs'
+console.log('🐺ㅤIniciando Lobo-MD...');
+import { join, dirname } from 'path';
+import { createRequire } from 'module';
+import { fileURLToPath } from 'url';
+import { setupMaster, fork } from 'cluster';
+import { watchFile, unwatchFile } from 'fs';
 import cfonts from 'cfonts';
-import { createInterface } from 'readline'
-import yargs from 'yargs'
-const __dirname = dirname(fileURLToPath(import.meta.url))
-const require = createRequire(__dirname) 
-const { name, author } = require(join(__dirname, './package.json')) 
-const { say } = cfonts
-const rl = createInterface(process.stdin, process.stdout)
+import { createInterface } from 'readline';
+import yargs from 'yargs';
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const require = createRequire(__dirname);
+const { name, author } = require(join(__dirname, './package.json'));
+const { say } = cfonts;
+const rl = createInterface(process.stdin, process.stdout);
 
 say('LoboBot - MD', {
 font: 'tiny',
