@@ -1,5 +1,5 @@
 {
-    "name": "LOBO-BOT-MD",
+    "name": "LOBOBOT-MD",
     "version": "1.0.0",
     "description": "Si tu quisieras esta noche ir a bailar un chachachá,  yo te puedo enamorar",
     "main": "index.js",
@@ -23,7 +23,7 @@
         "url": "git+https://github.com/Ender-GB-Isis777/LOBO-BOT-MD.git"
     },
     "bugs": {
-        "url": "https://github.com/Ender-GB-Isis777/LOBO-BOT-MDissues"
+        "url": "https://github.com/Ender-GB-Isis777/LOBO-BOT-MD/issues"
     },
     "license": "GPL-3.0-or-later",
     "dependencies": {
