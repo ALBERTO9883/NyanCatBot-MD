@@ -29,7 +29,7 @@ export async function handler(chatUpdate) {
         if (!m)
             return
         m.exp = 0
-        m.limit = false
+        m.cookie = false
         try {
             // TODO: use loop to insert data instead of this
             let user = global.db.data.users[m.sender]
@@ -38,8 +38,8 @@ export async function handler(chatUpdate) {
             if (user) {
                 if (!isNumber(user.exp))
                     user.exp = 0
-                if (!isNumber(user.limit))
-                    user.limit = 10
+                if (!isNumber(user.cookie))
+                    user.cookie = 10
                 if (!isNumber(user.lastclaim))
                     user.lastclaim = 0
                 if (!('registered' in user))
@@ -71,8 +71,8 @@ export async function handler(chatUpdate) {
                     user.money = 0
                 if (!isNumber(user.health))
                     user.health = 100
-                if (!isNumber(user.limit))
-                    user.limit = 10
+                if (!isNumber(user.cookie))
+                    user.cookie = 20
                 if (!isNumber(user.potion))
                     user.potion = 0
                 if (!isNumber(user.trash))
@@ -200,7 +200,7 @@ export async function handler(chatUpdate) {
             } else
                 global.db.data.users[m.sender] = {
                     exp: 0,
-                    limit: 15,
+                    cookie: 15,
                     lastclaim: 0,
                     registered: false,
                     name: m.name,
@@ -216,7 +216,7 @@ export async function handler(chatUpdate) {
 
                     money: 0,
                     health: 100,
-                    limit: 10,
+                    cookie: 20,
                     potion: 10,
                     trash: 0,
                     wood: 0,
@@ -562,8 +562,8 @@ export async function handler(chatUpdate) {
                     m.reply('Ngecit -_-') // Hehehe
                 else
                     m.exp += xp
-                if (!isPrems && plugin.limit && global.db.data.users[m.sender].limit < plugin.limit * 1) {
-                    this.sendButton(m.chat, `⚠️️ Tus monedas se agotaron \n *_use el siguiente comando para comprar más monedas_* \n*${usedPrefix}buy* *<cantidad>* \n*${usedPrefix}buyall*`, ignyc, null, [['Buy', `${usedPrefix}buy`], ['Buy All', `${usedPrefix}buyall`]], m)
+                if (!isPrems && plugin.cookie && global.db.data.users[m.sender].cookie < plugin.cookie * 1) {
+                    this.sendButton(m.chat, `⚠️️ Tus galletas se agotaron \n *_use el siguiente comando para comprar más galletitas* \n*${usedPrefix}buy* *<cantidad>* \n*${usedPrefix}buyall*`, ignyc, null, [['Buy', `${usedPrefix}buy`], ['Buy All', `${usedPrefix}buyall`]], m)
                     continue 
                 }
                 if (plugin.level > _user.level) {
@@ -596,7 +596,7 @@ export async function handler(chatUpdate) {
                 try {
                     await plugin.call(this, m, extra)
                     if (!isPrems)
-                        m.limit = m.limit || plugin.limit || false
+                        m.cookie = m.cookie || plugin.cookie || false
                 } catch (e) {
                     // Error occured
                     m.error = e
@@ -622,8 +622,8 @@ export async function handler(chatUpdate) {
                             console.error(e)
                         }
                     }
-                    if (m.limit)
-                        m.reply(`*_Utilizaste ${+m.limit} de tus moneditas 🪙_*`)
+                    if (m.cookie)
+                        m.reply(`*_Utilizaste ${+m.cookie} de tus galletas 🍪_*`)
                 }
                 break
             }
@@ -641,7 +641,7 @@ export async function handler(chatUpdate) {
         if (m) {
             if (m.sender && (user = global.db.data.users[m.sender])) {
                 user.exp += m.exp
-                user.limit -= m.limit * 1
+                user.cookie -= m.cookie * 1
             }
 
             let stat
@@ -714,12 +714,12 @@ export async function participantsUpdate({ id, participants, action }) {
                         text = (action === 'add' ? (chat.sWelcome || this.welcome || Connection.conn.welcome || 'Bienvenido, @user').replace('@group', await this.getName(id)).replace('@date', date).replace('@bio', about).replace('@time', time).replace('@desc', groupMetadata.desc?.toString() || 'unknow') :
                             (chat.sBye || this.bye || Connection.conn.bye || 'Adiós, @user')).replace('@user', '@' + user.split('@')[0]).replace('@date', date).replace('@bio', about).replace('@time', time)
  
- let wel = await conn.getFile(`https://api.lolhuman.xyz/api/welcomeimage?apikey=${lolkeysapi}&img=${pp}&text=Hola,+Bienvenido+al+grupo`)
+let wel = await conn.getFile(`https://api.lolhuman.xyz/api/welcomeimage?apikey=${lolkeysapi}&img=${pp}&text=Hola,+Bienvenido+al+grupo`)
  
 let bye = await conn.getFile(`https://api.lolhuman.xyz/api/welcomeimage?apikey=${lolkeysapi}&img=${pp}&text=Se+fue+un+Burro`)
 
 
- conn.sendFile(id, action === 'add' ? wel.data : bye.data,  'out.png', text, false, true, { contextInfo: { 'forwardingScore': 200, 'isForwarded': false, externalAdReply:{ showAdAttribution: false, title: botname, body: `h`, mediaType: 2, sourceUrl: linkgc, thumbnail: miniurl}, mentionedJid: [user]}}, { quoted: false })
+conn.sendFile(id, action === 'add' ? wel.data : bye.data,  'out.png', text, false, true, { contextInfo: { 'forwardingScore': 200, 'isForwarded': false, externalAdReply:{ showAdAttribution: false, title: botname, body: `h`, mediaType: 2, sourceUrl: linkgc, thumbnail: miniurl}, mentionedJid: [user]}}, { quoted: false })
  
                     }
                 }
