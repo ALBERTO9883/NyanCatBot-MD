@@ -5,11 +5,7 @@ import fs from 'fs'
  
 //• ↳ᏢϴΝ ᏞϴՏ ΝႮ́ᎷᎬᎡϴՏ ϘႮᎬ ϘႮᏆᎬᎡᎪՏ
 global.owner = [
-  ['50499698072', '۪〬.࠭⤿ 👑 ⋅ Aʟʙᴇʀᴛᴏ', true],
-  ['19045209846', '۪〬.࠭⤿ 👤 ⋅ LevelUp㋡', true],
-  ['50246028932', '۪〬.࠭⤿ 👤 ⋅ SinNombre', true],
-  ['50232239315', '۪〬.࠭⤿ 👤 ⋅ Xavi', true],
-  ['573012949069', '۪〬.࠭⤿ 👤 ⋅ Yorman', true]
+  ['50499698072', '۪〬.࠭⤿ 👑 ⋅ Aʟʙᴇʀᴛᴏ', true]
 ]
 global.mods = [] 
 global.prems = [] 
@@ -44,7 +40,8 @@ global.APIs = { // API Prefix
   ana: 'https://anabotofc.herokuapp.com/',
   kanx: 'https://kannxapi.herokuapp.com/',
   dhnjing: 'https://dhnjing.xyz',
-  violetics: 'https://violetics.pw'
+  violetics: 'https://violetics.pw',
+  fgmods: 'https://api.fgmods.xyz'
 },
 global.APIKeys = { // APIKey Here
   // 'https://website': 'apikey'
@@ -64,7 +61,8 @@ global.APIKeys = { // APIKey Here
   'https://botstyle-api.herokuapp.com': 'Eyar749L',
   'https://neoxr-api.herokuapp.com': 'yntkts',
   'https://anabotofc.herokuapp.com/': 'AnaBot',
-  'https://violetics.pw': 'beta'
+  'https://violetics.pw': 'beta',
+  'https://api.fgmods.xyz': 'KgrTRknD'
 }
 
 //▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰
@@ -108,7 +106,7 @@ global.author = `A\nL\nB\nE\nR\nT\nO\n\n🐢`
 
 //▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰
 //• ↳ ◜𝑴𝑺𝑮 𝑫𝑬 𝑬𝑺𝑷𝑬𝑹𝑨◞ • 🈸
-global.wait = '*⏳Aɢᴜᴀʀᴅᴇ ᴜɴ ᴍᴏᴍᴇɴᴛᴏ... ฅ^•ﻌ•^ฅ⏳*'
+global.wait = '⏳Aɢᴜᴀʀᴅᴇ ᴜɴ ᴍᴏᴍᴇɴᴛᴏ... ฅ^•ﻌ•^ฅ⏳'
 //▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰
 
 
@@ -149,7 +147,7 @@ global.ownerfk = { "key": {"participants":"0@s.whatsapp.net", "remoteJid": "stat
 global.estilo = { key: {  fromMe: false, participant: `0@s.whatsapp.net`, ...(false ? { remoteJid: "5219992095479-1625305606@g.us" } : {}) }, message: { orderMessage: { itemCount : -999999, status: 1, surface : 1, message: `${botname}\n${me}`, orderTitle: 'Bang', thumbnail: catalogo, sellerJid: '0@s.whatsapp.net'}}}
 //▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰
 //• ↳ ◜𝑮𝑰𝑭 𝑽𝑬𝑹𝑰𝑭𝑰𝑪𝑨𝑫𝑶◞ • 🌺
-global.fgif = { key: {participant: `0@s.whatsapp.net`, ...(false ? { remoteJid: "6289643739077-1613049930@g.us" } : {})},message: {"videoMessage": { "title":`*${me}*`, "h": `Hmm`,'seconds': '99999', 'gifPlayback': 'true', 'caption': `${botname}\n      ${me}`, 'jpegThumbnail': imgfgif }}}
+global.fgif = { key: {participant: `0@s.whatsapp.net`, ...(false ? { remoteJid: "6289643739077-1613049930@g.us" } : {})},message: {"videoMessage": { "title":`${me}`, "h": `Hmm`,'seconds': '99999', 'gifPlayback': 'true', 'caption': `${botname}\n      ${me}`, 'jpegThumbnail': imgfgif }}}
 //▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰
 //• ↳ ◜𝑨𝑼𝑫𝑰𝑶 𝑽𝑬𝑹𝑰𝑭𝑰𝑪𝑨𝑫𝑶◞ • 🌺
 global.estiloaudio = { key: {  fromMe: false, participant: `0@s.whatsapp.net`, ...(false ? { remoteJid: "50499698072-1625305606@g.us" } : {}) }, message: { "audioMessage": { "mimetype":"audio/ogg; codecs=opus", "seconds": "99569", "ptt": "true"   }}}  
@@ -158,7 +156,7 @@ global.estiloaudio = { key: {  fromMe: false, participant: `0@s.whatsapp.net`, .
 global.fdocument = {key : {participant : '0@s.whatsapp.net'},message: {documentMessage: {title: `${botname}\n   ${me}`,jpegThumbnail: catalogo}}}
 //▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰
 //• ↳ ◜𝑰𝑴𝑨𝑮𝑬𝑵 𝑽𝑬𝑹𝑰𝑭𝑰𝑪𝑨𝑫𝑨◞ • 🌺
-global.fakeimg = { key: {participant: `0@s.whatsapp.net`, ...(false ? { remoteJid: "6289643739077-1613049930@g.us" } : {})},message: {"imageMessage": { "title":`*${me}*`, "h": `Hmm`,'seconds': '99999', 'imagePlayback': 'true', 'caption': `${botname}\n    ${me}`, 'jpegThumbnail': catalogo }}}
+global.fakeimg = { key: {participant: `0@s.whatsapp.net`, ...(false ? { remoteJid: "6289643739077-1613049930@g.us" } : {})},message: {"imageMessage": { "title":`${me}`, "h": `Hmm`,'seconds': '99999', 'imagePlayback': 'true', 'caption': `${botname}\n    ${me}`, 'jpegThumbnail': catalogo }}}
 //▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰
 //• ↳ ◜𝑴𝑬𝑵𝑺𝑨𝑱𝑬 𝑽𝑬𝑹𝑰𝑭𝑰𝑪𝑨𝑫𝑶◞ • 🌺
 global.fakemsg = { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(false ? { remoteJid: "17608914335-1625305606@g.us" } : {}) }, message: { "extendedTextMessage": { "text":`${botname}\n${me}`, "title": `${botname}`, 'jpegThumbnail': catalogo}}}
@@ -185,8 +183,21 @@ global.fproducto2 = { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...
 global.fakevoimg = { key: { fromMe: false, participant: '0@s.whatsapp.net', remoteJid: 'status@broadcast' }, message: { imageMessage: { mimetype: 'image/jpeg', caption: botname, jpegThumbnail: catalogo, viewOnce: true }}}
 //▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰
 //• ↳ ◜𝑽𝑰𝑬𝑾𝑶𝑵𝑪𝑬 𝑽𝑬𝑹𝑰𝑭𝑰𝑪𝑨𝑫𝑶 #2◞ • 🌺
-global.fakevovid = { key: { fromMe: false, participant: '0@s.whatsapp.net', remoteJid: 'status@broadcast' }, message: { videoMessage: { mimetype: 'video/mp4', caption: botname, jpegThumbnail: catalogo, viewOnce: true }}}
+global.fakevovid = { key: { fromMe: false, participant: '0@s.whatsapp.net', remoteJid: 'status@broadcast' }, message: {
+  extendedTextMessage: {
+    text: '=> m.message',
+    previewType: 0,
+    contextInfo: {
+      mentionedJid: [],
+      groupMentions: [],
+      stanzaId: '1B0791BAB5D10FE6E78F69E64F013B02',
+      participant: '50499698072@s.whatsapp.net',
+      expiration: 7776000,
+      ephemeralSettingTimestamp: true,
+      disappearingMode: true
+    }}}}
 //▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰
+
 //• ↳ ◜𝑷𝑨𝒀𝑴𝑬𝑵𝑻 𝑽𝑬𝑹𝑰𝑭𝑰𝑪𝑨𝑫𝑶◞ • 🌺
 global.fpay = { "key": { "participant": `0@s.whatsapp.net`, "remoteJid": "6287834993722-1621306547@g.us", "fromMe": false, "id": "3B64558B07848BD81108C1D14712018E" }, "message": { "requestPaymentMessage": { "currencyCodeIso4217": "USD", "amount1000": "100000", "requestFrom": "50499698072@s.whatsapp.net", "noteMessage": { "extendedTextMessage": { "text": botname }}, "expiryTimestamp": "0", "amount": { "value": "100000", "offset": 1000, "currencyCode": "USD" }, "background": { "id": "BBB9307B17C17F928E57A7435E45033E", "fileLength": "94896", "width": 64, "height": 64, "mimetype": "image/webp", "placeholderArgb": 4288282521, "textArgb": 4278190080, "subtextArgb": 4288282521}}}}
 //▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰
@@ -213,9 +224,11 @@ global.adyt = { contextInfo: { externalAdReply: { showAdAttribution: true, title
 //• ↳ ◜𝑲𝑬𝒀𝑺 𝑨𝑷𝑰𝑺◞ • 🌾
 global.keysZens = ['fiktod', 'c2459db922', 'BF39D349845E', '675e34de8a', '37CC845916', '0b917b905e6f', '6fb0eff124']
 global.keysxxx = keysZens[Math.floor(keysZens.length * Math.random())]
-global.lolkeysapi = ['NyanCatBot']
+global.lolkeysapi = ['GataDios']
 global.fgapikey = ['fg-dylux']
 global.zenzapikey = ['zenzkey_048b3b850d51']
+global.ibengapijson = ['GeVyaThW9S', 'HrGOK5NCnV']
+global.ibengapi = ibengapijson[Math.floor(ibengapijson.length * Math.random())]
 //▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰
 
 //▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰
