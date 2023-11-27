@@ -25,9 +25,9 @@ console.error(e)}
  await conn.sendMessage(m.chat, { delete: key })
 } catch {
  await conn.sendMessage(m.chat, { delete: m.quoted.vM.key })}
-        await conn.sendButton(m.chat, `*≡ Enlace Detectado*
+ await conn.reply(m.chat, `*≡ Enlace Detectado*
             
-🐢Nᴏ Sᴇ Pᴇʀᴍɪᴛᴇɴ Eɴʟᴀᴄᴇs Eɴ Esᴛᴇ Cʜᴀᴛ Lᴏ Sɪᴇɴᴛᴏ *@${m.sender.split`@`[0]}* Sᴇʀᴀ́s Exᴘᴜʟsᴀᴅᴏ Dᴇʟ Gʀᴜᴘᴏ ${isBotAdmin ? '' : '\n\nTᴇ Sᴀʟᴠᴀsᴛᴇ Nᴏ Sᴏʏ Aᴅᴍɪɴ =/'}`, ignyc, ['AɴᴛɪLɪɴᴋ Oғғ❌', '/off antilink'], m, { mentions: [m.sender] })
+ 🐢Nᴏ Sᴇ Pᴇʀᴍɪᴛᴇɴ Eɴʟᴀᴄᴇs Eɴ Esᴛᴇ Cʜᴀᴛ Lᴏ Sɪᴇɴᴛᴏ *@${m.sender.split`@`[0]}* Sᴇʀᴀ́s Exᴘᴜʟsᴀᴅᴏ Dᴇʟ Gʀᴜᴘᴏ ${isBotAdmin ? '' : '\n\nTᴇ Sᴀʟᴠᴀsᴛᴇ Nᴏ Sᴏʏ Aᴅᴍɪɴ =/'}`, m, { mentions: [m.sender] })
         if (isBotAdmin && chat.antiLink) {
             await conn.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
         } else if (!chat.antiLink) return //m.reply('')

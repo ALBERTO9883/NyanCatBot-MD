@@ -1,27 +1,36 @@
+import fetch from "node-fetch";
+let handler = async (m, { conn, args, text, usedPrefix, command }) => {
+  if (!args[0])
+    throw `⚠️ *Escriba un Nombre de Usuario.*\n\n📌 *_Ejemplo :_* ${
+      usedPrefix + command
+    } carlos_acosta.1`;
+  let res = await fetch(
+    `https://api.lolhuman.xyz/api/stalkig/${args[0]}?apikey=${lolkeysapi}`
+  );
+  let igs = await res.json();
+  let img = await (await fetch(igs.result.photo_profile)).buffer();
+  let te = `*Instagram Stalk 🌺*
+  
+ *⤿ 🥗 Nombre:* ${igs.result.fullname}
+ *⤿ 🍘 Username:* ${igs.result.username}
+ *⤿ 👥 Seguidores:* ${igs.result.followers}
+ *⤿ 🐢 Siguiendo:* ${igs.result.following}
+ *⤿ 💬 Bio:* ${igs.result.bio}
+ *⤿ 🏝️ Posts:* ${igs.result.posts}`;
 
-import fg from 'api-dylux'
-let handler= async (m, { conn, args, text, usedPrefix, command }) => {
-	
-    if (!args[0]) throw `⚠️ *Escriba un Nombre de Usuario.*\n\n📌 *_Ejemplo :_* ${usedPrefix + command} carlos_acosta.1` 
-    let res = await fg.igStalk(args[0])
-    let te = `
-┏━⊜「 *STALKING* 」
-┃⋄ *🔖Nombre:* ${res.name} 
-┃⋄ *🔖Username:* ${res.username}
-┃⋄ *👥Seguidores:* ${res.followersH}
-┃⋄ *🫂Siguiendo:* ${res.followingH}
-┃⋄ *📌Bio:* ${res.description}
-┃⋄ *🏝️Posts:* ${res.postsH}
-┃
-┃⋄ *🔗 Link* : https://instagram.com/${res.username.replace(/^@/, '')}
-┗━━━━━⬣`
+  conn.sendUrl(m.chat, te, m, {
+    externalAdReply: {
+      mediaType: 1,
+      renderLargerThumbnail: true,
+      thumbnail: img,
+      thumbnailUrl: img,
+      title: botname,
+    },
+  });
+};
+handler.help = ["igstalk *<nombre de usuario>*"];
+handler.tags = ["downloader"];
+handler.command = ["igstalk"];
+handler.register = true;
 
-     await conn.sendFile(m.chat, res.profilePic, 'tt.png', te, m)
-     
-}
-handler.help = ['igstalk *<nombre de usuario>*']
-handler.tags = ['downloader']
-handler.command = ['igstalk'] 
-handler.register = true
-
-export default handler
+export default handler;

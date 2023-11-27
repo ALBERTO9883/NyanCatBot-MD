@@ -33,7 +33,7 @@ function handler(m, { text }) {
 }
 handler.help = ['nombreninja *<texto>*']
 handler.tags = ['fun']
-handler.command = ['nombreninja']
+handler.command = ['nombreninja', 'nameninja']
 handler.register = true
 
 export default handler

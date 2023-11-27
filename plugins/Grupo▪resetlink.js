@@ -4,7 +4,7 @@ let handler = async(m, { conn }) => {
 }
 
 handler.tags = ['group']
-handler.command = handler.help = ['resetlink']
+handler.command = handler.help = ['resetlink', 'revoke']
 handler.botAdmin = true
 handler.admin = true
 handler.group = true
