@@ -9,6 +9,6 @@ let handler = async (m, { conn, args }) => {
 handler.help = ['logololi'].map(v => v + ' *<nombre>*')
 handler.tags = ['logo']
 handler.command = /^(logololi)$/i
-handler.limit = true
+handler.cookie = true
 
 export default handler

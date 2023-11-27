@@ -9,6 +9,6 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
 handler.help = ['logoneko'].map(v => v + ' *<texto|texto>*')
 handler.tags = ['logo']
 handler.command = /^(logoneko)$/i
-handler.limit = true
+handler.cookie = true
 
 export default handler

@@ -6,7 +6,7 @@ let handler = async(m, { conn, text, usedPrefix, command }) => {
   await conn.sendNyanCat(m.chat, global.wait, adnyancat, adimagen, null, script, m)
   conn.sendFile(m.chat, json.getRandom(), 'pinterest.jpg', `
 *• ♦️ Pinterest:*  ${text}
-`.trim(), fakemsg)
+`.trim(), m)
 }
 handler.help = ['pinterest']
 handler.tags = ['img']

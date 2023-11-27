@@ -9,5 +9,4 @@ handler.help = ['totalfunciones']
 handler.tags = ['info']
 handler.command = ['totalfunciones']
 handler.register = true
-handler.limit = false
 export default handler 

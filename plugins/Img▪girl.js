@@ -14,7 +14,7 @@ handler.tags = ['img']
 handler.command = ['girl', 'woman']
 handler.register = true
 handler.premium = false
-handler.limit = true
+handler.cookie = true
 
 export default handler
 

@@ -11,13 +11,35 @@ var {age} = global.db.data.users[m.sender]
    m.reply(`❎ Eres menor de edad! vuelve cuando tengas más de 18 años`)
    throw false
 	}
-let cosp = await conn.getFile(`https://api-fgmods.ddns.net/api/nsfw/cosplay?apikey=${fgapikey}`)
 await conn.sendNyanCat(m.chat, global.wait, adnyancat18, adnsfw, null, script, m)
-conn.sendButton(m.chat, `_${command}_`.trim(), `*◈•${name}*`, cosp.data, [['「🔃 Sɪɢᴜɪᴇɴᴛᴇ 🔃」', `${usedPrefix + command}`]], fakemsg)
+conn.sendFile(
+   m.chat,
+   'https://api-fgmods.ddns.net/api/nsfw/cosplay?apikey=KgrTRknD',
+   "out.png",
+   `_${command}_`.trim(),
+   m,
+   true,
+   {
+     contextInfo: {
+       forwardingScore: 200,
+       isForwarded: false,
+       externalAdReply: {
+         showAdAttribution: false,
+         title: botname,
+         body: `h`,
+         mediaType: 2,
+         sourceUrl: linkgc,
+         thumbnail: miniurl,
+       },
+       mentions: [m.sender],
+     },
+   },
+   { quoted: m }
+ );
 }
 handler.help = ['pack']
 handler.tags = ['nsfw']
-handler.command = ['pack']
-handler.limit = true
+handler.command = ['nsfwcosplay']
+handler.cookie = true
 handler.register = true
 export default handler

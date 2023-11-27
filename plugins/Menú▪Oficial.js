@@ -40,7 +40,7 @@ const defaultMenu = {
 
 ┏━━⊜ *_INFO USER_* ━⊜
 ┃⋄ 📇 *Nombre*:  %taguser
-┃⋄ 🪙 *Monedas*: %limit
+┃⋄ 🍪 *Galletas*: %cookie
 ┃⋄ 📊 *Nivel*: %level (%exp / %maxexp) 
 ┃⋄ ✨ *Exp*: %totalexp
 ┃⋄ 📍 *Rol*: %role
@@ -60,7 +60,7 @@ const defaultMenu = {
 ┃⋄ *_Características del Menú_*
 ┃
 ┃ •🪪 = *_Premium_*
-┃ •🪙 = *_Monedas_*
+┃ •🍪 = *_Galletas_*
 ┗━━━━━━━━━━━━━━┛\n
   ≡ \`\`\`LISTA DE MENUS\`\`\`
 `.trimStart(),
@@ -72,7 +72,7 @@ const defaultMenu = {
 
   try {
     let _package = JSON.parse(await promises.readFile(join(__dirname, '../package.json')).catch(_ => ({}))) || {}
-    let { exp, limit, level, role } = global.db.data.users[m.sender]
+    let { exp, cookie, level, role } = global.db.data.users[m.sender]
     let { min, xp, max } = xpRange(level, global.multiplier)
     let name = await conn.getName(m.sender)
     let d = new Date(new Date + 3600000)
@@ -113,7 +113,7 @@ const defaultMenu = {
         help: Array.isArray(plugin.tags) ? plugin.help : [plugin.help],
         tags: Array.isArray(plugin.tags) ? plugin.tags : [plugin.tags],
         prefix: 'customPrefix' in plugin,
-        limit: plugin.limit,
+        cookie: plugin.cookie,
         premium: plugin.premium,
         enabled: !plugin.disabled,
       }
@@ -135,7 +135,7 @@ const defaultMenu = {
           ...help.filter(menu => menu.tags && menu.tags.includes(tag) && menu.help).map(menu => {
             return menu.help.map(help => {
               return body.replace(/%cmd/g, menu.prefix ? help : '%p' + help)
-                .replace(/%islimit/g, menu.limit ? '◜🪙◞' : '')
+                .replace(/%islimit/g, menu.cookie ? '◜🍪◞' : '')
                 .replace(/%isPremium/g, menu.premium ? '◜🪪◞' : '')
                 .trim()
             }).join('\n')
@@ -163,7 +163,7 @@ const defaultMenu = {
       totalexp: exp,
       xp4levelup: max - exp,
       github: _package.homepage ? _package.homepage.url || _package.homepage : '[unknown github url]',
-      greeting, level, limit, name, weton, week, date, dateIslamic, time, totalreg, rtotalreg, role,
+      greeting, level, cookie, name, weton, week, date, dateIslamic, time, totalreg, rtotalreg, role,
       readmore: readMore
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
