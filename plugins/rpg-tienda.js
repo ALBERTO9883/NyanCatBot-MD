@@ -2,8 +2,8 @@ import MessageType from '@whiskeysockets/baileys'
 import fs from 'fs'
 const potion = 520
 const Spotion = 150 
-const limit = 350
-const Slimit = 100
+const cookie = 350
+const Scookie = 100
 const Bdiamond = 900
 const Sdiamond = 750
 const Bcommon = 200
@@ -32,7 +32,7 @@ const _pickaxe = global.db.data.users[m.sender].pickaxe
 • 🛡️ Armadura:   ${armor}
 • 🗡️ Espada:   ${sword}
 • 🧪 Pocion:   ${potion}
-• ✨ Limit:   ${limit}
+• 🍪 Galleta:   ${cookie}
 • 💎 Diamante:   ${Bdiamond}
 • 📦 Comun:   ${Bcommon}
 • 🛍️ Raro:   ${Buncommon}
@@ -43,7 +43,7 @@ const _pickaxe = global.db.data.users[m.sender].pickaxe
 ✅ Ejemplos de uso: ${usedPrefix}comprar pocion 1\n
 *Ítems | Precio de venta*\n
 • 🧪 Pocion:   ${Spotion}
-• ✨ Limit:   ${Slimit}
+• ✨ Galleta:   ${Scookie}
 • 💎 Diamante:   ${Sdiamond}
 • 📦 Comun:   ${Scommon}
 • 🛍️ Raro:   ${Suncommon}
@@ -91,12 +91,12 @@ let buttonMessage= {
                                 conn.reply(m.chat, `Compraste con exito ${count}  pocion/es precio de ${potion * count} dinero\n\nUsa pociones escribiendo: *${usedPrefix}use pocion <número>*`, m)
                             } else conn.reply(m.chat, `Tu dinero no es suficiente para comprar ${count} Pocion/es a precio de  ${potion * count} dinero`,)
                         break
-                    case 'limit':
-                             if (global.db.data.users[m.sender].exp >= limit * count) {
-                             	global.db.data.users[m.sender].exp -= limit * count
-                                 global.db.data.users[m.sender].limit += count * 1
-                                 conn.reply(m.chat, `Compraste con exito ${count} limit por ${limit * count} exp`, m)
-                              } else conn.reply(m.chat, `Tu experiencia no es suficiente para comprar ${count} limit por ${limit * count} exp`, m)
+                    case 'cookie':
+                             if (global.db.data.users[m.sender].exp >= cookie * count) {
+                             	global.db.data.users[m.sender].exp -= Scookie * count
+                                 global.db.data.users[m.sender].cookie += count * 1
+                                 conn.reply(m.chat, `Compraste con exito ${count} galletas por ${cookie * count} exp`, m)
+                              } else conn.reply(m.chat, `Tu experiencia no es suficiente para comprar ${count} galletas por ${cookie * count} exp`, m)
                            break
                     case 'diamante':
                             if (global.db.data.users[m.sender].money >= Bdiamond * count) {
@@ -176,11 +176,11 @@ let buttonMessage= {
                             conn.reply(m.chat, `Conpraste con exito ${count} al precio de ${Spotion * count} monedas`.trim(), m)
                         } else conn.reply(m.chat, `Tus pociones no son suficientes`.trim(), m)
                         break
-                   case 'limit':
-                       if (global.db.data.users[m.sender].limit >= count * 1) {
-                            global.db.data.users[m.sender].exp += Slimit * count
-                            global.db.data.users[m.sender].limit -= count * 1
-                            conn.reply(m.chat, `Compraste con exito ${count} limit a precio de ${Slimit * count} exp`.trim(), m)
+                   case 'cookie':
+                       if (global.db.data.users[m.sender].cookie >= count * 1) {
+                            global.db.data.users[m.sender].exp += Scookie * count
+                            global.db.data.users[m.sender].cookie -= count * 1
+                            conn.reply(m.chat, `Compraste con exito ${count} cookie a precio de ${Scookie * count} exp`.trim(), m)
                          } else conn.reply(m.chat, `Tus límit no son suficientes`.trim(), m)
                          break
                     case 'comun':
@@ -243,12 +243,12 @@ let buttonMessage= {
                         } else conn.reply(m.chat, `No tienes suficiente dinero para comprar ${count}  ${potion * count} monedas`,m)
                     
                     break
-               case 'limit':
-                        if (global.db.data.users[m.sender].exp >= limit * count) {
-                        	global.db.data.users[m.sender].exp -= limit * count
-                            global.db.data.users[m.sender].limit += count * 1
-                            conn.reply(m.chat, `Compraste con exito ${count} a precio de ${limit * count} exp`, m)
-                         } else conn.reply(m.chat, `Exp kamu tidak cukup untuk membeli ${count} limit dengan harga ${limit * count} exp`, m)
+               case 'cookie':
+                        if (global.db.data.users[m.sender].exp >= cookie * count) {
+                        	global.db.data.users[m.sender].exp -= cookie * count
+                            global.db.data.users[m.sender].cookie += count * 1
+                            conn.reply(m.chat, `Compraste con exito ${count} galletas a precio de ${cookie * count} exp`, m)
+                         } else conn.reply(m.chat, `Exp kamu tidak cukup untuk membeli ${count} cookie dengan harga ${cookie * count} exp`, m)
                          break
                 case 'diamante':
                         if (global.db.data.users[m.sender].money >= Bdiamond * count) {
@@ -344,11 +344,11 @@ let buttonMessage= {
                         conn.reply(m.chat, `Venta exitosa, vendiste ${count} pocion/es al precio de ${Spotion * count} dinero`.trim(), m)
                     } else conn.reply(m.chat, `Tus pociones no son suficientes`.trim(), m)
                     break
-                case 'limit':
-                    if (global.db.data.users[m.sender].limit >= count * 1) {
-                        global.db.data.users[m.sender].exp += Slimit * count
-                        global.db.data.users[m.sender].limit -= count * 1
-                        conn.reply(m.chat, `Venta exitosa, vendiste ${count} limit a precio de ${Slimit * count} exp`.trim(), m)
+                case 'cookie':
+                    if (global.db.data.users[m.sender].cookie >= count * 1) {
+                        global.db.data.users[m.sender].exp += Scookie * count
+                        global.db.data.users[m.sender].cookie -= count * 1
+                        conn.reply(m.chat, `Venta exitosa, vendiste ${count} Galletas a precio de ${Scookie * count} exp`.trim(), m)
                     } else conn.reply(m.chat, `Tu límite no es suficiente`.trim(), m)
                     break
                 case 'comun':

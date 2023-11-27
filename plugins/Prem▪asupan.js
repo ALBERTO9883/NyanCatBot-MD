@@ -13,7 +13,7 @@ handler.help = ['asupan']
 handler.tags = ['premium']
 handler.command = ['asupan']
 handler.premium = true
-handler.limit = true
+handler.cookie = true
 
 export default handler
 

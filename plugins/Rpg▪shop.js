@@ -7,13 +7,13 @@ let handler = async (m, { conn, command, args }) => {
   count = Math.max(1, count)
   if (global.db.data.users[m.sender].exp >= xpperlimit * count) {
     global.db.data.users[m.sender].exp -= xpperlimit * count
-    global.db.data.users[m.sender].limit += count
+    global.db.data.users[m.sender].cookie += count
     conn.reply(m.chat, `
 ┏━「 *NOTA DE PAGO* 」
 ┃⋄ *Compra nominal* : + ${count}
 ┃⋄ *Gastado* : -${xpperlimit * count} XP
 ┗━━━━━━━━━━━━━⬣`, m)
-  } else conn.reply(m.chat, `❎ *_Lo siento, no tienes suficiente - XP - para comprar - ${count} - Monedas🪙_*`, m)
+  } else conn.reply(m.chat, `❎ *_Lo siento, no tienes suficiente - XP - para comprar - ${count} - Galletas🍪_*`, m)
 }
 handler.help = ['buy', 'buyall']
 handler.tags = ['xp']

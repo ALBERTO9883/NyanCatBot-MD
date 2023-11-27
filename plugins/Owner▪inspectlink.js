@@ -1,45 +1,75 @@
-import * as baileys from '@whiskeysockets/baileys'
+import * as baileys from "@whiskeysockets/baileys";
 
 let handler = async (m, { conn, text }) => {
-	let [, code] = text.match(/chat\.whatsapp\.com\/(?:invite\/)?([0-9A-Za-z]{20,24})/i) || []
-	if (!code) throw '⚠️ *_Ingrese un enlace de whatsapp_*'
-	let res = await conn.query({ tag: 'iq', attrs: { type: 'get', xmlns: 'w:g2', to: '@g.us' }, content: [{ tag: 'invite', attrs: { code } }] }),
-		data = extractGroupMetadata(res),
-		txt = Object.keys(data).map(v => `*${v.capitalize()}:* ${data[v]}`).join('\n'),
-		pp = await conn.profilePictureUrl(data.id, 'image').catch(console.error)
-		let groupinfo = `
+  let [, code] =
+    text.match(/chat\.whatsapp\.com\/(?:invite\/)?([0-9A-Za-z]{20,24})/i) || [];
+  if (!code) throw "⚠️ *_Ingrese un enlace de whatsapp_*";
+  let res = await conn.query({
+      tag: "iq",
+      attrs: { type: "get", xmlns: "w:g2", to: "@g.us" },
+      content: [{ tag: "invite", attrs: { code } }],
+    }),
+    data = extractGroupMetadata(res),
+    txt = Object.keys(data)
+      .map((v) => `*${v.capitalize()}:* ${data[v]}`)
+      .join("\n"),
+    pp = await conn.profilePictureUrl(data.id, "image").catch(console.error);
+  let groupinfo = `
 *╭───────────────╮*
 *│🎋❐ ID:* ◜${data.id}◞
 *│🎋❐ Nombre:* ◜${data.subject}◞
 *│🎋❐ Creado:* ◜${data.creation}◞
 *│🎋❐ Owner:* ◜${data.owner}◞
 *╰───────────────╯*
-`
-	await conn.reply(m.chat, groupinfo, fakemsg)
-	const botones = [
-{index: 1, urlButton: {displayText: `•Copiar Desc`, url: `https://www.whatsapp.com/otp/copy/${data.desc}`}},
-]
-await conn.sendMessage(m.chat, { text: `*╭──────────────╮*\n│🐳 • ¿Desea copiar la descripción?\n*╰──────────────╯*`, templateButtons: botones, footer: botname })
-conn.sendNyanCat(m.chat, `${data.desc}`, adnyancat, 'Dᴇsᴄʀɪᴘᴄɪᴏ́ɴ Gʀᴀᴛɪs🐱', botname, script, m)
-}
-handler.tags = ['owner']
-handler.command = handler.help = ['inspect']
+`;
+  await conn.reply(m.chat, groupinfo, fakemsg);
+  const botones = [
+    {
+      index: 1,
+      urlButton: {
+        displayText: `•Copiar Desc`,
+        url: `https://www.whatsapp.com/otp/copy/${data.desc}`,
+      },
+    },
+  ];
+  await conn.sendMessage(m.chat, {
+    text: `*╭──────────────╮*\n│🐳 • ¿Desea copiar la descripción?\n*╰──────────────╯*`,
+    templateButtons: botones,
+    footer: botname,
+  });
+  conn.sendNyanCat(
+    m.chat,
+    `${data.desc}`,
+    adnyancat,
+    "Dᴇsᴄʀɪᴘᴄɪᴏ́ɴ Gʀᴀᴛɪs🐱",
+    botname,
+    script,
+    m
+  );
+};
+handler.tags = ["owner"];
+handler.command = handler.help = ["inspect"];
 
-export default handler
-handler.owner = true
-
+export default handler;
+handler.owner = true;
 
 const extractGroupMetadata = (result) => {
-	const group = baileys.getBinaryNodeChild(result, 'group')
-	const descChild = baileys.getBinaryNodeChild(group, 'description')
-	let desc
-	if (descChild) desc = baileys.getBinaryNodeChild(descChild, 'body')?.content
-	const metadata = {
-		id: group.attrs.id.includes('@') ? group.attrs.id : baileys.jidEncode(group.attrs.id, 'g.us'),
-		subject: group.attrs.subject,
-		creation: new Date(+group.attrs.creation * 1000).toLocaleString('id', { timeZone: 'Asia/Jakarta' }),
-		owner: group.attrs.creator ? 'wa.me/' + baileys.jidNormalizedUser(group.attrs.creator).split('@')[0] : undefined,
-		desc
-	}
-	return metadata
-}
+  const group = baileys.getBinaryNodeChild(result, "group");
+  const descChild = baileys.getBinaryNodeChild(group, "description");
+  let desc;
+  if (descChild) desc = baileys.getBinaryNodeChild(descChild, "body")?.content;
+  const metadata = {
+    id: group.attrs.id.includes("@")
+      ? group.attrs.id
+      : baileys.jidEncode(group.attrs.id, "g.us"),
+    subject: group.attrs.subject,
+    creation: new Date(+group.attrs.creation * 1000).toLocaleString("id", {
+      timeZone: "Asia/Jakarta",
+    }),
+    owner: group.attrs.creator
+      ? "wa.me/" + baileys.jidNormalizedUser(group.attrs.creator).split("@")[0]
+      : undefined,
+    desc,
+  };
+  return metadata;
+};

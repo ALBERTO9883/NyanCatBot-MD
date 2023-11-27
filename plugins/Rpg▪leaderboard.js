@@ -5,7 +5,7 @@ let handler = async (m, { conn, args, participants }) => {
     return {...value, jid: key}
   })
   let sortedExp = users.map(toNumber('exp')).sort(sort('exp'))
-  let sortedLim = users.map(toNumber('limit')).sort(sort('limit'))
+  let sortedLim = users.map(toNumber('cookie')).sort(sort('cookie'))
   let sortedLevel = users.map(toNumber('level')).sort(sort('level'))
   let usersExp = sortedExp.map(enumGetKey)
   let usersLim = sortedLim.map(enumGetKey)
@@ -20,10 +20,10 @@ Tú : *${usersExp.indexOf(m.sender) + 1}* de *${usersExp.length}*
 
 ${sortedExp.slice(0, len).map(({ jid, exp }, i) => `${i + 1}. ${participants.some(p => jid === p.jid) ? `(${conn.getName(jid)}) wa.me/` : '@'}${jid.split`@`[0]} *${exp} Exp✨*`).join`\n`}
 
-⊜ *_TOP ${len} MONEDAS🪙_* •
+⊜ *_TOP ${len} GALLETAS🍪_* •
 Tú : *${usersLim.indexOf(m.sender) + 1}* de *${usersLim.length}*
 
-${sortedLim.slice(0, len).map(({ jid, limit }, i) => `${i + 1}. ${participants.some(p => jid === p.jid) ? `(${conn.getName(jid)}) wa.me/` : '@'}${jid.split`@`[0]} *${limit} Monedas🪙*`).join`\n`}
+${sortedLim.slice(0, len).map(({ jid, cookie }, i) => `${i + 1}. ${participants.some(p => jid === p.jid) ? `(${conn.getName(jid)}) wa.me/` : '@'}${jid.split`@`[0]} *${cookie} Galletas🍪*`).join`\n`}
 
 ⊜ *_TOP ${len} NIVEL_* •
 Tú : *${usersLevel.indexOf(m.sender) + 1}* de *${usersLevel.length}*

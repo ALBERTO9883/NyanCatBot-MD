@@ -71,7 +71,7 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
 
     let money = global.db.data.users[who].money
     
-    let { name, exp, limit, lastclaim, registered, regTime, age, level, role } = global.db.data.users[who]
+    let { name, exp, cookie, lastclaim, registered, regTime, age, level, role } = global.db.data.users[who]
     let { min, xp, max } = xpRange(user.level, global.multiplier)
   
     //let invt = fs.readFileSync('./storage/image/inv.png')
@@ -88,7 +88,7 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
 
 *❤ Vida:* ${health}
 *💵 Dinero:* ${shortNum(money)}
-*🪙 Limite:* ${limit}
+*🍪 Galletas:* ${cookie}
 *📈 Nivel:* ${level}
 *✨ Exp:* ${exp}
 

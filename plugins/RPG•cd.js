@@ -8,7 +8,7 @@ const inventory = {
     health: true,
     money: true,
     exp: true,
-    limit: true,
+    cookie: true,
     level: true,
   },
   items: {

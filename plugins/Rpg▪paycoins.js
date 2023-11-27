@@ -11,26 +11,26 @@ let handler = async (m, { conn, text }) => {
     if (!txt) throw '⚠️️ *_Ingrese la cantidad de -Monedas- que quiere transferir._*'
     if (isNaN(txt)) throw '🔢 *sólo números.*'
     let poin = parseInt(txt)
-    let limit = poin
+    let cookie = poin
     let imt = Math.ceil(poin * impuesto)
-    limit += imt
-    if (limit < 1) throw '⚠️️ *Mínimo es  1*'
+    cookie += imt
+    if (cookie < 1) throw '⚠️️ *Mínimo es  1*'
     let users = global.db.data.users
-    if (limit > users[m.sender].limit) throw '⚠️ *_Monedas insuficiente para transferir._*'
-    users[m.sender].limit -= limit
-    users[who].limit += poin
+    if (cookie > users[m.sender].cookie) throw '⚠️ *_Galletas insuficientes para transferir._*'
+    users[m.sender].cookie -= cookie
+    users[who].cookie += poin
     
-    await m.reply(`⊜ *TRANSFERENCIA 🪙*
+    await m.reply(`⊜ *TRANSFERENCIA 🍪*
 ┏━━━━━━━━━━━━━⬣
 ┃⋄ *${-poin}* Monedas
-┃⋄ Impuesto 2% : *${-imt}* Monedas
-┃⋄ Total gastado: *${-limit}* Monedas
+┃⋄ Impuesto 2% : *${-imt}* Galletas
+┃⋄ Total gastado: *${-cookie}* Galletas
 ┗━━━━━━━━━━━━━⬣`)
-    conn.fakeReply(m.chat, `⊜ *_Recibiste_*\n\n *+${poin}* *_Monedas🪙._*`, who, m.text)
+    conn.fakeReply(m.chat, `⊜ *_Recibiste_*\n\n *+${poin}* *_Galletas🍪._*`, who, m.text)
 }
-handler.help = ['paycoins *@user <cantidad>*']
+handler.help = ['paycookies *@user <cantidad>*']
 handler.tags = ['xp']
-handler.command = ['paycoins', 'transfercoins', 'transfercn'] 
+handler.command = ['paycookies', 'transfercookies', 'transferck'] 
 handler.rowner = false
 
 export default handler

@@ -27,6 +27,6 @@ conn.sendFile(m.chat, stiker, null, { asSticker: true }, m, true, { contextInfo:
 handler.help = ['emojimix *<emoji+emoji>*']
 handler.tags = ['sticker']
 handler.command = ['emojimix'] 
-handler.limit = true
+handler.cookie = true
 
 export default handler

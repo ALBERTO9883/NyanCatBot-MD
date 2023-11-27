@@ -34,6 +34,6 @@ await conn.sendFile(m.chat, apiUrl, 'smaker.png', null, m, true, { contextInfo: 
 handler.help = ['smaker']
 handler.tags = ['sticker']
 handler.command = ['stickmaker', 'stickermaker', 'smaker'] 
-handler.limit = true
+handler.cookie = true
 
 export default handler

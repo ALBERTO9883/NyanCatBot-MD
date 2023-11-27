@@ -23,7 +23,7 @@ handler.help = ['stikertele *<url>*']
 handler.tags = ['sticker', 'downloader']
 handler.command = /^(stic?kertele(gram)?)$/i
 
-handler.limit = 1
+handler.cookie = 1
 
 export default handler
 
