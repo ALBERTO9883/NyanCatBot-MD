@@ -25,5 +25,5 @@ handler.help = ['setchattime'].map(v => v + ' <tanggal|jam|text>')
 handler.tags = ['tools']
 
 handler.command = /^(set(chat)?(time)?)$/i
-handler.limit = false
+handler.cookie = false
 export default handler

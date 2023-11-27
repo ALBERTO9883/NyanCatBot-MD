@@ -43,6 +43,6 @@ handler.command = /^(spamchat)$/i
 
 handler.fail = null
 handler.exp = 100
-handler.limit = true
+handler.cookie = true
 
 export default handler
