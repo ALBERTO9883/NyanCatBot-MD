@@ -39,7 +39,7 @@
     },
     "license": "GPL-3.0-or-later",
     "dependencies": {
-        "@whiskeysockets/baileys": "^6.5.0",
+        "@whiskeysockets/baileys": "npm:@jcteh8885/baileys@1.0.6",
         "@adiwajshing/keyed-db": "^0.2.4",
         "@nechlophomeriaa/chatgptv2": "^0.0.14",
         "@nechlophomeriaa/spotifydl": "1.0.11",
