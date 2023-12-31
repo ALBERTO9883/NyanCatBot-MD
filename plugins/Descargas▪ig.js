@@ -1,29 +1,38 @@
-import axios from "axios";
-import instagramDl from "@sasmeee/igdl"
+import fetch from 'node-fetch';
 
-let handler = async (m, { conn, args, usedPrefix, command }) => {
-  if (!args[0])
-    throw `*_📌️ Uso del comando_*\n *${
-      usedPrefix + command
-    }* https://www.instagram.com/p/CYHeKxyMj-J/?igshid=YmMyMTA2M2Y=`;
-  if (!args[0].match(/instagram/gi))
+const handler = async (m, { conn, args }) => {
+    if (!args[0]) {
+        throw `⚠️ Por favor, ingresa un enlace de Instagram.`;
+    }
+if (!args[0].match(/instagram/gi))
     throw `❎ Asegurese que el enlace sea de Instagram`;
-  await conn.sendNyanCat(
-    m.chat,
-    global.wait,
-    adnyancat,
-    addescargas,
-    null,
-    script,
-    m
-  );
-  let res = await instagramDl(args[0]);
-  for (let result of res) {
-    conn.sendFile(m.chat, result.download_link, "igdl.mp4", ``, m);
-  }
-};
-handler.help = ["instagram *<link ig>*"];
-handler.tags = ["downloader"];
-handler.command = ["ig", "igdl", "instagram", "igimg", "igvid"];
+    await conn.sendNyanCat(m.chat, global.wait, adnyancat, addescargas, null, script, m);
 
-export default handler;
+    try {
+        const apiUrl = `https://visionaryapi.boxmine.xyz/api/v1/igdl?url=${args[0]}`;
+
+        const response = await fetch(apiUrl);
+        const data = await response.json();
+
+        if (data.success && data.data.length > 0) {
+            for (const media of data.data) {
+                if (media.type === 'video')
+            {
+                    await conn.sendFile(m.chat, media.url_download, 'video.mp4', '', m);
+                } else {
+                    await conn.sendFile(m.chat, media.url_download, 'imagen.jpg', '', m);
+                }
+            }
+        } else {
+            throw '🐢 No se pudo obtener el contenido de Instagram.';
+        }
+    } catch (error) {
+        throw `🐢 Ocurrió un error al procesar la solicitud:\n\n ${error}`;
+    }
+};
+
+handler.help = ['instagram'];
+handler.tags = ['dl'];
+handler.command = /^(instagramdl|instagram|igdl|ig)$/i;
+
+export default handler
