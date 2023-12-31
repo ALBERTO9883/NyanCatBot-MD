@@ -11,9 +11,9 @@ let handler = async (m,{ conn} ) => {
   for (let reward of Object.keys(rewards)) {
     if (!(reward in user)) continue
     user[reward] += rewards[reward]
-    text += `*+${rewards[reward]}* ${global.rpg.emoticon(reward)}${reward}\n`
+    text += `*––––––『 DIARIO 』––––––*\n\n*+${rewards[reward]}* ${global.rpg.emoticon(reward)}${reward}\n`.trim()
   }
-  conn.sendButton(m.chat,'*––––––『 DIARIO 』––––––*', text.trim(), null, [['Inventario', '.inv'], ['Semanal', '.weekly']],m)
+  m.reply(m.chat, text, m)
   user.lastclaim = new Date * 1
 }
 handler.help = ['daily', 'claim']
