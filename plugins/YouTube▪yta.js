@@ -67,8 +67,8 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
       { quoted: m }
     );
   } catch {
-    m.reply("*_🐢 Alto imbecil, eso no es un enlace de spotify._*");
-  }
+    m.reply("*_🐢 Error, hubo un problema en la descarga._*");
+    }
 };
 handler.help = ["mp3", "a"].map((v) => "yt" + v + ` <url>`);
 handler.tags = ["downloader"];
