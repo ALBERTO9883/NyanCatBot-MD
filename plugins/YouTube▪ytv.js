@@ -1,69 +1,81 @@
-let limit = 50;
-import fs from "fs";
+import ufs from "url-file-size";
+import { sizeFormatter } from "human-readable";
 import fetch from "node-fetch";
-import { youtubedl, youtubedlv2 } from "@bochilteam/scraper";
-let handler = async (
-  m,
-  { conn, args, isPrems, isOwner, usedPrefix, command }
-) => {
+import { ytmp4 } from "@nechlophomeriaa/ytdl";
+import axios from "axios";
+
+let format = sizeFormatter({
+  std: "JEDEC",
+  decimalPlaces: 2,
+  keepTrailingZeroes: false,
+  render: (literal, symbol) => `${literal} ${symbol}B`,
+});
+
+let handler = async (m, { conn, args, isPrems, isOwner, text, usedPrefix }) => {
   if (!args || !args[0])
     throw `*_⚠️ Inserte el comando más el enlace de YouTube._*`;
   if (!args[0].match(/youtu/gi))
     throw `*_⚠️ Esto no es un enlace de YouTube._*\n*_📌 Ejemplo :_* *${
       usedPrefix + command
     }* https://youtu.be/H5v3kku4y6Q?si=baGFQa48xOeJTL3s`;
-  conn.sendNyanCat(m.chat, global.wait, adnyancat, adyoutube, null, script, m);
-  let chat = global.db.data.chats[m.chat];
-  const isY = /y(es)/gi.test(args[1]);
-  const {
-    thumbnail,
-    video: _video,
-    title,
-  } = await youtubedl(args[0]).catch(async (_) => await youtubedlv2(args[0]));
-  const limitedSize = (isPrems || isOwner ? 350 : limit) * 3074;
-  let video, source, res, link, lastError, isLimit;
-  for (let i in _video) {
-    try {
-      video = _video[i];
-      isLimit = limitedSize < video.fileSizeH;
-      if (isLimit) continue;
-      link = await video.download();
-      if (link) res = await fetch(link);
-      isLimit =
-        res?.headers.get("content-length") &&
-        parseInt(res.headers.get("content-length")) < limitedSize;
-      if (isLimit) continue;
-      if (res) source = await res.arrayBuffer();
-      if (source instanceof ArrayBuffer) break;
-    } catch (e) {
-      video = source = link = null;
-      lastError = e;
-    }
-  }
-  if ((!(source instanceof ArrayBuffer) || !link || !res.ok) && !isLimit)
-    throw (
-      "*_⚠️ Error, " + (lastError || "no fue posible descargar el video._*")
-    );
-  let _thumb = {};
   try {
-    _thumb = { thumbnail: await (await fetch(thumbnail)).buffer() };
-  } catch (e) {}
+  var limit;
+  if (isOwner || isPrems) limit = 900;
+  else limit = 350;
+  const ytm = await ytmp4(args[0]);
+  const { title, channel, duration, type, quality, id, thumbnail, url } = ytm;
+  let size = await format(await ufs(url));
+  let chat = global.db.data.chats[m.chat];
+  if (Number(size.split(" MB")[0]) >= limit)
+    return m
+      .reply(
+        `⚠️ *_El archivo pesa mas de ${limit} MB, se canceló la Descarga._*`
+      )
+      .then((_) => m.react("✖️"));
+  if (Number(size.split(" GB")[0]) >= 0)
+    return m
+      .reply(
+        `⚠️ *_El archivo pesa mas de ${limit} MB, se canceló la Descarga._*`
+      )
+      .then((_) => m.react("✖️"));
+  let img = await (await fetch(thumbnail)).buffer();
+  let txt = `💿 *Y O U T U B E  -  M P 4*\n\n`;
+  txt += ` ⤿   *Titulo* : ${title}\n`;
+  txt += ` ⤿   *Canal* : ${channel}\n`;
+  txt += ` ⤿   *Calidad* : ${quality}p\n`;
+  txt += ` ⤿   *Tamaño* : ${size}\n`;
+  txt += ` ⤿   *Duración* : ${duration || "×"}\n`;
+  txt += ` ⤿   *Tipo* : ${type}\n`;
+  txt += ` ⤿   *Url* : ${"https://youtu.be/" + id}\n\n`;
+  txt += `El video se esta enviando, Espere un momento.`;
+  await conn.sendUrl(m.chat, txt, m, {
+    externalAdReply: {
+      mediaType: 1,
+      renderLargerThumbnail: true,
+      thumbnail: img,
+      thumbnailUrl: img,
+      title: botname,
+    },
+  });
   conn.sendFile(
     m.chat,
-    link,
-    title + ".mp4",
+    url,
+    `${title}` + ".mp4",
     `
-*🌾 • Título:* ${title}
-*📁 • Peso del vídeo:* ${video.fileSizeH}
+*⤿  Titulo* : ${title}
+*⤿  Peso* : ${size}
 `.trim(),
     m,
     false,
     {
-      ..._thumb,
       asDocument: chat.useDocument,
     }
   );
+  } catch {
+      m.reply("*_🐢 Error, hubo un problema en la descarga._*");
+    }
 };
+
 handler.help = ["mp4", "v"].map((v) => "yt" + v + ` *<url>*`);
 handler.tags = ["downloader"];
 handler.command = /^yt(v|mp4)?$/i;
