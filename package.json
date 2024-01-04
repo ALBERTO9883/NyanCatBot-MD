@@ -42,6 +42,7 @@
   "dependencies": {
     "@whiskeysockets/baileys": "npm:@jcteh8885/baileys@1.0.6",
     "@adiwajshing/keyed-db": "^0.2.4",
+    "@fantox01/lyrics-scraper": "^2.0.2",
     "@nechlophomeriaa/chatgptv2": "^0.0.14",
     "@nechlophomeriaa/spotifydl": "1.0.11",
     "@nechlophomeriaa/ytdl": "0.0.7",
