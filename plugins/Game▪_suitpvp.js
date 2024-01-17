@@ -21,11 +21,11 @@ let imgplay = `https://www.merca2.es/wp-content/uploads/2020/05/Piedra-papel-o-t
 if (!room.pilih) await conn.sendButton(room.p, 'Por favor, escoja una de las siguientes opciones', `Ganador +${room.poin}XP\nPerdedor ${room.poin_lose}XP`, imgplay, [['PIEDRA 🗿', 'Piedra'], ['PAPEL 📄', 'Papel'], ['TIJERA ✂️', 'Tijera']], m)
 if (!room.pilih2) await conn.sendButton(room.p2, 'Por favor, escoja una de las siguientes opciones', `Ganador +${room.poin}XP\nPerdedor ${room.poin_lose}XP`, imgplay, [['PIEDRA 🗿', 'Piedra'], ['PAPEL 📄', 'Papel'], ['TIJERA ✂️', 'Tijera']], m)
 room.waktu_milih = setTimeout(() => {
-if (!room.pilih && !room.pilih2) this.sendButton(m.chat, `⚠️ Ningún jugador tomo la iniciativa de empezar el juego, el pvp se ha cancelado`, wm, null, [['Menú 🥗', '#menu']], m)
+if (!room.pilih && !room.pilih2) this.sendMessage(m.chat, {text: `⚠️ Ningún jugador tomo la iniciativa de empezar el juego, el pvp se ha cancelado`}, {quoted: m});
 else if (!room.pilih || !room.pilih2) {
 win = !room.pilih ? room.p2 : room.p 
 let textnull = `⚠️ *@${(room.pilih ? room.p2 : room.p).split`@`[0]} No elegiste ninguna opción, fin del pvp*`
-this.sendButton(m.chat, textnull, wm, null, [['Menú 🥗', '#menu']], m, { mentions: this.parseMention(textnull)})
+this.sendMessage(m.chat, {text: textnull}, {quoted: m}, { mentions: this.parseMention(textnull)})
 db.data.users[win == room.p ? room.p : room.p2].exp += room.poin
 db.data.users[win == room.p ? room.p : room.p2].exp += room.poin_bot
 db.data.users[win == room.p ? room.p2 : room.p].exp -= room.poin_lose
