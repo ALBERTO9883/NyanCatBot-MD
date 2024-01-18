@@ -59,7 +59,7 @@ let str = `
         ${arr.slice(3, 6).join('')}
         ${arr.slice(6).join('')}
 
-${isWin ? `@${(isSurrender ? room.game.currentTurn : room.game.winner).split('@')[0]} 𝙶𝙰𝙽𝙰𝚂𝚃𝙴 🥳, 𝚃𝙴 𝙻𝙻𝙴𝚅𝙰𝚂 +4999 𝚎𝚡𝚙` : isTie ? '𝙴𝙻 𝙹𝚄𝙴𝙶𝙾 𝚃𝙴𝚁𝙸𝙽𝙾 𝙴𝙽 𝙴𝙼𝙿𝙰𝚃𝙴 😐' : `𝚃𝚄𝚁𝙽𝙾 𝙳𝙴 @${room.game.currentTurn.split('@')[0]}`}
+${isWin ? `@${(isSurrender ? room.game.currentTurn : room.game.winner).split('@')[0]} ganaste 🥳, te llevas 4999 de exp` : isTie ? 'el juego terminó en empate 😐' : `turno de @${room.game.currentTurn.split('@')[0]}`}
 `.trim()
 let users = global.db.data.users
 if ((room.game._currentTurn ^ isSurrender ? room.x : room.o) !== m.chat)
